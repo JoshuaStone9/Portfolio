@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css"/>
+    <title>Document</title>
+</head>
+<body>
+    <div class="navbar">
+        <button class="navBtn">Home</button>
+        <button class="navBtn">About</button>
+        <button class="navBtn">Contact</button>
+    </div>
+    <div class="mainHeaders">
+        <img src="images/profile-pic.jpg"  id="profilePicture">
+        <h1>JOSHUA STONE</h1>
+        <div class="aboutMe">
+            <h2>About Me</h2>
+            <p>Hello, I am Joshua Stone a Cyber Security Graduate who is ambitous to get into the software world. 
+            <br><br>
+            In whatever free time I have I am learning new skillsets within coding ranging from learning new software languages to simply hosting services to help provide me with experience to land a role within the industry.</p>
+            <br>
+            I have a great passion for software developement and engineering which can be seen from the projects I have completed below.</p>
+        </div>
+        <br>
+        <div>
+            <h2>Programming Languages</h2>
+            <img src="Images/html icon.png" class="icons">
+            <img src="Images/css logo.png" class="icons">
+            <img src="Images/javascript icon.png" class="icons">
+            <img src="Images/react logo.png" class="icons">
+            <img src="Images/c sharp icon.png" class="icons">
+        </div>
+    </div>
+    <div class="projects">
+    <h2>Home NAS Control Panel</h2>
+    <button onclick="viewHomeNASControlPanel()" id="viewHomeNASControlPanel" class="projectViewBtn">View Project</button>
+    <h2>NAS Auto Backup</h2>
+    <button onclick="viewNASAutoBackup()" id="NASAutoBackup" class="projectViewBtn">View Project</button>
+    <button onclick="viewNASAutoBackupCode()" id="NASAutoBackupCode" class="projectViewBtn">View Code</button>
+    <h2>Date Checker</h2>
+    <button onclick="viewDateChecker()" id="viewDateChecker" class="projectViewBtn">View Project</button>
+    <button onclick="viewDateCheckerCode()" id="viewDateCheckerCode" class="projectViewBtn">View Code</button>
+    <h2>Smart Habit Tracker</h2>
+    <button onclick="viewSmartHabitTracker()" id="smartHabitTrackerViewBtn" class="projectViewBtn">View Project</button>
+    <button onclick="viewSmartHabitTrackerCode()" id="smartHabitTrackerViewBtn" class="projectViewBtn">View Code</button>
+    <h2>Finance Tracker</h2>
+    <button onclick="viewFinanceTracker()" id="financeTrackerViewBtn" class="projectViewBtn">View Project</button>
+    <button onclick="viewFinanceTrackerCode()" id="financeTrackerViewBtn" class="projectViewBtn">View Code</button>
+    <h2>Breadsheet</h2>
+    <button onclick="viewBreadsheet()" id="breadsheetViewBtn" class="projectViewBtn">View Project</button>
+    <button onclick="viewBreadsheetCode()" id="breadsheetViewBtn" class="projectViewBtn">View Code</button>
+    <!-- <h2>University Dissertation Project</h2>
+    <button onclick="viewFinanceTracker()" id="financeTrackerViewBtn" class="projectViewBtn">View Project</button>
+    <button onclick="viewFinanceTrackerCode()" id="financeTrackerViewBtn" class="projectViewBtn">View Code</button> -->
+    <h2>Photography Site</h2>
+    <button onclick="viewPhotography()" id="smartHabitTrackerViewBtn" class="projectViewBtn">View Project</button>
+    <button onclick="viewPhotographyCode()" id="smartHabitTrackerViewBtn" class="projectViewBtn">View Code</button>
+    </div>
+    <h1>External Projects</h1>
+    <a href="https://www.freecodecamp.org/JoshuaStone"><img src="/Images/freeCodeCamp icon.png" class="externalProjectsIcons"></a>
+    <div class="popup-wrapper hidden">
+    <div id="viewSmartHabitTrackerWindow"class="popup">
+        <button class="window-controls" onclick="closePopup()">X</button>
+        <div class="popup-background">
+            <div class="projectInfo">
+            </div>
+        </div>
+        <!-- Right-side slide-in panel -->
+<aside
+  id="projectSidePanel"
+  class="side-panel"
+  role="dialog"
+  aria-labelledby="panelTitle"
+  aria-hidden="true"
+>
+  <button id="panelClose" class="panel-close" aria-label="Close panel">×</button>
+  <div class="panel-scroll">
+    <h3 id="panelTitle" class="panel-title">Quick Actions</h3>
+    <div class="panel-content">
+      <!-- You can replace this per-view via setPanelContent(...) -->
+      <p>Select a project to see shortcuts here.</p>
+    </div>
+  </div>
+</aside>
+
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

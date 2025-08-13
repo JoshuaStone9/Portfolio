@@ -1,0 +1,355 @@
+/* === Base Styles === */
+body {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: bisque;
+    text-align: center;
+}
+
+.navbar{
+    padding: 10px;
+    background-color: rgb(64, 63, 63);
+    color: aliceblue;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.navBtn {
+    background-color: rgb(64, 63, 63);
+    color: aliceblue;
+    border: 0;
+    padding: 10px;
+    margin-left: 10%;
+    margin-right: 10%;
+    font-weight: bolder;
+    font-size: medium;
+}
+
+.externalProjectsIcons {
+    width: 35%;
+    height: 25%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 12%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.hidden {
+    display: none !important;
+}
+
+.icons {
+    position: relative;
+    display: inline-block;
+    height: 10%;
+    width: 10%;
+}
+
+#profilePicture {
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    justify-content: center;
+    width: 200px;
+    height: 200px;
+    border-radius: 25%;
+    border-color: mediumpurple;
+    border: 10;
+}
+
+.aboutMe {
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 8%;
+    margin-bottom:5%;
+    text-align: center;
+}
+
+.projectProgrammingLanguage {
+    font-weight: bold;
+}
+
+.projects {
+    position: relative;
+    display: block;
+    font-size: larger;
+    padding: 10px;
+    background-color:rgb(255, 189, 123);
+    width: 100%;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.projectViewBtn {
+    border: black solid 2px;
+    background-color: goldenrod;
+    width: 20%;
+    height: 20%;
+    font-size: large;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.projectViewBtn:hover {
+    background-color: aqua;
+}
+
+.projectImage {
+    width: 100%;
+    height: auto;
+    display: inline-block;
+    object-fit: contain;
+    margin: 10px;
+}
+
+.mainHeaders{
+    text-align: center;
+}
+
+/* === Modern Popup Styles === */
+
+/* Dimmed, blurred overlay */
+.popup-wrapper {     
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center; /* vertical center */
+  justify-content: center; /* horizontal center */
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  padding: 4vh 2vw;
+}
+
+/* The modal "card" */
+.popup-background {
+  position: relative;
+  width: min(960px, 96%);
+  max-height: 86vh;
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.15),
+    0 2px 8px rgba(0,0,0,0.08);
+  padding: 24px;
+  overflow: auto;
+  animation: modalIn 180ms ease-out;
+}
+
+/* Modern Close Button (Bigger & More Visible) */
+.window-controls {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 2;
+  font-size: large;
+  height: 50px;
+  width: 80px;
+  appearance: none;
+  border: none;
+  background: #ef4444;
+  color: white;
+  border-radius: 20%;
+  font-size: 1.8rem;
+  font-weight: bold;
+  line-height: 1;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+  transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+
+}
+
+
+.window-controls .close-btn:hover {
+  background: #dc2626;
+  transform: scale(10.08);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.3);
+}
+
+.window-controls .close-btn:active {
+  background: #b91c1c;
+  transform: scale(0.95);
+}
+
+.window-controls .close-btn:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+/* Content styling inside popup */
+.projectInfo {
+  display: block;
+  text-align: left;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: #1f2937;
+}
+
+.projectInfo h2, .projectInfo h3 {
+  color: #111827;
+  margin: 0.2em 0 0.4em;
+}
+
+.projectInfo h2 {
+  font-size: clamp(1.4rem, 1.2rem + 1vw, 2rem);
+  font-weight: 800;
+}
+
+.projectInfo h3 {
+  font-size: clamp(1.05rem, 0.95rem + 0.5vw, 1.25rem);
+  font-weight: 700;
+  margin-top: 1.2em;
+}
+
+.projectInfo p, .projectInfo li, .projectInfo figcaption {
+  color: #334155;
+}
+
+.projectInfo ul {
+  padding-left: 1.2rem;
+  margin: 0.6rem 0 1rem;
+}
+
+.projectInfo li {
+  margin: 0.3rem 0;
+}
+
+/* Images inside popup */
+.projectInfo figure {
+  margin: 1rem 0;
+}
+
+.projectInfo img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+/* Animation */
+@keyframes modalIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Scrollbars */
+.popup-background::-webkit-scrollbar {
+  width: 10px;
+}
+.popup-background::-webkit-scrollbar-track {
+  background: transparent;
+}
+.popup-background::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.15);
+  border-radius: 8px;
+}
+.popup-background::-webkit-scrollbar-thumb:hover {
+  background: rgba(0,0,0,0.25);
+}
+
+/* Responsive tweaks */
+@media (max-width: 640px) {
+  .popup-background {
+    width: 100%;
+    max-height: 90vh;
+    padding: 16px;
+    border-radius: 12px;
+  }
+  .projectInfo {
+    font-size: 1rem;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .popup-background {
+    animation: none;
+  }
+  .window-controls .close-btn {
+    transition: none;
+  }
+}
+
+/* Right-side panel base */
+.side-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: min(420px, 92vw);
+  background: #1f1f1f;               /* dark to match your theme */
+  color: #fff;
+  border-left: 1px solid #3a3a3a;
+  box-shadow: -8px 0 24px rgba(0,0,0,.35);
+  transform: translateX(100%);
+  transition: transform .35s ease;
+  z-index: 10000;                     /* above your popup */
+  display: flex;
+  flex-direction: column;
+}
+
+.side-panel.is-visible {
+  transform: translateX(0);
+}
+
+/* Scrollable content area */
+.panel-scroll {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 16px 18px 24px;
+  gap: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header & close */
+.panel-title {
+  margin: 0 0 8px 0;
+  font-size: 1.1rem;
+  letter-spacing: .25px;
+  font-weight: 700;
+}
+
+.panel-close {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  font-size: 22px;
+  line-height: 1;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  border: 1px solid #333;
+  background: #2a2a2a;
+  color: #fff;
+  cursor: pointer;
+}
+
+.panel-close:hover { background: #353535; }
+
+/* Content defaults */
+.panel-content p,
+.panel-content li { color: #e6e6e6; }
+
+.panel-content a {
+  color: #ffd28a;
+  text-decoration: none;
+}
+.panel-content a:hover { text-decoration: underline; }
+
+/* Optional: when the panel is open, prevent background scroll */
+body.panel-open {
+  overflow: hidden;
+}
