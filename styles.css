@@ -353,3 +353,40 @@ body {
 body.panel-open {
   overflow: hidden;
 }
+
+/* Predictable sizing */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+/* Page wrapper that fits phones */
+.container { width: min(100%, 72rem); margin-inline: auto; padding-inline: 1rem; }
+
+/* Images, videos, embeds scale down */
+img, video, iframe, canvas, svg { max-width: 100%; height: auto; display: block; }
+
+/* Kill horizontal scroll caused by one wide child */
+html, body { max-width: 100%; overflow-x: hidden; }
+
+/* Typography that scales on small screens */
+h1 { font-size: clamp(1.6rem, 6vw, 2.5rem); }
+h2 { font-size: clamp(1.25rem, 4.5vw, 1.75rem); }
+p, li { font-size: clamp(1rem, 3.5vw, 1.125rem); }
+
+/* Flexible grid/cards instead of fixed widths */
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 1rem; }
+.card { width: 100%; max-width: 28rem; }
+
+/* Don’t let long text/URLs blow out layout */
+.wrap, .title, .desc { overflow-wrap: anywhere; word-break: break-word; }
+
+/* Tables scroll on small screens instead of overflowing */
+.table-responsive { overflow-x: auto; }
+.table-responsive table { min-width: 36rem; }
+
+/* Safer full-height sections on mobile UI */
+.hero { min-height: 100dvh; } /* use dvh, not vh */
+
+width: 100%; max-width: 800px; /* example */
+
+
