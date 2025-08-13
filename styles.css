@@ -288,7 +288,7 @@ body {
   top: 0;
   right: 0;
   height: 100vh;
-  width: min(420px, 92vw);
+  width: 600px;
   background: #1f1f1f;               /* dark to match your theme */
   color: #fff;
   border-left: 1px solid #3a3a3a;
@@ -298,6 +298,7 @@ body {
   z-index: 10000;                     /* above your popup */
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .side-panel.is-visible {
@@ -387,6 +388,9 @@ p, li { font-size: clamp(1rem, 3.5vw, 1.125rem); }
 /* Safer full-height sections on mobile UI */
 .hero { min-height: 100dvh; } /* use dvh, not vh */
 
-width: 100%; max-width: 800px; /* example */
+.sidepanelimg {
+  width: 600px;
+  height: 300px;
+}
 
 

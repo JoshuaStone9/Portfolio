@@ -22,10 +22,6 @@ projectInfo.innerHTML = `
       Ultimately, the goal is to help users take control of their time, stay consistent and achieve positive lasting change on their own terms.
     </p>
     <p>_________</p>
-    <h1>User Interface</h1>
-    <img src=Images/SHT2.png></img>
-    <img src=Images/SHT1.png></img>
-    <img src=Images/SHT3.png></img>
     <p>The overall Smart Habit Tracker user interface is simple and easy to understand and has clear labels and inputs and outputs to help users track all the data which is inputted.</p>
     <br><br>
     <h4> This is one of many HTML projects I have completed however JavaScript elements are somewhat new to me and development on this programming language is still in progress however I am starting to become more proficient the more times I tackle errors when completing projects like this one, however this project has been somewhat easy but great to complete.</h4>
@@ -34,13 +30,9 @@ projectInfo.innerHTML = `
 `;
 
   setPanelContent(`
-    <ul>
-      <li><a href="#ui">Jump to UI images</a></li>
-      <li><a href="#features">Key features</a></li>
-      <li><a href="#tech">Tech stack</a></li>
-    </ul>
-    <hr />
-    <p>Tip: Press <kbd>Esc</kbd> to close the side panel.</p>
+    <img src=Images/SHT2.png class="sidepanelimg"></img>
+    <img src=Images/SHT1.png class="sidepanelimg"></img>
+    <img src=Images/SHT3.png class="sidepanelimg"></img>
   `, "Smart Habit Tracker");
 
   openRightPanel();
@@ -380,10 +372,6 @@ projectInfo.innerHTML = `
                 <p>I have designed the UI to be as simplistic as possible and have the same structure as our paper version to avoid confusion, I have recieved positive feedback from team members and how they have found this tool useful and sometimes more efficent to use than the paper breadsheet</p>
                 <p>As seen within the images below I have designed a different breadsheet for both units in which I work in which is our Driv Thru and Main Store as our Driv Thru has limited stock and creating a seperate sheet for this proves to be more efficent and effective</p>
                 <p>_________</p>
-                <h1>User Interface</h1>
-                <img src=Images/B1.png class="projectImage">
-                <img src=Images/B2.png class="projectImage"> 
-                <img src=Images/B3.png class="projectImage"> 
                 <p>The Breadsheet application is deployed as a single-page HTML in which styles from CSS and scripts from JavaScript are brought together in one HTML documents</p>
                 <p>I used Firebase Hosting to deploy the application to an active webport to allow for users to easily access it</p> 
                 <p>There is a feature in which the users selects todays date and the top row of the breadsheet will get auto-filled with todays date and the next 3 coming days, this feature is more of a convenience factor rather than an overall improvement</p>
@@ -392,6 +380,14 @@ projectInfo.innerHTML = `
                    <h3>
                     This project has helped me to gain further knowledge on SPAs and how several languages can be brought together within a single page and what benefits this has to offer.</h3>
 `;
+
+  setPanelContent(`
+          <img src=Images/B1.png class="projectImage">
+          <img src=Images/B2.png class="projectImage"> 
+          <img src=Images/B3.png class="projectImage"> 
+  `, "Breadsheet");
+
+  openRightPanel();
 }
 function viewBreadsheetCode() {
     const openPopUp = document.querySelector(".popup-wrapper");
@@ -856,12 +852,6 @@ projectInfo.innerHTML = `<section id="home-nas-control-panel" aria-labelledby="h
           I have maintained a professional yet straightforward design for the Control Panel to ensure a clean, user-friendly interface throughout its development. Looking ahead, my goal is to create a highly customizable menu/control panel—building upon this foundation—that developers can adapt and use effectively within their own workflows.
         </p>
 
-        <figure>
-          <img src="your-control-panel-screenshot.png" alt="Screenshot of the Home NAS Control Panel UI" />
-          <figcaption>
-            The user interface is designed with clarity and accessibility in mind. Its clean and intuitive layout ensures a smooth user experience, allowing even non-technical users to navigate and operate the system with ease.
-          </figcaption>
-        </figure>
 
         <h3>Implementation Detail</h3>
         <p>
