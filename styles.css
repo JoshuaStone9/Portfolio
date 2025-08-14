@@ -399,4 +399,81 @@ p, li { font-size: clamp(1rem, 3.5vw, 1.125rem); }
   height: 300px;
 }
 
+/* ===== Code block styling (desktop + mobile) ===== */
+pre,
+code,
+pre code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono",
+               monospace;
+}
+
+pre {
+  background: #111;            /* dark background */
+  color: #e6e6e6;              /* light text */
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+  line-height: 1.45;
+  font-size: 0.9rem;
+  overflow-x: auto;            /* horizontal scroll for long lines */
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch; /* smooth scroll on iOS */
+  box-shadow: 0 6px 18px rgba(0,0,0,.12);
+}
+
+/* keep whitespace/indentation exactly as-is */
+pre code {
+  white-space: pre;            /* no wrapping; preserves spacing */
+  display: block;
+}
+
+/* Optional: lighter selection color inside code */
+pre ::selection {
+  background: #334155;
+  color: #fff;
+}
+
+/* Subtle scrollbar styling */
+pre::-webkit-scrollbar {
+  height: 10px;
+}
+pre::-webkit-scrollbar-track {
+  background: transparent;
+}
+pre::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,.18);
+  border-radius: 8px;
+}
+pre::-webkit-scrollbar-thumb:hover {
+  background: rgba(255,255,255,.28);
+}
+
+/* ===== Mobile tweaks ===== */
+@media (max-width: 640px) {
+  pre {
+    font-size: 0.8rem;         /* smaller text on phones */
+    padding: 0.85rem 1rem;
+    border-radius: 8px;
+  }
+}
+
+/* ===== Optional: “copy” button styling if you add one ===== */
+.code-actions {
+  display: flex;
+  gap: .5rem;
+  justify-content: flex-end;
+  margin-top: .25rem;
+}
+.code-actions .btn-copy {
+  font: inherit;
+  padding: .35rem .6rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,.15);
+  background: #1f2937;
+  color: #fff;
+  cursor: pointer;
+}
+.code-actions .btn-copy:hover { background: #273449; }
+
 
