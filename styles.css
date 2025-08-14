@@ -423,9 +423,13 @@ pre {
 }
 
 /* keep whitespace/indentation exactly as-is */
-pre code {
-  white-space: pre;            /* no wrapping; preserves spacing */
+pre code {          
   display: block;
+  white-space: pre-wrap;      /* Wrap long lines */
+  word-wrap: break-word;      /* Break long words if needed */
+  max-width: 100%;            /* Prevent horizontal overflow */
+  overflow-x: auto;           /* Allow horizontal scroll if really needed */
+
 }
 
 /* Optional: lighter selection color inside code */
