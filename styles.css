@@ -291,7 +291,7 @@ body {
   top: 0;
   right: 0;
   height: 100vh;
-  width: 600px;
+  min-width: 700px;
   background: #1f1f1f;               /* dark to match your theme */
   color: #fff;
   border-left: 1px solid #3a3a3a;
@@ -336,7 +336,7 @@ body {
   font-size: 22px;
   line-height: 1;
   min-width: 80px;
-  min-height: 70px;
+  min-height: 50px;
   border-radius: 10px;
   border: 1px solid #333;
   background: #2a2a2a;
@@ -400,7 +400,7 @@ p, li { font-size: clamp(1rem, 3.5vw, 1.125rem); }
 
 .sidepanelimg {
   width: 600px;
-  height: 300px;
+  height: 280px;
 }
 
 /* ===== Code block styling (desktop + mobile) ===== */
@@ -459,7 +459,7 @@ pre::-webkit-scrollbar-thumb:hover {
 }
 
 /* ===== Mobile tweaks ===== */
-@media (max-width: 640px) {
+@media (min-width: 700px) {
   pre {
     font-size: 0.6rem;         /* smaller text on phones */
     padding: 0.85rem 1rem;
