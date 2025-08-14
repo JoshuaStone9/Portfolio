@@ -338,6 +338,7 @@ body {
   background: #2a2a2a;
   color: #fff;
   cursor: pointer;
+  z-index: 10002;
 }
 
 .panel-close:hover { background: #353535; }
