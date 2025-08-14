@@ -1412,6 +1412,7 @@ function viewDateCheckerCode() {
   const pre = document.createElement("pre");
   const code = document.createElement("code");
   code.textContent = htmlCode;
+  code.classList.add("projectInfo");
   pre.appendChild(code);
   projectInfo.appendChild(pre);
 }
