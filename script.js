@@ -1170,6 +1170,34 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
+let touchStartX = 0;
+let touchCurrentX = 0;
+const swipeThreshold = 60; // how far you must swipe to trigger
+
+document.addEventListener("touchstart", (e) => {
+  touchStartX = e.touches[0].clientX;
+  touchCurrentX = touchStartX;
+});
+
+document.addEventListener("touchmove", (e) => {
+  touchCurrentX = e.touches[0].clientX;
+});
+
+document.addEventListener("touchend", () => {
+  const deltaX = touchCurrentX - touchStartX;
+
+  // Swipe left to close
+  if (deltaX < -swipeThreshold && document.getElementById("projectSidePanel")?.classList.contains("is-visible")) {
+    closeRightPanel();
+  }
+
+  // Swipe right from screen edge to open
+  if (touchStartX < 30 && deltaX > swipeThreshold && !document.getElementById("projectSidePanel")?.classList.contains("is-visible")) {
+    openRightPanel();
+  }
+});
+
+
 /* ---- Right-side panel: safe, self-creating helpers ---- */
 function ensureSidePanel() {
   let panel = document.getElementById("projectSidePanel");
