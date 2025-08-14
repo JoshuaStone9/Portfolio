@@ -312,6 +312,7 @@ body {
 /* Scrollable content area */
 .panel-scroll {
   overflow-y: auto;
+  overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   padding: 16px 18px 24px;
   gap: 12px;
