@@ -123,6 +123,7 @@ body {
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
   padding: 4vh 2vw;
+  
 }
 
 /* The modal "card" */
@@ -139,6 +140,8 @@ body {
   padding: 24px;
   overflow: auto;
   animation: modalIn 180ms ease-out;
+  text-align: center;
+  display: flex;
 }
 
 /* Modern Close Button (Bigger & More Visible) */
@@ -184,11 +187,11 @@ body {
 
 /* Content styling inside popup */
 .projectInfo {
-  display: block;
+  display:inline;
   text-align: left;
   font-size: 1.05rem;
   line-height: 1.65;
-  color: #1f2937;
+  margin-left: 50px;
 }
 
 .projectInfo h2, .projectInfo h3 {
@@ -308,6 +311,7 @@ body {
 /* Scrollable content area */
 .panel-scroll {
   overflow-y: auto;
+  overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   padding: 16px 18px 24px;
   gap: 12px;
@@ -317,6 +321,7 @@ body {
 
 /* Header & close */
 .panel-title {
+  margin-top: 20px;
   margin: 0 0 8px 0;
   font-size: 1.1rem;
   letter-spacing: .25px;
@@ -324,19 +329,24 @@ body {
 }
 
 .panel-close {
+  margin-top: 20px;
   position: absolute;
   top: 8px;
   left: 8px;
   font-size: 22px;
   line-height: 1;
-  width: 36px;
-  height: 36px;
+  min-width: 80px;
+  min-height: 70px;
   border-radius: 10px;
   border: 1px solid #333;
   background: #2a2a2a;
   color: #fff;
   cursor: pointer;
+  z-index: 10002;
+  touch-action: manipulation; 
 }
+.panel-edge-grabber { display: none; }
+.panel-edge-grabber.active { display: block; }
 
 .panel-close:hover { background: #353535; }
 
@@ -392,5 +402,88 @@ p, li { font-size: clamp(1rem, 3.5vw, 1.125rem); }
   width: 600px;
   height: 300px;
 }
+
+/* ===== Code block styling (desktop + mobile) ===== */
+pre,
+code,
+pre code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono",
+               monospace;
+}
+
+pre {
+  background: #111;            /* dark background */
+  color: #e6e6e6;              /* light text */
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+  line-height: 1.45;
+  white-space: pre;
+  font-size: 0.9rem;
+  overflow-x: auto;            /* horizontal scroll for long lines */
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch; /* smooth scroll on iOS */
+  box-shadow: 0 6px 18px rgba(0,0,0,.12);
+}
+
+/* keep whitespace/indentation exactly as-is */
+pre code {          
+  display: block;
+  white-space: pre-wrap;      /* Wrap long lines */
+  word-wrap: break-word;      /* Break long words if needed */
+  max-width: 100%;            /* Prevent horizontal overflow */
+  overflow-x: auto;           /* Allow horizontal scroll if really needed */
+
+}
+
+/* Optional: lighter selection color inside code */
+pre ::selection {
+  background: #334155;
+  color: #fff;
+}
+
+/* Subtle scrollbar styling */
+pre::-webkit-scrollbar {
+  height: 10px;
+}
+pre::-webkit-scrollbar-track {
+  background: transparent;
+}
+pre::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,.18);
+  border-radius: 8px;
+}
+pre::-webkit-scrollbar-thumb:hover {
+  background: rgba(255,255,255,.28);
+}
+
+/* ===== Mobile tweaks ===== */
+@media (max-width: 640px) {
+  pre {
+    font-size: 0.6rem;         /* smaller text on phones */
+    padding: 0.85rem 1rem;
+    border-radius: 8px;
+    margin-left: 30px;
+  }
+}
+
+/* ===== Optional: “copy” button styling if you add one ===== */
+.code-actions {
+  display: flex;
+  gap: .5rem;
+  justify-content: flex-end;
+  margin-top: .25rem;
+}
+.code-actions .btn-copy {
+  font: inherit;
+  padding: .35rem .6rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,.15);
+  background: #1f2937;
+  color: #fff;
+  cursor: pointer;
+}
+.code-actions .btn-copy:hover { background: #273449; }
 
 
