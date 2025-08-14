@@ -30,9 +30,9 @@ projectInfo.innerHTML = `
 `;
 
   setPanelContent(`
-    <img src=Images/SHT2.png class="sidepanelimg"></img>
-    <img src=Images/SHT1.png class="sidepanelimg"></img>
-    <img src=Images/SHT3.png class="sidepanelimg"></img>
+    <img src=images/SHT2.png class="sidepanelimg"></img>
+    <img src=images/SHT1.png class="sidepanelimg"></img>
+    <img src=images/SHT3.png class="sidepanelimg"></img>
   `, "Smart Habit Tracker");
 
   openRightPanel();
@@ -382,9 +382,9 @@ projectInfo.innerHTML = `
 `;
 
   setPanelContent(`
-          <img src=Images/B1.png class="projectImage">
-          <img src=Images/B2.png class="projectImage"> 
-          <img src=Images/B3.png class="projectImage"> 
+          <img src=images/B1.png class="projectImage">
+          <img src=images/B2.png class="projectImage"> 
+          <img src=images/B3.png class="projectImage"> 
   `, "Breadsheet");
 
   openRightPanel();
@@ -526,9 +526,9 @@ projectInfo.innerHTML = `
     </p>
     <p>_________</p>
     <h1>User Interface</h1>
-    <img src=Images/SHT2.png></img>
-    <img src=Images/SHT1.png></img>
-    <img src=Images/SHT3.png></img>
+    <img src=images/SHT2.png></img>
+    <img src=images/SHT1.png></img>
+    <img src=images/SHT3.png></img>
     <p>The overall Smart Habit Tracker user interface is simple and easy to understand and has clear labels and inputs and outputs to help users track all the data which is inputted.</p>
     <br><br>
     <h4> This is one of many HTML projects I have completed however JavaScript elements are somewhat new to me and development on this programming language is still in progress however I am starting to become more proficient the more times I tackle errors when completing projects like this one, however this project has been somewhat easy but great to complete.</h4>
