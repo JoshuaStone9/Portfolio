@@ -142,7 +142,6 @@ body {
   animation: modalIn 180ms ease-out;
   text-align: center;
   display: flex;
-  margin-left: min(50px);
 }
 
 /* Modern Close Button (Bigger & More Visible) */
