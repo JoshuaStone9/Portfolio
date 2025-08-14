@@ -123,12 +123,13 @@ body {
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
   padding: 4vh 2vw;
+  
 }
 
 /* The modal "card" */
 .popup-background {
   position: relative;
-  width: min(960px, 96%);
+  width: min(760px, 96%);
   max-height: 86vh;
   background: #fff;
   border-radius: 16px;
@@ -139,6 +140,7 @@ body {
   padding: 24px;
   overflow: auto;
   animation: modalIn 180ms ease-out;
+  margin-left: 20px;
 }
 
 /* Modern Close Button (Bigger & More Visible) */
@@ -189,6 +191,7 @@ body {
   font-size: 1.05rem;
   line-height: 1.65;
   color: #1f2937;
+  margin-left: 20px;
 }
 
 .projectInfo h2, .projectInfo h3 {
