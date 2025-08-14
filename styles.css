@@ -142,7 +142,7 @@ body {
   animation: modalIn 180ms ease-out;
   text-align: center;
   display: flex;
-  margin-left: 10px;
+  margin-left: min(50px);
 }
 
 /* Modern Close Button (Bigger & More Visible) */
@@ -192,7 +192,7 @@ body {
   text-align: left;
   font-size: 1.05rem;
   line-height: 1.65;
-  margin-left: 20px;
+  margin-left: 50px;
 }
 
 .projectInfo h2, .projectInfo h3 {
