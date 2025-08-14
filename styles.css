@@ -462,10 +462,10 @@ pre::-webkit-scrollbar-thumb:hover {
 /* ===== Mobile tweaks ===== */
 @media (max-width: 640px) {
   pre {
-    font-size: 0.8rem;         /* smaller text on phones */
+    font-size: 0.6rem;         /* smaller text on phones */
     padding: 0.85rem 1rem;
     border-radius: 8px;
-    margin-left: 20px;
+    margin-left: 30px;
   }
 }
 
