@@ -1149,18 +1149,24 @@ function setPanelContent(html, title = "Quick Actions") {
 }
 
 function openRightPanel() {
-  sidePanel.classList.add("is-visible");
-  sidePanel.setAttribute("aria-hidden", "false");
+  const panel = ensureSidePanel();
+  panel.classList.add("is-visible");
+  panel.setAttribute("aria-hidden", "false");
   document.body.classList.add("panel-open");
-  // Focus the close button for accessibility
-  panelCloseBtn?.focus();
+  document.querySelector(".panel-overlay")?.classList.add("is-visible");
+  document.querySelector(".panel-edge-grabber")?.classList.remove("active"); // hide
+  panel.querySelector("#panelClose").focus();
 }
 
 function closeRightPanel() {
-  sidePanel.classList.remove("is-visible");
-  sidePanel.setAttribute("aria-hidden", "true");
+  const panel = ensureSidePanel();
+  panel.classList.remove("is-visible");
+  panel.setAttribute("aria-hidden", "true");
   document.body.classList.remove("panel-open");
+  document.querySelector(".panel-overlay")?.classList.remove("is-visible");
+  document.querySelector(".panel-edge-grabber")?.classList.add("active"); // show
 }
+
 
 // Close interactions
 panelCloseBtn?.addEventListener("click", closeRightPanel);
