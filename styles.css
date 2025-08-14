@@ -339,6 +339,7 @@ body {
   color: #fff;
   cursor: pointer;
   z-index: 10002;
+  touch-action: manipulation; 
 }
 
 .panel-close:hover { background: #353535; }
