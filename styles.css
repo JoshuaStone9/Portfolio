@@ -420,6 +420,7 @@ pre {
   padding: 1rem 1.25rem;
   margin: 1rem 0;
   line-height: 1.45;
+  white-space: pre;
   font-size: 0.9rem;
   overflow-x: auto;            /* horizontal scroll for long lines */
   overflow-y: hidden;
@@ -464,6 +465,7 @@ pre::-webkit-scrollbar-thumb:hover {
     font-size: 0.8rem;         /* smaller text on phones */
     padding: 0.85rem 1rem;
     border-radius: 8px;
+    margin-left: 20px;
   }
 }
 
