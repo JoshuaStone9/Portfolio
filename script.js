@@ -83,7 +83,6 @@ function viewSmartHabitTrackerCode() {
 </html>`;
 
 
-    // === JavaScript Heading and Code ===
     const jsHeading = document.createElement("h1");
     jsHeading.textContent = "JavaScript (script.js)";
     projectInfo.appendChild(jsHeading);
@@ -397,14 +396,13 @@ function viewBreadsheetCode() {
     openPopUp.classList.remove("hidden");
 
     const projectInfo = document.querySelector(".projectInfo");
-    projectInfo.innerHTML = ""; // Clear previous content
-
-    // Heading
+    projectInfo.innerHTML = ""; 
+    
     const heading = document.createElement("h1");
     heading.textContent = "HTML, JavaScript & CSS (index.html)";
     projectInfo.appendChild(heading);
 
-    // Code text (kept with HTML entities so it doesn't render)
+    
     const codeText = `
 <!DOCTYPE html>
 <html lang="en">
@@ -477,14 +475,12 @@ function viewBreadsheetCode() {
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <script>
-    /* Full JavaScript remains unchanged */
   </script>
 </body>
 </html>
     `;
 
 
-    // Display in <pre> so it stays as text
     const preElement = document.createElement("pre");
     preElement.textContent = codeText;
 
@@ -781,7 +777,6 @@ const cssCode = `body {
   font-size: 0.8rem;
 }
 
-/* Events */
 .events {
   padding: 0;
   background: #333;
@@ -876,12 +871,10 @@ projectInfo.innerHTML = `<section id="home-nas-control-panel" aria-labelledby="h
 }
 
 function viewDateChecker() {
-  // Elements you need on the page:
   const popup = document.querySelector(".popup-wrapper");          // the overlay/shell
   const projectInfo = document.querySelector(".projectInfo");       // the content area inside the popup
   const sidePanel = document.querySelector(".side-panel");          // your actual slide-in panel
 
-  // Basic guards so the function doesn't die silently
   if (!popup) {
     console.error('[viewDateChecker] .popup-wrapper not found');
     return;
@@ -891,10 +884,8 @@ function viewDateChecker() {
     return;
   }
 
-  // Show the popup shell
   popup.classList.remove("hidden");
 
-  // Inject content (fixed UL/LI)
   projectInfo.innerHTML = `
     <section id="time-checker-application" aria-labelledby="tca-title">
       <h2 id="tca-title">Date Checker</h2>
@@ -928,7 +919,6 @@ function viewDateChecker() {
     <hr />
   `;
 
-  // Fallback for setPanelContent if your helper isn't present
   if (typeof setPanelContent === "function") {
     setPanelContent(`
       <img src="images/DateChecker.png" alt="DateChecker" height="350px" width="350px" />
@@ -949,7 +939,6 @@ function viewDateChecker() {
     }
   }
 
-  // Fallback for openRightPanel if your helper isn't present
   if (typeof openRightPanel === "function") {
     openRightPanel();
   } else if (sidePanel) {
@@ -1018,12 +1007,10 @@ function viewNASAutoBackupCode() {
   const projectInfo = document.querySelector(".projectInfo");
   projectInfo.innerHTML = ""; // Clear existing content
 
-  // --- Heading: PowerShell ---
   const psHeading = document.createElement("h1");
   psHeading.textContent = "PowerShell (Auto-Backup.ps1)";
   projectInfo.appendChild(psHeading);
 
-  // PowerShell code (use String.raw + ${'${'}...} to show literal ${...}, and keep backslashes)
   const psCode = String.raw`function Backup-Drive {
     param (
         [string]$driveLetter
@@ -1089,7 +1076,6 @@ function viewNASAutoBackupCode() {
     }
 }
 
-# --- MONITORING LOOP ---
 $previousDrives = @()
 
 Write-Host "🔄 Monitoring for USB drives on H: or I:... Press Ctrl+C to stop."
@@ -1197,7 +1183,6 @@ document.addEventListener("touchmove", (e) => {
 document.addEventListener("touchend", () => {
   const deltaX = touchCurrentX - touchStartX;
 
-  // Swipe left to close
   if (deltaX < -swipeThreshold && document.getElementById("projectSidePanel")?.classList.contains("is-visible")) {
     closeRightPanel();
   }
@@ -1209,7 +1194,6 @@ document.addEventListener("touchend", () => {
 });
 
 
-/* ---- Right-side panel: safe, self-creating helpers ---- */
 function ensureSidePanel() {
   let panel = document.getElementById("projectSidePanel");
   if (!panel) {
@@ -1227,7 +1211,6 @@ function ensureSidePanel() {
     `;
     document.body.appendChild(panel);
   }
-  // Inject minimal CSS once
   if (!document.getElementById("sidePanelStyles")) {
     const style = document.createElement("style");
     style.id = "sidePanelStyles";
@@ -1441,4 +1424,4 @@ function closeRightPanel() {
   panel.setAttribute("aria-hidden", "true");
   document.body.classList.remove("panel-open");
 }
-/* ---- end helpers ---- */
+
