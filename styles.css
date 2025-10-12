@@ -86,8 +86,6 @@ body {
 .projectViewBtn {
     border: black solid 2px;
     background-color: goldenrod;
-    width: 20%;
-    height: 20%;
     font-size: large;
     border-radius: 5px;
     padding: 10px;
@@ -100,7 +98,15 @@ body {
     box-shadow: 0 0 0 rgba(0,0,0,0); 
     text-decoration: none;
     color: black;
-    display: inline-block;
+    display:inline-flex;      /* nicer vertical centering */
+    align-items:center;
+    justify-content:center;
+    padding:10px 16px;
+    min-width:140px;          /* keeps them visually even */
+    height:auto;
+    width:auto;               /* important: stop using % widths */
+    line-height:1.2;
+    white-space:nowrap;  
 
     
 }
@@ -114,7 +120,6 @@ body {
 .projectViewBtn:hover {
     background-color: rgb(255, 98, 41);
     border-radius: 6px;
-    width: 25%;
     transform: translateY(-2px);
     filter: saturate(1.05);
     box-shadow: 0 4px 10px rgba(0,0,0,0.25);
