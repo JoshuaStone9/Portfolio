@@ -100,7 +100,9 @@ body {
     box-shadow: 0 0 0 rgba(0,0,0,0); 
     text-decoration: none;
     color: black;
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 
     
 }
