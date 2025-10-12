@@ -101,7 +101,7 @@ body {
     display:inline-flex;      /* nicer vertical centering */
     align-items:center;
     justify-content:center;
-    padding:10px 16px;
+    padding:10px 30px;
     min-width:140px;          /* keeps them visually even */
     height:auto;
     width:auto;               /* important: stop using % widths */
