@@ -296,6 +296,9 @@ body {
   .projectInfo {
     font-size: 1rem;
   }
+  .projectViewBtn {
+    display: inline-block;
+  }
 }
 
 /* Accessibility */
