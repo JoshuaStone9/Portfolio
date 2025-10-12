@@ -100,9 +100,7 @@ body {
     box-shadow: 0 0 0 rgba(0,0,0,0); 
     text-decoration: none;
     color: black;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    display: inline-block;
 
     
 }
@@ -300,7 +298,7 @@ body {
   }
   .projectViewBtn {
     display: inline-block;
-    min-width:30px;
+    min-width:50px;
   }
 }
 
