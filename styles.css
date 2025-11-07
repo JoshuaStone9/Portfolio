@@ -20,7 +20,6 @@ body {
   margin: 10px;
   max-height: 50px;
 } */
-/* Tablet size */
 @media (max-width: 768px) {
   .aboutMe {
     width: 90%;              /* expand width for small screens */
@@ -177,6 +176,8 @@ body {
 
 .mainHeaders{
     text-align: center;
+    flex-direction: column;
+    align-items: stretch; 
 }
 
 /* === Modern Popup Styles === */
