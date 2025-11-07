@@ -78,6 +78,89 @@ projectInfo.innerHTML = `
 
 }
 
+function hideAllProjects() {
+  const projects = document.querySelectorAll('.projectHeaders, .projectViewBtn');
+  projects.forEach(el => el.classList.add('hidden'));
+}
+
+
+
+function viewAllProjects() {
+  hideAllProjects();
+
+  const projects = document.querySelectorAll('.projectHeaders, .projectViewBtn');
+  projects.forEach(el => el.classList.remove('hidden'));
+}
+
+function htmlProjects() {
+  hideAllProjects();
+
+  const idsToShow = [
+    "dateCheckerHeader",
+    "viewDateChecker",
+    "dateCheckerWebsite",
+    "inventoryDatabaseHeader",
+    "InventoryDatabaseBtn",
+    "breadsheetHeader",
+    "breadsheetViewBtn"
+  ];
+
+  idsToShow.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.classList.remove('hidden');
+  });
+}
+
+function SQLProjects() {
+  hideAllProjects();
+
+  const idsToShow = [
+    "inventoryDatabaseHeader",
+    "InventoryDatabaseBtn"
+  ];
+
+  idsToShow.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.classList.remove('hidden');
+  });
+}
+
+function CSharpAndSQLProjects() {
+  hideAllProjects();
+
+  const idsToShow = [
+    "financeManagerHeader",
+    "FinanceManagerBtn"
+  ];
+
+  idsToShow.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.classList.remove('hidden');
+  });
+}
+
+function pythonProjects() {
+  hideAllProjects();
+
+  const idsToShow = [
+    "nasAutoBackupHeader",
+    "NASAutoBackup",
+    "homeNASControlPanelHeader",
+    "viewHomeNASControlPanel"
+  ];
+
+  idsToShow.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.classList.remove('hidden');
+  });
+}
+
+
+
+// function SQLprojects() {
+//   const 
+// }
+
 
 
 function viewHomeNASControlPanel() {

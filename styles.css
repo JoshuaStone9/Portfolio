@@ -1,9 +1,11 @@
-/* === Base Styles === */
+
 body {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: bisque;
+    background: linear-gradient(90deg,rgba(224, 44, 16, 1) 0%, rgba(255, 115, 0, 1) 50%, rgba(255, 145, 0, 1) 100%);
     text-align: center;
 }
+
+
 
 .navbar{
     padding: 10px;
@@ -12,6 +14,13 @@ body {
     margin-bottom: 10px;
     text-align: center;
 }
+
+/* .externalProjects {
+  display: inline-block;
+  margin: 10px;
+  max-height: 50px;
+} */
+
 
 .navBtn {
     background-color: rgb(64, 63, 63);
@@ -24,18 +33,36 @@ body {
     font-size: medium;
 }
 
-.externalProjectsIcons {
-    width: 35%;
-    height: 25%;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 12%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
+/* .externalProjectsIcons {
+  display: inline-block;  
+  width: 160px;             
+  height: auto;
+  margin: 10px;
+  vertical-align: middle;  
+} */
+
+ 
+.projectsFilterButtons-grad {background-image: linear-gradient(to right, #e52d27 0%, #b31217  51%, #e52d27  100%)}
+.projectsFilterButtons-grad {
+    margin: 10px;
+    padding: 25px 75px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    box-shadow: 0 0 20px white;
+    border-radius: 20px;
+    display: inline-block;
+    }
+
+.projectsFilterButtons:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+    }
+         
+
 
 .hidden {
     display: none !important;
@@ -50,7 +77,7 @@ body {
 }
 
 #profilePicture {
-    display: block;
+    display: inline-block;
     position: relative;
     margin: 0 auto;
     justify-content: center;
@@ -519,4 +546,13 @@ pre::-webkit-scrollbar-thumb:hover {
 }
 .code-actions .btn-copy:hover { background: #273449; }
 
-
+.aboutMe {
+  padding: 30px 90px;
+  border-radius: 20px;
+background: linear-gradient(
+  90deg,
+  rgba(255, 184, 108, 1) 0%,
+  rgba(255, 136, 91, 1) 50%,
+  rgba(224, 44, 16, 1) 100%
+);
+}

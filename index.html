@@ -16,13 +16,13 @@
         <img src="images/profile-pic.jpg" id="profilePicture">
         <h1>JOSHUA STONE</h1>
         <div class="aboutMe">
-            <h2>About Me</h2>
             <p>Hello, I am Joshua Stone a Cyber Security Graduate who is ambitious to get into the software world. 
             <br><br>
             In whatever free time I have I am learning new skillsets within coding ranging from learning new software languages to simply hosting services to help provide me with experience to land a role within the industry.</p>
             <br>
             <p>I have a great passion for software development and engineering which can be seen from the projects I have completed below.</p>
         </div>
+    </div>
         <br>
         <div>
             <h2>Programming Languages</h2>
@@ -38,25 +38,33 @@
     </div>
 
     <div class="projects">
-        <h2>Home NAS Control Panel</h2>
+        <div class="projectsButtons">
+            <h1>Projects</h1>
+            <p class="projectsFilterButtons projectsFilterButtons-grad" onclick="viewAllProjects()">ALL</p>
+            <p class="projectsFilterButtons projectsFilterButtons-grad" onclick="htmlProjects()">HTML & JS & CSS</p>
+            <p class="projectsFilterButtons projectsFilterButtons-grad" onclick="CSharpAndSQLProjects()">C# & SQL</p>
+            <p class="projectsFilterButtons projectsFilterButtons-grad" onclick="SQLProjects()">SQL</p>
+            <p class="projectsFilterButtons projectsFilterButtons-grad" onclick="pythonProjects()">Python</p>
+        </div>
+        <h2 class="projectHeaders" id="homeNASControlPanelHeader">Home NAS Control Panel</h2>
         <button onclick="viewHomeNASControlPanel()" id="viewHomeNASControlPanel" class="projectViewBtn">View Project</button>
 
-        <h2>NAS Auto Backup</h2>
+        <h2 class="projectHeaders" id="nasAutoBackupHeader">NAS Auto Backup</h2>
         <button onclick="viewNASAutoBackup()" id="NASAutoBackup" class="projectViewBtn">View Project</button>
 
-        <h2>Date Checker</h2>
+        <h2 class="projectHeaders" id="dateCheckerHeader">Date Checker</h2>
         <button onclick="viewDateChecker()" id="viewDateChecker" class="projectViewBtn">View Project</button>
-        <a href="https://date-checker-costa.web.app/" target="_blank" class="projectViewBtn">View Website</a>
+        <a href="https://date-checker-costa.web.app/" target="_blank" id="dateCheckerWebsite" class="projectViewBtn">View Website</a>
 
-        <h2>Finance Manager</h2>
+        <h2 class="projectHeaders" id="financeManagerHeader">Finance Manager</h2>
         <button onclick="viewFinanceManager()" id="FinanceManagerBtn" class="projectViewBtn">View Project</button>
         <a href="https://github.com/JoshuaStone9/Finance-Manager" target="_blank" class="projectViewBtn">View Repository</a>
 
-        <h2>Inventory Database</h2>
+        <h2 class="projectHeaders" id="inventoryDatabaseHeader">Inventory Database</h2>
         <button onclick="viewInventoryDatabase()" id="InventoryDatabaseBtn" class="projectViewBtn">View Project</button>
         <a href="https://inventorydatabase.uk" target="_blank" class="projectViewBtn">View Website</a>
 
-        <h2>Breadsheet</h2>
+        <h2 class="projectHeaders" id="breadsheetHeader">Breadsheet</h2>
         <button onclick="viewBreadsheet()" id="breadsheetViewBtn" class="projectViewBtn">View Project</button>
         <a href="https://breadsheet-8de43.web.app/" target="_blank" class="projectViewBtn">View Website</a>
 
@@ -67,14 +75,15 @@
         <button onclick="viewPhotography()" id="smartHabitTrackerViewBtn" class="projectViewBtn">View Project</button> -->
     </div>
 
-    <h1>External Projects</h1>
+    <!-- <h1>External Projects</h1>
+    <div class="externalProjects">
     <a href="https://www.freecodecamp.org/JoshuaStone">
         <img src="/images/freeCodeCamp-icon.png" class="externalProjectsIcons">
     </a>
     <a href="https://github.com/JoshuaStone9">
       <img src="images/github.png" class="externalProjectsIcons">
     </a>
-
+    </div> -->
 
     <div class="popup-wrapper hidden">
         <div id="viewSmartHabitTrackerWindow" class="popup">
