@@ -20,25 +20,23 @@ body {
   margin: 10px;
   max-height: 50px;
 } */
-
+/* Tablet size */
 @media (max-width: 768px) {
   .aboutMe {
-    width: 90%;           
-    padding: 20px 25px;   
-    font-size: 1rem;      
-    margin-top: 25px;
-    border-radius: 15px;
+    width: 90%;              /* expand width for small screens */
+    padding: 20px;
+    font-size: 1rem;
   }
 }
 
+/* Small phones */
 @media (max-width: 480px) {
   .aboutMe {
-    width: 95%;
-    padding: 15px 18px;
+    width: 95%;              /* full width, but still with padding */
+    padding: 15px;
     font-size: 0.95rem;
   }
 }
-
 .navBtn {
     background-color: rgb(64, 63, 63);
     color: aliceblue;
@@ -106,11 +104,10 @@ body {
 }
 
 .aboutMe {
-    width: 50%;
-    margin-left: 25%;
-    margin-top: 8%;
-    margin-bottom:5%;
-    text-align: center;
+  width: min(95%, 700px);
+  margin: 24px auto;      
+  padding: 5px;
+  border-radius: 20px;
 }
 
 .projectProgrammingLanguage {
