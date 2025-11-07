@@ -23,7 +23,7 @@ body {
 @media (max-width: 768px) {
   .aboutMe {
     width: 90%;              /* expand width for small screens */
-    padding: 20px;
+    padding: 14px 16px !important;
     font-size: 1rem;
   }
 }
@@ -32,7 +32,7 @@ body {
 @media (max-width: 480px) {
   .aboutMe {
     width: 95%;              /* full width, but still with padding */
-    padding: 15px;
+    padding: 14px 16px !important;
     font-size: 0.95rem;
   }
 }
