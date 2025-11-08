@@ -28,6 +28,15 @@ body {
   }
 }
 
+@media (max-width: 600px) {
+  .popup {
+    width: 95%;
+    height: 90vh;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    max-width: none;
+  }
+}
 /* Small phones */
 @media (max-width: 480px) {
   .aboutMe {
