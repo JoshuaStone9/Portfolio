@@ -299,6 +299,8 @@ body {
   font-size: 1.05rem;
   line-height: 1.65;
   margin-left: 50px;
+  overflow-y: auto;
+  overflow-x: auto;
 }
 
 .projectInfo h2, .projectInfo h3 {
