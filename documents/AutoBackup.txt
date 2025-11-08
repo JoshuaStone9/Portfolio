@@ -1,0 +1,93 @@
+﻿function Backup-Drive {
+    param (
+        [string]$driveLetter
+    )
+
+    if (-not (Test-Path "${driveLetter}\")) {
+        Write-Host "X Drive ${driveLetter} not found or not ready."
+        return
+    }
+
+    # --- Get and sanitize volume label ---
+    try {
+        $volumeLabel = (Get-Volume -DriveLetter $driveLetter.TrimEnd(':')).FileSystemLabel
+        if ([string]::IsNullOrWhiteSpace($volumeLabel)) {
+            $volumeLabel = "UnnamedDrive"
+        }
+    } catch {
+        $volumeLabel = "UnknownDrive"
+    }
+    $safeLabel = ($volumeLabel -replace '[\\/:*?"<>|]', '_')
+    if (-not $safeLabel) { $safeLabel = "UnknownDrive" }
+
+    # --- Build paths ---
+    $timestamp       = Get-Date -Format "yyyy-MM-dd_HH-mm-ss"
+    $baseBackupPath  = "D:\Backups"
+
+    $driveBackupRoot = Join-Path -Path $baseBackupPath -ChildPath $safeLabel
+    $backupFolder    = Join-Path -Path $driveBackupRoot -ChildPath $timestamp
+
+    $driveLogRoot    = Join-Path -Path (Join-Path -Path $baseBackupPath -ChildPath "Logs") -ChildPath $safeLabel
+    $logFolder       = $driveLogRoot
+    $logFile         = Join-Path -Path $logFolder -ChildPath "BackupLog.txt"
+
+    # --- Create folders ---
+    New-Item -ItemType Directory -Force -Path $backupFolder -Confirm:$false | Out-Null
+    New-Item -ItemType Directory -Force -Path $logFolder -Confirm:$false | Out-Null
+
+    # --- Start backup ---
+    $src  = "${driveLetter}\"
+    $dest = $backupFolder
+
+    if (-not (Test-Path $src)) {
+        Add-Content -Path $logFile -Value "[$(Get-Date)] X Source path not found: $src"
+        return
+    }
+
+    Add-Content -Path $logFile -Value "[$(Get-Date)] Starting robocopy from $src to $dest"
+
+    try {
+        robocopy $src $dest /E /Z /MT:32 `
+            /R:0 /W:0 `
+            /XD "${driveLetter}\Backups" "${driveLetter}\Logs" `
+            /COPY:DAT /DCOPY:T `
+            /XO /XN /XC `
+            /NFL /NDL /NJH /NJS /NP `
+            /LOG+:"$logFile" /TEE
+
+        $exitCode = $LASTEXITCODE
+        Add-Content -Path $logFile -Value "[$(Get-Date)] robocopy exited with code $exitCode"
+
+        if ($exitCode -ge 8) {
+            Add-Content -Path $logFile -Value "[$(Get-Date)] X robocopy encountered a serious error."
+        } else {
+            Add-Content -Path $logFile -Value "[$(Get-Date)] Backup completed successfully."
+        }
+
+    } catch {
+        Add-Content -Path $logFile -Value "[$(Get-Date)] X Exception during robocopy: $_"
+    }
+}
+
+# --- MONITORING LOOP ---
+$previousDrives = @()
+
+Write-Host " Monitoring for USB drives on H: or I:... Press Ctrl+C to stop."
+
+while ($true) {
+    Start-Sleep -Seconds 3
+
+    $currentDrives = Get-PSDrive -PSProvider FileSystem |
+        Where-Object { $_.Name -in @("H", "I") } |
+        Select-Object -ExpandProperty Name
+
+    $newDrives = $currentDrives | Where-Object { $_ -notin $previousDrives }
+
+    foreach ($drive in $newDrives) {
+        Write-Host " Detected drive ${drive}: — starting backup..."
+        Backup-Drive -driveLetter "${drive}:"
+    }
+
+    $previousDrives = $currentDrives
+}
+

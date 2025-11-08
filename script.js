@@ -215,6 +215,33 @@ projectInfo.innerHTML = `
 
 }
 
+function viewHomeNASControlPanelImages() {
+    const openPopUp = document.querySelector(".popup-wrapper");
+    openPopUp.classList.remove("hidden");
+    const projectInfo = document.querySelector(".projectInfo");
+    projectInfo.innerHTML = `
+    <img src="images/HomeNASControlPanel.png" alt="Home NAS Control Panel">
+    `;
+}
+
+function viewHomeNASControlPanelScripts() {
+    const openPopUp = document.querySelector(".popup-wrapper");
+    openPopUp.classList.remove("hidden");
+        Promise.all([
+        fetch('documents/NetworkTransferFiles.txt').then(res => res.text()),
+        fetch('documents/NetworkTransferFolders.txt').then(res => res.text())
+    ])
+    .then(([filesText, foldersText]) => {
+        document.querySelector(".projectInfo").innerHTML = `
+            <h3>NetworkTransferFiles PowerShell Script</h3>
+            <pre>${filesText}</pre>
+            <h3>NetworkTransferFolders PowerShell Script</h3>
+            <pre>${foldersText}</pre>
+        `;
+    })
+    .catch(error => console.error('Error loading text files:', error));
+}
+
 function viewDateChecker() {
   const popup = document.querySelector(".popup-wrapper");          // the overlay/shell
   const projectInfo = document.querySelector(".projectInfo");       // the content area inside the popup
@@ -278,6 +305,21 @@ function viewNASAutoBackup() {
     <hr />
     `;
 }
+
+function viewNASAutoBackupScripts() {
+    const openPopUp = document.querySelector(".popup-wrapper");
+    openPopUp.classList.remove("hidden");
+        fetch('documents/AutoBackup.txt').then(res => res.text())
+    .then(data => {
+        document.querySelector(".projectInfo").innerHTML = `
+            <h3>Auto Backup PowerShell Script</h3>
+            <pre>${data}</pre>
+        `;
+    })
+    .catch(error => console.error('Error loading text files:', error));
+}
+
+
 
 
 function viewInventoryDatabase() {

@@ -1,0 +1,190 @@
+﻿# L# Run this script in STA mode:
+# powershell.exe -NoProfile -ExecutionPolicy Bypass -STA -File YourScript.ps1
+
+Add-Type -AssemblyName System.Windows.Forms
+Add-Type -AssemblyName System.Drawing
+Add-Type -AssemblyName Microsoft.VisualBasic
+Add-Type -AssemblyName System.IO.Compression.FileSystem
+
+
+function Select-Folders {
+    $folders = @()
+    do {
+        $dialog = New-Object System.Windows.Forms.FolderBrowserDialog
+        $dialog.Description = "Select a folder to back up"
+
+        if ($dialog.ShowDialog() -eq [System.Windows.Forms.DialogResult]::OK) {
+            $folders += $dialog.SelectedPath
+            $more = [System.Windows.Forms.MessageBox]::Show(
+                "Add another folder?", "Continue?",
+                [System.Windows.Forms.MessageBoxButtons]::YesNo
+            )
+        } else {
+            $more = [System.Windows.Forms.DialogResult]::No
+        }
+    } while ($more -eq [System.Windows.Forms.DialogResult]::Yes)
+    return $folders
+}
+
+function Select-Destination {
+    $dialog = New-Object System.Windows.Forms.FolderBrowserDialog
+    $dialog.Description = "Select the destination folder"
+    $dialog.ShowNewFolderButton = $true
+
+    if ($dialog.ShowDialog() -eq [System.Windows.Forms.DialogResult]::OK) {
+        return $dialog.SelectedPath
+    } else {
+        [System.Windows.Forms.MessageBox]::Show("No destination selected. Exiting.")
+        exit
+    }
+}
+
+function Ensure-Folder {
+    param ([string]$path)
+    if (-Not (Test-Path $path)) {
+        try {
+            [System.IO.Directory]::CreateDirectory($path) | Out-Null
+            Write-Host " Created folder: $path"
+        } catch {
+            Write-Host "X Failed to create folder: $path"
+            Write-Host $_.Exception.Message
+            exit
+        }
+    }
+}
+
+function Prompt-Options {
+    $form = New-Object System.Windows.Forms.Form
+    $form.Text = "Transfer Options"
+    $form.Size = New-Object System.Drawing.Size(300,200)
+    $form.StartPosition = "CenterScreen"
+
+    $chkSchedule = New-Object System.Windows.Forms.CheckBox
+    $chkSchedule.Text = "Schedule Transfer"
+    $chkSchedule.Location = New-Object System.Drawing.Point(20,20)
+    $chkSchedule.AutoSize = $true
+    $form.Controls.Add($chkSchedule)
+
+    $chkTimestamp = New-Object System.Windows.Forms.CheckBox
+    $chkTimestamp.Text = "Timestamp"
+    $chkTimestamp.Location = New-Object System.Drawing.Point(20,50)
+    $chkTimestamp.AutoSize = $true
+    $chkTimestamp.Checked = $true
+    $form.Controls.Add($chkTimestamp)
+
+    $okButton = New-Object System.Windows.Forms.Button
+    $okButton.Text = "OK"
+    $okButton.Location = New-Object System.Drawing.Point(100,100)
+    $okButton.Add_Click({ $form.DialogResult = [System.Windows.Forms.DialogResult]::OK })
+    $form.Controls.Add($okButton)
+
+    if ($form.ShowDialog() -eq [System.Windows.Forms.DialogResult]::OK) {
+        return @{
+            Schedule  = $chkSchedule.Checked
+            Timestamp = $chkTimestamp.Checked
+        }
+    } else {
+        exit
+    }
+}
+
+function Compress-Folder {
+    param (
+        [string]$sourceFolder,
+        [string]$destinationZip
+    )
+    try {
+        if (Test-Path $destinationZip) {
+            Remove-Item $destinationZip -Force
+        }
+        [System.IO.Compression.ZipFile]::CreateFromDirectory(
+            $sourceFolder,
+            $destinationZip,
+            [System.IO.Compression.CompressionLevel]::Optimal,
+            $false
+        )
+        Write-Host " Compressed $sourceFolder to $destinationZip"
+        return $true
+    } catch {
+        Write-Host "X Compression failed for ${sourceFolder}: $($_.Exception.Message)"
+        return $false
+    }
+}
+
+# ----------------- MAIN SCRIPT -----------------
+
+$selectedFolders = Select-Folders
+if ($selectedFolders.Count -eq 0) {
+    Write-Host "✘ No folders selected. Exiting."
+    exit
+}
+
+$destinationBase = Select-Destination
+Ensure-Folder -path $destinationBase
+
+$options = Prompt-Options
+
+if ($options.Schedule) {
+    do {
+        $timeInput = [Microsoft.VisualBasic.Interaction]::InputBox(
+            "Enter start time (24-hour format, HH:mm)",
+            "Schedule Time"
+        )
+
+        if (-not $timeInput) {
+            Write-Host "✘ No time entered. Exiting."
+            exit
+        }
+
+        try {
+            $scheduledTime = [datetime]::ParseExact($timeInput, "HH:mm", $null)
+            $now = Get-Date
+            if ($scheduledTime -lt $now) { $scheduledTime = $scheduledTime.AddDays(1) }
+            $delay = ($scheduledTime - $now).TotalSeconds
+            Write-Host "⏳ Waiting until $scheduledTime to start transfer..."
+            Start-Sleep -Seconds $delay
+            break
+        } catch {
+            [System.Windows.Forms.MessageBox]::Show("Invalid time format. Use HH:mm.","Error")
+        }
+    } while ($true)
+} else {
+    Write-Host " Starting transfer immediately..."
+}
+
+$logFolder = "\\192.168.1.180\12tb\Transfers\logs"
+Ensure-Folder -path $logFolder
+$logFile = Join-Path $logFolder ("TransferLog_{0}.txt" -f (Get-Date -Format "yyyy-MM-dd"))
+
+foreach ($sourcePath in $selectedFolders) {
+    $sourceName = Split-Path $sourcePath -Leaf
+
+    $destinationName = if ($options.Timestamp) {
+        "$sourceName-$(Get-Date -Format 'yyyy-MM-dd_HH-mm-ss')"
+    } else { $sourceName }
+
+    $destinationPath = Join-Path $destinationBase $destinationName
+    Ensure-Folder -path $destinationPath
+
+    Add-Content -Path $logFile -Value ("[{0}] Starting transfer: {1}" -f (Get-Date), $sourcePath)
+
+    robocopy $sourcePath $destinationPath /E /Z /R:2 /W:2 /LOG+:$logFile
+    $exitCode = $LASTEXITCODE
+
+    Add-Content -Path $logFile -Value ("[{0}] robocopy exit code: {1}" -f (Get-Date), $exitCode)
+
+    if ($exitCode -lt 8) {
+        Write-Host "✔ Copied $sourcePath to $destinationPath"
+        $zipPath = "$destinationPath.zip"
+        if (Compress-Folder -sourceFolder $destinationPath -destinationZip $zipPath) {
+            Add-Content -Path $logFile -Value ("[{0}] ✔ Compressed to: {1}" -f (Get-Date), $zipPath)
+        } else {
+            Add-Content -Path $logFile -Value ("[{0}] ✘ Compression failed for: {1}" -f (Get-Date), $destinationPath)
+        }
+    } else {
+        Write-Host "✘ robocopy encountered an error for $sourcePath"
+    }
+}
+
+Write-Host " Transfer and compression complete. Log saved to: $logFile"
+

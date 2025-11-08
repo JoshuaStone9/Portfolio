@@ -1,0 +1,184 @@
+# ---- Ensure STA when launched from C#/background threads ----
+if ([Threading.Thread]::CurrentThread.GetApartmentState() -ne 'STA') {
+    # Prefer Windows PowerShell for WinForms UI reliability (pwsh -STA works on 7.3+ if you prefer)
+    $exe = 'powershell.exe'
+    $argList = @(
+        '-NoProfile','-ExecutionPolicy','Bypass','-STA',
+        '-File',"`"$PSCommandPath`""
+    ) + $args
+    Start-Process -FilePath $exe -ArgumentList $argList -Wait
+    exit
+}
+[System.Windows.Forms.Application]::EnableVisualStyles()
+
+# Load required .NET assemblies
+Add-Type -AssemblyName System.Windows.Forms
+Add-Type -AssemblyName System.Drawing
+Add-Type -AssemblyName Microsoft.VisualBasic
+Add-Type -AssemblyName System.IO.Compression.FileSystem
+
+
+function Show-OptionsDialog {
+    $form = New-Object System.Windows.Forms.Form
+    $form.Text = "Copy Options"
+    $form.Size = New-Object System.Drawing.Size(300, 220)
+    $form.StartPosition = "CenterScreen"
+
+    # Schedule Checkbox
+    $chkSchedule = New-Object System.Windows.Forms.CheckBox
+    $chkSchedule.Text = "Schedule Transfer"
+    $chkSchedule.Location = New-Object System.Drawing.Point(20,20)
+    $form.Controls.Add($chkSchedule)
+
+    # Time Picker
+    $lblTime = New-Object System.Windows.Forms.Label
+    $lblTime.Text = "Start Time:"
+    $lblTime.Location = New-Object System.Drawing.Point(40,50)
+    $form.Controls.Add($lblTime)
+
+    $timePicker = New-Object System.Windows.Forms.DateTimePicker
+    $timePicker.Format = [System.Windows.Forms.DateTimePickerFormat]::Time
+    $timePicker.ShowUpDown = $true
+    $timePicker.Location = New-Object System.Drawing.Point(110,45)
+    $form.Controls.Add($timePicker)
+
+    # Disabled timestamp checkbox (not used here)
+    $chkTimestamp = New-Object System.Windows.Forms.CheckBox
+    $chkTimestamp.Text = "Add Timestamp to Filenames (ignored)"
+    $chkTimestamp.Location = New-Object System.Drawing.Point(20,80)
+    $chkTimestamp.Enabled = $false
+    $form.Controls.Add($chkTimestamp)
+
+    # OK Button
+    $okButton = New-Object System.Windows.Forms.Button
+    $okButton.Text = "OK"
+    $okButton.Location = New-Object System.Drawing.Point(50,130)
+    $okButton.DialogResult = [System.Windows.Forms.DialogResult]::OK
+    $form.AcceptButton = $okButton
+    $form.Controls.Add($okButton)
+
+    # Cancel Button
+    $cancelButton = New-Object System.Windows.Forms.Button
+    $cancelButton.Text = "Cancel"
+    $cancelButton.Location = New-Object System.Drawing.Point(150,130)
+    $cancelButton.DialogResult = [System.Windows.Forms.DialogResult]::Cancel
+    $form.CancelButton = $cancelButton
+    $form.Controls.Add($cancelButton)
+
+    # Enable/disable time picker based on checkbox
+    $chkSchedule.Add_CheckedChanged({
+        $timePicker.Enabled = $chkSchedule.Checked
+        $lblTime.Enabled = $chkSchedule.Checked
+    })
+    $timePicker.Enabled = $false
+    $lblTime.Enabled = $false
+
+    if ($form.ShowDialog() -eq [System.Windows.Forms.DialogResult]::OK) {
+        return @{
+            Schedule  = $chkSchedule.Checked
+            StartTime = $timePicker.Value
+        }
+    } else {
+        Write-Host "Operation cancelled by user."
+        exit
+    }
+}
+
+function Ensure-Folder {
+    param ([string]$path)
+    if (-not (Test-Path -LiteralPath $path)) {
+        try {
+            [System.IO.Directory]::CreateDirectory($path) | Out-Null
+            Write-Host "Created folder: $path"
+        } catch {
+            Write-Host "Failed to create folder: $path"
+            Write-Host $_.Exception.Message
+            exit 1
+        }
+    }
+}
+
+
+
+# Logs go to the network share
+$logFolder = "\\192.168.1.180\12tb\transfers\logs"
+Ensure-Folder -path $logFolder
+
+# Select source files
+$openDialog = New-Object System.Windows.Forms.OpenFileDialog
+$openDialog.Title = "Select files to copy"
+$openDialog.Multiselect = $true
+$openDialog.Filter = "All Files (*.*)|*.*"
+if ($openDialog.ShowDialog() -ne [System.Windows.Forms.DialogResult]::OK) { exit }
+$selectedFiles = $openDialog.FileNames
+
+if (-not $selectedFiles -or $selectedFiles.Count -eq 0) {
+    Write-Host "No files selected. Exiting."
+    exit
+}
+
+# Pick destination folder
+$folderDialog = New-Object System.Windows.Forms.FolderBrowserDialog
+$folderDialog.Description = "Choose destination folder"
+$folderDialog.ShowNewFolderButton = $true
+if ($folderDialog.ShowDialog() -ne [System.Windows.Forms.DialogResult]::OK) { exit }
+$destinationFolder = $folderDialog.SelectedPath
+
+if (-not $destinationFolder -or $destinationFolder.Trim() -eq "") {
+    Write-Host "No destination chosen. Exiting."
+    exit
+}
+Ensure-Folder -path $destinationFolder
+
+# Show schedule options
+$options = Show-OptionsDialog
+
+# Handle scheduling
+if ($options.Schedule) {
+    $now = Get-Date
+    $scheduledTime = $options.StartTime
+    if ($scheduledTime -lt $now) { $scheduledTime = $scheduledTime.AddDays(1) }
+    $delay = [int][Math]::Ceiling(($scheduledTime - $now).TotalSeconds)
+    Write-Host "Waiting until $scheduledTime to start transfer (about $delay seconds)..."
+    Start-Sleep -Seconds $delay
+} else {
+    Write-Host "Starting transfer immediately..."
+}
+
+# Prepare log file
+$logFile = Join-Path $logFolder ("TransferLog_{0}.txt" -f (Get-Date -Format "yyyy-MM-dd"))
+Add-Content -Path $logFile -Value ("[{0}] Destination: {1}" -f (Get-Date), $destinationFolder)
+Add-Content -Path $logFile -Value ("[{0}] Files selected: {1}" -f (Get-Date), $selectedFiles.Count)
+
+# Copy files
+$copied = 0
+$failed = 0
+
+for ($i = 0; $i -lt $selectedFiles.Count; $i++) {
+    $file = $selectedFiles[$i]
+    $fileName = Split-Path $file -Leaf
+    Write-Progress -Activity "Copying files" -Status "$($i+1)/$($selectedFiles.Count): $fileName" -PercentComplete (100*($i+1)/$selectedFiles.Count)
+
+    if (-not (Test-Path -LiteralPath $file)) {
+        Add-Content -Path $logFile -Value ("[{0}] Skipped (not found): {1}" -f (Get-Date), $file)
+        $failed++
+        continue
+    }
+
+    try {
+        Copy-Item -LiteralPath $file -Destination $destinationFolder -Force -ErrorAction Stop
+        Add-Content -Path $logFile -Value ("[{0}] Copied: {1}" -f (Get-Date), $fileName)
+        $copied++
+    } catch {
+        Add-Content -Path $logFile -Value ("[{0}] Failed to copy: {1} - {2}" -f (Get-Date), $fileName, $_.Exception.Message)
+        $failed++
+    }
+}
+
+Write-Progress -Activity "Copying files" -Completed
+
+Write-Host "Transfer complete."
+Write-Host "   Copied: $copied"
+Write-Host "   Failed: $failed"
+Write-Host "   Destination: $destinationFolder"
+Write-Host "   Log: $logFile"
