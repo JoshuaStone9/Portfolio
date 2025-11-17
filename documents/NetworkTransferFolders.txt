@@ -1,4 +1,7 @@
-﻿# L# Run this script in STA mode:
+﻿
+# NOTES TO ENSURE SCRIPT RUNS CORRECTLY
+
+# L# Run this script in STA mode:
 # powershell.exe -NoProfile -ExecutionPolicy Bypass -STA -File YourScript.ps1
 
 Add-Type -AssemblyName System.Windows.Forms

@@ -172,37 +172,47 @@ projectInfo.innerHTML = `
       <h2>Created with C# and PowerShell Scripts
       <h3>Project Overview</h3>
         <p>
-          The <b>Home NAS Control Panel</b> is a custom Windows Forms application I developed to simplify and streamline the 
-          management of my personal NAS (Network Attached Storage) system. It provides an intuitive interface with 
-          dedicated buttons for frequently used operations, allowing me to perform routine tasks quickly and efficiently 
-          without navigating complex menus or command-line tools.
+          The <b>Home NAS Control Panel</b> is a custom Windows Forms application I am developing to simplify and streamline the 
+          management of my personal NAS (Network Attached Storage) system. It currently has two buttons in which assist to transport files and folders
+          using robocopy and has a friendly UI, allowing me to perform routine tasks quickly and efficiently 
+          without the need to worry if any files not copying or massively slowing my system down.
         </p>
-        <p>
-          The Control Panel reflects my ongoing journey to deepen my expertise 
-          in C# and desktop application development. Throughout the process I engineered creative solutions to automate repetitive workflows, optimize system interactions and improve the speed and reliability of daily operations.
+        <h3>Why?</h3>
+        <p><b>These Are The Reasons In Which Why I Created This & Why It's Needed:</b>
+        <br>
+        <ul>
+          <li><b>Robocopy:</b> A faster, more reliable and more flexible alternative to standard file copying. 
+          It handles large transfers with ease and can create detailed log files to track skipped or failed files and the reasons behind them.</li>
+          <li><b>Time Allocation:</b> Allowing the user to choose when a task runs ensures large transfers can occur during low-usage periods which results in reducing
+           interruptions and minimizing the impact on system performance.</li>
+          <li><b>External Deployment:</b> The program runs on my mini PC which serves as the application layer for my NAS. This approach keeps processing 
+          separate from the main device preventing performance issues and ensuring smoother operation.</li>
+        </ul>
         </p>
+
+
 
 
         <h3>Features</h3>
         <ul>
-          <li><b>Automated NAS Management:</b> Custom automation for routine NAS management tasks.</li>
+          <li><b>Automated NAS Management:</b> Custom automation for routine NAS management tasks which is driven by the time inputted by the user.</li>
           <li><b>Responsive Interface Design:</b> Event-driven UI design for smooth and user-friendly controls.</li>
-          <li><b>Ongoing Development:</b> Continuous improvement and updates as new operational needs arise.</li>
+          <li><b>Ongoing Development:</b> Continuous improvements and updates as new operational needs arise.</li>
         </ul>
 
         <h3>Implementation Detail</h3>
         <p>Each button within the application is linked to a dedicated <strong>PowerShell</strong> script that executes multiple functions. 
-        I adopted this approach to improve code readability within the main C# application, streamline the debugging process, and 
-        leverage the extended functionality that PowerShell offers. This design choice ensures that each button operates as intended while 
+        I adopted this approach to improve code readability within the main C# application and streamline the debugging process and 
+        use the extended functionality that PowerShell offers. This design choice ensures that each button operates as intended while 
         reducing unnecessary complexity in the core program logic.</p>
 
         <h3>Personal Development</h3>
-        <p>This project has been both a technical challenge and a rewarding learning experience. It continues to evolve as I discover new 
-        ways to improve efficiency, enhance the user interface and expand functionality transforming my NAS management into a smooth, one-click process.</p>
+        <p>This project has been both challenging and rewarding. As I keep working on it i am finding new ways to make it easier to use, 
+        more efficient and more helpful overall. My goal is to turn my NAS management into a simple one-click process and as the project 
+        grows this will become more visible</p>
 
-        <p>I have maintained a professional yet straightforward design for the Control Panel to ensure a clean, user-friendly interface 
-        throughout its development. Looking ahead, my goal is to create a highly customizable menu/control panel—building upon this foundation—that developers 
-        can adapt and use effectively within their own workflows.</p>
+        <p>I have maintained a professional yet straightforward design for the Control Panel to ensure a clean user-friendly interface 
+        throughout its development. Looking ahead my goal is to create a highly customizable menu/control panel which can be used for extensive tasks</p>
 
 
 
@@ -251,14 +261,18 @@ function viewDateChecker() {
 
   projectInfo.innerHTML = `
       <h2>Date Checker</h2>
-        <p>The <b>Time Checker Application</b> is a cross-platform web tool I developed to improve accuracy and efficiency
-         when dating new stock at my current workplace</p>
-        <p> The project began as a <b>C# .NET 9.0 WinForms</b> application and once complete, 
-            the application was deployed via <b>Firebase Hosting</b></p>
+       <p>The <b>Time Checker Application</b> is a simple web tool I created to speed up and streamline the process of assigning 
+       dates to new stock at my workplace. Previously I had to rely on Siri or manually check the calendar, but now all the 
+       essential dates are available instantly in a single-page interface. The displayed dates correspond to those currently required 
+       for several products.</p>
+       
+       <p>This tool also helps reduce the chance of human error.</p>
+
+<p>The project is a simple yet effective tool built using <b>HTML, CSS and JavaScript</b> and once completed deployed through <b>Firebase Hosting</b>.</p>
+
 
         <h3>Features</h3>
         <ul>
-          <li>Cross-platform redevelopment from C# WinForms to HTML, CSS, and JavaScript.</li>
           <li>Clean, accessible user interface with large, legible text for quick reference.</li>
           <li>Fast, accurate date generation to reduce operational errors.</li>
           <li>Deployment using Firebase Hosting for easy accessibility on any device.</li>

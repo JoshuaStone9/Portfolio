@@ -1,4 +1,4 @@
-# ---- Ensure STA when launched from C#/background threads ----
+
 if ([Threading.Thread]::CurrentThread.GetApartmentState() -ne 'STA') {
     # Prefer Windows PowerShell for WinForms UI reliability (pwsh -STA works on 7.3+ if you prefer)
     $exe = 'powershell.exe'
@@ -100,11 +100,10 @@ function Ensure-Folder {
 
 
 
-# Logs go to the network share
 $logFolder = "\\192.168.1.180\12tb\transfers\logs"
 Ensure-Folder -path $logFolder
 
-# Select source files
+
 $openDialog = New-Object System.Windows.Forms.OpenFileDialog
 $openDialog.Title = "Select files to copy"
 $openDialog.Multiselect = $true
@@ -117,7 +116,7 @@ if (-not $selectedFiles -or $selectedFiles.Count -eq 0) {
     exit
 }
 
-# Pick destination folder
+
 $folderDialog = New-Object System.Windows.Forms.FolderBrowserDialog
 $folderDialog.Description = "Choose destination folder"
 $folderDialog.ShowNewFolderButton = $true
@@ -130,10 +129,10 @@ if (-not $destinationFolder -or $destinationFolder.Trim() -eq "") {
 }
 Ensure-Folder -path $destinationFolder
 
-# Show schedule options
+
 $options = Show-OptionsDialog
 
-# Handle scheduling
+
 if ($options.Schedule) {
     $now = Get-Date
     $scheduledTime = $options.StartTime
@@ -145,12 +144,12 @@ if ($options.Schedule) {
     Write-Host "Starting transfer immediately..."
 }
 
-# Prepare log file
+
 $logFile = Join-Path $logFolder ("TransferLog_{0}.txt" -f (Get-Date -Format "yyyy-MM-dd"))
 Add-Content -Path $logFile -Value ("[{0}] Destination: {1}" -f (Get-Date), $destinationFolder)
 Add-Content -Path $logFile -Value ("[{0}] Files selected: {1}" -f (Get-Date), $selectedFiles.Count)
 
-# Copy files
+
 $copied = 0
 $failed = 0
 

@@ -8,7 +8,6 @@
         return
     }
 
-    # --- Get and sanitize volume label ---
     try {
         $volumeLabel = (Get-Volume -DriveLetter $driveLetter.TrimEnd(':')).FileSystemLabel
         if ([string]::IsNullOrWhiteSpace($volumeLabel)) {
@@ -20,7 +19,6 @@
     $safeLabel = ($volumeLabel -replace '[\\/:*?"<>|]', '_')
     if (-not $safeLabel) { $safeLabel = "UnknownDrive" }
 
-    # --- Build paths ---
     $timestamp       = Get-Date -Format "yyyy-MM-dd_HH-mm-ss"
     $baseBackupPath  = "D:\Backups"
 
@@ -31,11 +29,9 @@
     $logFolder       = $driveLogRoot
     $logFile         = Join-Path -Path $logFolder -ChildPath "BackupLog.txt"
 
-    # --- Create folders ---
     New-Item -ItemType Directory -Force -Path $backupFolder -Confirm:$false | Out-Null
     New-Item -ItemType Directory -Force -Path $logFolder -Confirm:$false | Out-Null
 
-    # --- Start backup ---
     $src  = "${driveLetter}\"
     $dest = $backupFolder
 
@@ -69,7 +65,7 @@
     }
 }
 
-# --- MONITORING LOOP ---
+
 $previousDrives = @()
 
 Write-Host " Monitoring for USB drives on H: or I:... Press Ctrl+C to stop."
