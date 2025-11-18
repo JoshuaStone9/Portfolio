@@ -166,7 +166,8 @@ body {
 
 .externalProjectsBtn {
     border: black solid 2px;
-    background-image: linear-gradient(to right, #2d9b0c 0%, #4bff63 51%, #ff512f 100%);
+
+background-image: linear-gradient(to right, #0f2027 0%, #203a43 50%, #2c5364 100%);
     font-size: large;
     
     cursor: pointer;
@@ -217,6 +218,65 @@ body {
     filter: saturate(1.05);
     box-shadow: 0 4px 10px rgba(0,0,0,0.25);
 }
+
+.cyberSecurityDiv {
+  border: black solid 2px;
+    background-color: #FFB166;
+
+    font-size: large;
+    
+    cursor: pointer;
+
+    text-decoration: none;
+    display:inline-flex;      /* nicer vertical centering */
+    align-items:center;
+    justify-content:center;
+    min-width:140px;          /* keeps them visually even */
+    height:auto;
+    width:auto;               /* important: stop using % widths */
+    line-height:1.2;
+    white-space:nowrap;  
+
+    margin: 10px;
+    padding: 25px 75px;
+    text-align: center;
+ 
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: black;            
+    box-shadow: 0 0 20px white;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+.cyberSecurityBtn {
+    border: black solid 2px;
+    background-image: linear-gradient(to right, #151515 0%, #51514f 51%, #ff0000 100%);
+
+    font-size: large;
+    
+    cursor: pointer;
+
+    text-decoration: none;
+
+    min-width:140px;          /* keeps them visually even */
+    height:auto;
+    width:auto;               /* important: stop using % widths */
+    line-height:1.2;
+    white-space:nowrap;  
+
+    margin: 0px;
+    padding: 25px 75px;
+    text-align: center;
+ 
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+
+    border-radius: 20px;
+    display: inline-block;
+}
+
 
 .projectImage {
     width: 100%;
