@@ -127,7 +127,9 @@ function CSharpAndSQLProjects() {
 
   const idsToShow = [
     "financeManagerHeader",
-    "FinanceManagerBtn"
+    "FinanceManagerBtn",
+    "toDoListBtn",
+    "toDoListHeader",
   ];
 
   idsToShow.forEach(id => {

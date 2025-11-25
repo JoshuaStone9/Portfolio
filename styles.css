@@ -477,6 +477,13 @@ background-image: linear-gradient(to right, #0f2027 0%, #203a43 50%, #2c5364 100
 
 /* Responsive tweaks */
 @media (max-width: 640px) {
+
+  .cyberSecurityDiv {
+    width: 100%;
+    max-height: 90vh;
+    padding: 16px;
+    border-radius: 12px;
+  }
   .popup-background {
     width: 100%;
     max-height: 90vh;
