@@ -47,7 +47,7 @@ function viewBreadsheet() {
     const openPopUp = document.querySelector(".popup-wrapper");
     openPopUp.classList.remove("hidden");
     const projectInfo = document.querySelector(".projectInfo");
-projectInfo.innerHTML = `
+    projectInfo.innerHTML = `
       <h1>Breadsheet</h1>
         <h2>Created With HTML, CSS, JavaScript, Firebase Hosting</h2>
           <p>I have designed a resource called a ‘breadsheet’ to help log dated stock in my current job role. Although the company already has a paper version of this, 
@@ -62,15 +62,18 @@ projectInfo.innerHTML = `
             <li><b>Single-Page Application (SPA):</b> Built using HTML, CSS and JavaScript combined into one streamlined document.</li>
             <li><b>Firebase Hosting:</b> Deployed online for easy, reliable access by all users.</li>
             <li><b>Automatic Date Generation:</b> Automatically fills the top row with today’s date and the next three days for added convenience.</li>
-          <img src=images/B2.png class="projectImage"> 
-          <img src=images/B3.png class="projectImage"> 
+          </ul>
+          <img src="images/B2.png" class="projectImage" alt="Breadsheet screenshot"> 
+          <img src="images/B3.png" class="projectImage" alt="Breadsheet screenshot"> 
           <h3>Future Improvements</h3>
-            <li>Implement a feature that allows sending the breadsheet directly to the group chat</li>
-            <li>Enable automatic input for specific products to streamline data entry</li>
-            <li>Incorporate functionality to input one or two boxes and have the table automatically calculate the equivalent number of individual items</li>
+          <ul>
+            <li>Implement a feature that allows sending the breadsheet directly to the group chat.</li>
+            <li>Enable automatic input for specific products to streamline data entry.</li>
+            <li>Incorporate functionality to input one or two boxes and have the table automatically calculate the equivalent number of individual items.</li>
+          </ul>
           <h3>Personal Development</h3>
           <p>This project has helped me to gain further knowledge on SPAs and how several languages can be brought together within a single page and what benefits this has to offer.</p>
-`;
+    `;
 
 
 }
@@ -382,12 +385,12 @@ function viewInventoryDatabase() {
       <li><b>Pre-Existing Excel Spreadsheet:</b> Contains example data input from the database and acts as an 
       intermediary for importing data from the SQL database to the web server.</li>
 
-      </li><b>PowerShell Automation Script:</b> Automates the process of importing data from SQL with login 
+      <li><b>PowerShell Automation Script:</b> Automates the process of importing data from SQL with login 
       processes and allows data to be uploaded to the webserver every hour.</li>
     </ul>
 
     <h3>User Interface</h3>
-    <img src="images/InventoryDatabase.png">
+    <img src="images/InventoryDatabase.png" alt="Inventory Database UI">
     `;
 }
 
