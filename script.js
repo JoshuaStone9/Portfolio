@@ -1,4 +1,3 @@
-
 function viewFinanceManager() {
     const openPopUp = document.querySelector(".popup-wrapper");
     openPopUp.classList.remove("hidden");
@@ -66,11 +65,9 @@ projectInfo.innerHTML = `
           <img src=images/B2.png class="projectImage"> 
           <img src=images/B3.png class="projectImage"> 
           <h3>Future Improvements</h3>
-          <ul>
             <li>Implement a feature that allows sending the breadsheet directly to the group chat</li>
             <li>Enable automatic input for specific products to streamline data entry</li>
             <li>Incorporate functionality to input one or two boxes and have the table automatically calculate the equivalent number of individual items</li>
-          </ul>
           <h3>Personal Development</h3>
           <p>This project has helped me to gain further knowledge on SPAs and how several languages can be brought together within a single page and what benefits this has to offer.</p>
 `;
@@ -378,6 +375,65 @@ function viewInventoryDatabase() {
     <img src="images/InventoryDatabase.png">
     `;
 }
+
+function viewToDoList() {
+    const openPopUp = document.querySelector(".popup-wrapper");
+    openPopUp.classList.remove("hidden");
+    const projectInfo = document.querySelector(".projectInfo");
+    projectInfo.innerHTML = `
+    <h1>To Do List Application</h1>
+
+    <h2>Project Overview</h2>
+
+    <h3>Created with C# (.NET), Object-Oriented Programming Principles & Console UI</h3>
+
+    <p>This project is a fully interactive and console-based To Do List Application designed to help users
+    easily manage everyday tasks. The system provides a clean menu interface for creating,
+    viewing, completing, editing and deleting tasks. It also includes automatic sorting into
+    categories such as active, completed and overdue items to help users keep full control 
+    of their workload.<br><br>
+
+    The application was created to demonstrate practical object-oriented programming concepts 
+    including classes, properties, encapsulation, collections and method organisation, it also 
+    highlights how console applications can be structured to feel natural and user-friendly 
+    despite being text-based.</p>
+
+    <h3>Features</h3>
+
+    <ul>
+      <li><b>Interactive Console Menu:</b> A clean interface allowing users to choose actions such as 
+      viewing tasks, adding new items, marking items complete, editing or deleting tasks.</li>
+
+      <li><b>To Do Item Management:</b> Items include a title, due date and completion status with 
+      automatic categorisation into active, completed or overdue.</li>
+
+      <li><b>C# Object-Oriented Architecture:</b> Built using classes, properties and methods that 
+      clearly separate responsibilities and maintain clean code structure.</li>
+
+      <li><b>Real-Time Feedback:</b> Every action such as adding or updating a task provides clear
+      on screen results to enhance the user experience.</li>
+
+      <li><b>Data Handling:</b> Items are stored in memory using lists, allowing fast lookups and 
+      flexible item management.</li>
+    </ul>
+
+    <h3>User Interface</h3>
+    <img src="images/To-Do-Application-UI.png" id="toDoImage">
+
+    <h3>Future Improvements</h3>
+    <ul>
+      <li><b>Persistent storage:</b> Make the app remember your tasks and save to a local file, small DB or cloud so nothing disappears when you close the app.</li>
+      <li><b>GUI / Web front-end:</b> Replace the console with a simple web or desktop UI (buttons, forms) so non‑tech users and phones can use it easily.</li>
+      <li><b>Sync & accounts:</b> Let people sign in and sync lists across devices phone, laptop, tablet or share lists with others.</li>
+      <li><b>Notifications & reminders:</b> Add alerts for due dates (system notifications, mobile push or email) so important tasks don’t get forgotten.</li>
+      <li><b>Search, filter & tags:</b> Add quick search, filters and tags so you can find urgent tasks or everything due this week in seconds.</li>
+      <li><b>Import/Export:</b> Allow CSV/JSON export and import so users can back up data or move it into spreadsheets and other apps.</li>
+      <li><b>Accessibility & UX:</b> Improve keyboard navigation, add ARIA labels and better contrast so everyone (including screen‑reader users) can use it comfortably.</li>
+      <li><b>Automated tests & CI:</b> Add unit tests and hook up continuous integration so future updates don’t accidentally break basic features.</li>
+    </ul>
+    `;
+}
+
 
 function closePopup() {
     const closePopUp = document.querySelector(".popup-wrapper");

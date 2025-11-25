@@ -285,6 +285,10 @@ background-image: linear-gradient(to right, #0f2027 0%, #203a43 50%, #2c5364 100
     object-fit: contain;
     margin: 10px;
 }
+#toDoImage {
+    width: 40%;
+    height: 60%;
+}
 
 .cvButton {
   display: inline-block;
