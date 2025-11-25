@@ -78,6 +78,9 @@ projectInfo.innerHTML = `
 function hideAllProjects() {
   const projects = document.querySelectorAll('.projectHeaders, .projectViewBtn');
   projects.forEach(el => el.classList.add('hidden'));
+
+  const externalProjects = document.querySelector('.externalProjects');
+  externalProjects.classList.add('hidden');
 }
 
 
@@ -87,19 +90,23 @@ function viewAllProjects() {
 
   const projects = document.querySelectorAll('.projectHeaders, .projectViewBtn');
   projects.forEach(el => el.classList.remove('hidden'));
+
+  const externalProjects = document.querySelector('.externalProjects');
+  externalProjects.classList.remove('hidden');
 }
 
 function htmlProjects() {
   hideAllProjects();
 
   const idsToShow = [
-    "dateCheckerHeader",
-    "viewDateChecker",
-    "dateCheckerWebsite",
-    "inventoryDatabaseHeader",
-    "InventoryDatabaseBtn",
-    "breadsheetHeader",
-    "breadsheetViewBtn"
+    "header-date-checker",
+    "btn-date-checker-view",
+    "link-date-checker-site",
+    "header-inventory-database",
+    "btn-inventory-database-view",
+    "header-breadsheet",
+    "btn-breadsheet-view",
+    "link-breadsheet-site",
   ];
 
   idsToShow.forEach(id => {
@@ -112,8 +119,9 @@ function SQLProjects() {
   hideAllProjects();
 
   const idsToShow = [
-    "inventoryDatabaseHeader",
-    "InventoryDatabaseBtn"
+    "header-inventory-database",
+    "btn-inventory-database-view",
+    "link-inventory-database-site",
   ];
 
   idsToShow.forEach(id => {
@@ -126,10 +134,12 @@ function CSharpAndSQLProjects() {
   hideAllProjects();
 
   const idsToShow = [
-    "financeManagerHeader",
-    "FinanceManagerBtn",
-    "toDoListBtn",
-    "toDoListHeader",
+    "header-finance-manager",
+    "btn-finance-manager-view",
+    "link-finance-manager-repo",
+    "btn-todo-view",
+    "link-todo-repo",
+    "header-todo",
   ];
 
   idsToShow.forEach(id => {
@@ -142,10 +152,13 @@ function pythonProjects() {
   hideAllProjects();
 
   const idsToShow = [
-    "nasAutoBackupHeader",
-    "NASAutoBackup",
-    "homeNASControlPanelHeader",
-    "viewHomeNASControlPanel"
+    "header-nas-auto-backup",
+    "btn-nas-auto-backup-view",
+    "btn-nas-auto-backup-scripts",
+    "header-home-nas",
+    "btn-home-nas-view",
+    "btn-home-nas-images",
+    "btn-home-nas-scripts"
   ];
 
   idsToShow.forEach(id => {

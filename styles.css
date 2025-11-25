@@ -498,7 +498,7 @@ background-image: linear-gradient(to right, #0f2027 0%, #203a43 50%, #2c5364 100
   }
 
   #cyberSecurityText {
-    font-size: 16px;
+    font-size: 14px;
   }
   .popup-background {
     width: 100%;
@@ -731,4 +731,35 @@ pre::-webkit-scrollbar-thumb:hover {
   border-radius: 20px;
 background:
   rgb(255, 199, 120)
+}
+
+#header-home-nas,
+#header-nas-auto-backup,
+#header-date-checker,
+#header-finance-manager,
+#header-inventory-database,
+#header-breadsheet,
+#header-todo {
+  display: block;
+  margin-top: 24px;
+  margin-bottom: 8px;
+}
+
+#btn-home-nas-view,
+#btn-home-nas-images,
+#btn-home-nas-scripts,
+#btn-nas-auto-backup-view,
+#btn-nas-auto-backup-scripts,
+#btn-date-checker-view,
+#btn-finance-manager-view,
+#btn-inventory-database-view,
+#btn-breadsheet-view,
+#btn-todo-view,
+#link-date-checker-site,
+#link-finance-manager-repo,
+#link-inventory-database-site,
+#link-breadsheet-site,
+#link-todo-repo {
+  display: inline-block;
+  vertical-align: middle;
 }
