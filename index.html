@@ -53,13 +53,54 @@
 
     <div class="projects">
   <div class="projectsButtons">
-    <h1>Projects</h1>
-    <p class="projectsFilterButtons projectsFilterButtons-grad" onclick="viewAllProjects()">ALL</p>
-    <p class="projectsFilterButtons projectsFilterButtons-grad" onclick="htmlProjects()">HTML & JS & CSS</p>
-    <p class="projectsFilterButtons projectsFilterButtons-grad" onclick="CSharpAndSQLProjects()">C# & SQL</p>
-    <p class="projectsFilterButtons projectsFilterButtons-grad" onclick="SQLProjects()">SQL</p>
-    <p class="projectsFilterButtons projectsFilterButtons-grad" onclick="pythonProjects()">Python & Powershell</p>
-  </div>
+  <h1>Projects</h1>
+
+  <form class="lang-filter-form" aria-label="Filter projects by language">
+    <fieldset class="lang-filter-fieldset">
+      <legend>Filter by language</legend>
+
+      <label class="lang-filter-chip">
+        <input type="checkbox" value="html" checked>
+        <span>HTML</span>
+      </label>
+
+      <label class="lang-filter-chip">
+        <input type="checkbox" value="css" checked>
+        <span>CSS</span>
+      </label>
+
+      <label class="lang-filter-chip">
+        <input type="checkbox" value="js" checked>
+        <span>JavaScript</span>
+      </label>
+
+      <label class="lang-filter-chip">
+        <input type="checkbox" value="csharp" checked>
+        <span>C#</span>
+      </label>
+
+      <label class="lang-filter-chip">
+        <input type="checkbox" value="sql" checked>
+        <span>SQL</span>
+      </label>
+
+      <label class="lang-filter-chip">
+        <input type="checkbox" value="python" checked>
+        <span>Python</span>
+      </label>
+
+      <label class="lang-filter-chip">
+        <input type="checkbox" value="powershell" checked>
+        <span>PowerShell</span>
+      </label>
+
+      <button type="button" class="lang-filter-reset" id="langFilterReset">
+        Clear selection
+      </button>
+    </fieldset>
+  </form>
+</div>
+
 
 <!-- HOME NAS CONTROL PANEL -->
 <h2 class="projectHeaders" id="header-home-nas">Home NAS Control Panel</h2>
@@ -106,7 +147,6 @@
 <button onclick="viewInventoryDatabase()" id="btn-inventory-database-view" class="projectViewBtn">View Project</button>
 <a href="https://inventorydatabase.uk" target="_blank" id="link-inventory-database-site" class="projectViewBtn">View Website</a>
 <div class="project-languages" id="langs-inventory-database">
-  <span class="lang-circle lang-csharp">C#</span>
   <span class="lang-circle lang-sql">SQL</span>
   <span class="lang-circle lang-html">HTML</span>
   <span class="lang-circle lang-css">CSS</span>
