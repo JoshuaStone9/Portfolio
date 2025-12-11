@@ -22,7 +22,7 @@
             <br>
             <p>I have a great passion for software development and engineering which can be seen from the projects I have completed below.</p>
              <br>
-            <p><strong>To learn more about my skills, experience, and professional background, you can view my CV below:</strong></p>
+            <p><strong>To learn more about my skills, experience and professional background, you can view my CV below:</strong></p>
   <a href="documents/Joshua_Stone_CV.pdf" target="_blank" class="cvButton">View CV</a>
         </div>
     </div>
@@ -52,53 +52,97 @@
     </div>
 
     <div class="projects">
-        <div class="projectsButtons">
-            <h1>Projects</h1>
-            <p class="projectsFilterButtons projectsFilterButtons-grad" onclick="viewAllProjects()">ALL</p>
-            <p class="projectsFilterButtons projectsFilterButtons-grad" onclick="htmlProjects()">HTML & JS & CSS</p>
-            <p class="projectsFilterButtons projectsFilterButtons-grad" onclick="CSharpAndSQLProjects()">C# & SQL</p>
-            <p class="projectsFilterButtons projectsFilterButtons-grad" onclick="SQLProjects()">SQL</p>
-            <p class="projectsFilterButtons projectsFilterButtons-grad" onclick="pythonProjects()">Python & Powershell</p>
-        </div>
-        <h2 class="projectHeaders" id="header-home-nas">Home NAS Control Panel</h2>
-        <button onclick="viewHomeNASControlPanel()" id="btn-home-nas-view" class="projectViewBtn">View Project</button>
-        <button onclick="viewHomeNASControlPanelImages()" id="btn-home-nas-images" class="projectViewBtn">View Images</button>
-        <button onclick="viewHomeNASControlPanelScripts()" id="btn-home-nas-scripts" class="projectViewBtn">View Scripts</button>
+  <div class="projectsButtons">
+    <h1>Projects</h1>
+    <p class="projectsFilterButtons projectsFilterButtons-grad" onclick="viewAllProjects()">ALL</p>
+    <p class="projectsFilterButtons projectsFilterButtons-grad" onclick="htmlProjects()">HTML & JS & CSS</p>
+    <p class="projectsFilterButtons projectsFilterButtons-grad" onclick="CSharpAndSQLProjects()">C# & SQL</p>
+    <p class="projectsFilterButtons projectsFilterButtons-grad" onclick="SQLProjects()">SQL</p>
+    <p class="projectsFilterButtons projectsFilterButtons-grad" onclick="pythonProjects()">Python & Powershell</p>
+  </div>
 
-        <h2 class="projectHeaders" id="header-nas-auto-backup">NAS Auto Backup</h2>
-        <button onclick="viewNASAutoBackup()" id="btn-nas-auto-backup-view" class="projectViewBtn">View Project</button>
-        <button onclick="viewNASAutoBackupScripts()" id="btn-nas-auto-backup-scripts" class="projectViewBtn">View Scripts</button>
+<!-- HOME NAS CONTROL PANEL -->
+<h2 class="projectHeaders" id="header-home-nas">Home NAS Control Panel</h2>
+<button onclick="viewHomeNASControlPanel()" id="btn-home-nas-view" class="projectViewBtn">View Project</button>
+<button onclick="viewHomeNASControlPanelImages()" id="btn-home-nas-images" class="projectViewBtn">View Images</button>
+<button onclick="viewHomeNASControlPanelScripts()" id="btn-home-nas-scripts" class="projectViewBtn">View Scripts</button>
+<div class="project-languages" id="langs-home-nas">
+  <span class="lang-circle lang-html">HTML</span>
+  <span class="lang-circle lang-css">CSS</span>
+  <span class="lang-circle lang-js">JavaScript</span>
+  <span class="lang-circle lang-powershell">PowerShell</span>
+</div>
 
-        <h2 class="projectHeaders" id="header-date-checker">Date Checker</h2>
-        <button onclick="viewDateChecker()" id="btn-date-checker-view" class="projectViewBtn">View Project</button>
-        <a href="https://date-checker-costa.web.app/" target="_blank" id="link-date-checker-site" class="projectViewBtn">View Website</a>
+<!-- NAS AUTO BACKUP -->
+<h2 class="projectHeaders" id="header-nas-auto-backup">NAS Auto Backup</h2>
+<button onclick="viewNASAutoBackup()" id="btn-nas-auto-backup-view" class="projectViewBtn">View Project</button>
+<button onclick="viewNASAutoBackupScripts()" id="btn-nas-auto-backup-scripts" class="projectViewBtn">View Scripts</button>
+<div class="project-languages" id="langs-nas-auto-backup">
+  <span class="lang-circle lang-powershell">PowerShell</span>
+  <span class="lang-circle lang-python">Python</span>
+</div>
 
-        <h2 class="projectHeaders" id="header-finance-manager">Finance Manager</h2>
-        <button onclick="viewFinanceManager()" id="btn-finance-manager-view" class="projectViewBtn">View Project</button>
-        <a href="https://github.com/JoshuaStone9/Finance-Manager" target="_blank" id="link-finance-manager-repo" class="projectViewBtn">View Repository</a>
+<!-- DATE CHECKER -->
+<h2 class="projectHeaders" id="header-date-checker">Date Checker</h2>
+<button onclick="viewDateChecker()" id="btn-date-checker-view" class="projectViewBtn">View Project</button>
+<a href="https://date-checker-costa.web.app/" target="_blank" id="link-date-checker-site" class="projectViewBtn">View Website</a>
+<div class="project-languages" id="langs-date-checker">
+  <span class="lang-circle lang-html">HTML</span>
+  <span class="lang-circle lang-css">CSS</span>
+  <span class="lang-circle lang-js">JavaScript</span>
+</div>
 
-        <h2 class="projectHeaders" id="header-inventory-database">Inventory Database</h2>
-        <button onclick="viewInventoryDatabase()" id="btn-inventory-database-view" class="projectViewBtn">View Project</button>
-        <a href="https://inventorydatabase.uk" target="_blank" id="link-inventory-database-site" class="projectViewBtn">View Website</a>
+<!-- FINANCE MANAGER -->
+<h2 class="projectHeaders" id="header-finance-manager">Finance Manager</h2>
+<button onclick="viewFinanceManager()" id="btn-finance-manager-view" class="projectViewBtn">View Project</button>
+<a href="https://github.com/JoshuaStone9/Finance-Manager" target="_blank" id="link-finance-manager-repo" class="projectViewBtn">View Repository</a>
+<div class="project-languages" id="langs-finance-manager">
+  <span class="lang-circle lang-csharp">C#</span>
+  <span class="lang-circle lang-sql">SQL</span>
+</div>
 
-        <h2 class="projectHeaders" id="header-breadsheet">Breadsheet</h2>
-        <button onclick="viewBreadsheet()" id="btn-breadsheet-view" class="projectViewBtn">View Project</button>
-        <a href="https://breadsheet-8de43.web.app/" target="_blank" id="link-breadsheet-site" class="projectViewBtn">View Website</a>
+<!-- INVENTORY DATABASE -->
+<h2 class="projectHeaders" id="header-inventory-database">Inventory Database</h2>
+<button onclick="viewInventoryDatabase()" id="btn-inventory-database-view" class="projectViewBtn">View Project</button>
+<a href="https://inventorydatabase.uk" target="_blank" id="link-inventory-database-site" class="projectViewBtn">View Website</a>
+<div class="project-languages" id="langs-inventory-database">
+  <span class="lang-circle lang-csharp">C#</span>
+  <span class="lang-circle lang-sql">SQL</span>
+  <span class="lang-circle lang-html">HTML</span>
+  <span class="lang-circle lang-css">CSS</span>
+</div>
 
-        <h2 class="projectHeaders" id="header-todo">To Do List Application</h2>
-        <button onclick="viewToDoList()" id="btn-todo-view" class="projectViewBtn">View Project</button>
-        <a href="https://github.com/JoshuaStone9/ToDoApp" target="_blank" id="link-todo-repo" class="projectViewBtn">View Repository</a>
+<!-- BREADSHEET -->
+<h2 class="projectHeaders" id="header-breadsheet">Breadsheet</h2>
+<button onclick="viewBreadsheet()" id="btn-breadsheet-view" class="projectViewBtn">View Project</button>
+<a href="https://breadsheet-8de43.web.app/" target="_blank" id="link-breadsheet-site" class="projectViewBtn">View Website</a>
+<div class="project-languages" id="langs-breadsheet">
+  <span class="lang-circle lang-html">HTML</span>
+  <span class="lang-circle lang-css">CSS</span>
+  <span class="lang-circle lang-js">JavaScript</span>
+</div>
 
-    <div class="externalProjects">
-        <h1>External Projects</h1>
-      <a href="https://www.freecodecamp.org/JoshuaStone">
-        <button id="btn-external-freecodecamp" class="externalProjectsBtn">FreeCodeCamp</button>
-      </a>
-      <a href="https://github.com/JoshuaStone9">
-        <button id="btn-external-github" class="externalProjectsBtn">GitHub</button>
-      </a>
-    </div>
-    </div>
+<!-- TODO LIST -->
+<h2 class="projectHeaders" id="header-todo">To Do List Application</h2>
+<button onclick="viewToDoList()" id="btn-todo-view" class="projectViewBtn">View Project</button>
+<a href="https://github.com/JoshuaStone9/ToDoApp" target="_blank" id="link-todo-repo" class="projectViewBtn">View Repository</a>
+<div class="project-languages" id="langs-todo">
+  <span class="lang-circle lang-csharp">C#</span>
+  <span class="lang-circle lang-sql">SQL</span>
+</div>
+
+
+  <div class="externalProjects">
+    <h1>External Sources</h1>
+    <a href="https://www.freecodecamp.org/JoshuaStone">
+      <button id="btn-external-freecodecamp" class="externalProjectsBtn">FreeCodeCamp</button>
+    </a>
+    <a href="https://github.com/JoshuaStone9">
+      <button id="btn-external-github" class="externalProjectsBtn">GitHub</button>
+    </a>
+  </div>
+</div>
+
 
 
 

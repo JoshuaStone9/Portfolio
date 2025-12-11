@@ -79,19 +79,21 @@ function viewBreadsheet() {
 }
 
 function hideAllProjects() {
-  const projects = document.querySelectorAll('.projectHeaders, .projectViewBtn');
+  const projects = document.querySelectorAll(
+    '.projectHeaders, .projectViewBtn, .project-languages'
+  );
   projects.forEach(el => el.classList.add('hidden'));
 
   const externalProjects = document.querySelector('.externalProjects');
   externalProjects.classList.add('hidden');
 }
 
-
-
 function viewAllProjects() {
   hideAllProjects();
 
-  const projects = document.querySelectorAll('.projectHeaders, .projectViewBtn');
+  const projects = document.querySelectorAll(
+    '.projectHeaders, .projectViewBtn, .project-languages'
+  );
   projects.forEach(el => el.classList.remove('hidden'));
 
   const externalProjects = document.querySelector('.externalProjects');
@@ -102,14 +104,23 @@ function htmlProjects() {
   hideAllProjects();
 
   const idsToShow = [
+    // Date Checker
     "header-date-checker",
     "btn-date-checker-view",
     "link-date-checker-site",
+    "langs-date-checker",
+
+    // Inventory Database
     "header-inventory-database",
     "btn-inventory-database-view",
+    "link-inventory-database-site",
+    "langs-inventory-database",
+
+    // Breadsheet
     "header-breadsheet",
     "btn-breadsheet-view",
     "link-breadsheet-site",
+    "langs-breadsheet",
   ];
 
   idsToShow.forEach(id => {
@@ -125,6 +136,7 @@ function SQLProjects() {
     "header-inventory-database",
     "btn-inventory-database-view",
     "link-inventory-database-site",
+    "langs-inventory-database",
   ];
 
   idsToShow.forEach(id => {
@@ -137,12 +149,17 @@ function CSharpAndSQLProjects() {
   hideAllProjects();
 
   const idsToShow = [
+    // Finance Manager
     "header-finance-manager",
     "btn-finance-manager-view",
     "link-finance-manager-repo",
+    "langs-finance-manager",
+
+    // To Do App
+    "header-todo",
     "btn-todo-view",
     "link-todo-repo",
-    "header-todo",
+    "langs-todo",
   ];
 
   idsToShow.forEach(id => {
@@ -155,13 +172,18 @@ function pythonProjects() {
   hideAllProjects();
 
   const idsToShow = [
+    // NAS Auto Backup
     "header-nas-auto-backup",
     "btn-nas-auto-backup-view",
     "btn-nas-auto-backup-scripts",
+    "langs-nas-auto-backup",
+
+    // Home NAS Control Panel
     "header-home-nas",
     "btn-home-nas-view",
     "btn-home-nas-images",
-    "btn-home-nas-scripts"
+    "btn-home-nas-scripts",
+    "langs-home-nas",
   ];
 
   idsToShow.forEach(id => {
@@ -169,6 +191,7 @@ function pythonProjects() {
     if (el) el.classList.remove('hidden');
   });
 }
+
 
 
 
