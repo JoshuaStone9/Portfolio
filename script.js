@@ -351,7 +351,7 @@ function viewToDoList() {
       flexible item management.</li>
     </ul>
 
-    <h3>User Interface</h3>
+    <h3>Console Interface</h3>
     <img src="images/To-Do-Application-UI.png" id="toDoImage" alt="To Do List Application UI">
 
     <h3>Future Improvements</h3>
@@ -367,6 +367,90 @@ function viewToDoList() {
     </ul>
   `;
 }
+
+function viewSpendingPotsProject() {
+  const openPopUp = document.querySelector(".popup-wrapper");
+  openPopUp.classList.remove("hidden");
+  const projectInfo = document.querySelector(".projectInfo");
+
+  projectInfo.innerHTML = `
+    <h1>Spending Pots Manager</h1>
+
+    <h2>Project Overview</h2>
+
+    <h3>Created with C#, .NET Console Application & Plaid API (Sandbox Environment)</h3>
+
+    <p>
+      This project is a console-based financial management application designed to help users
+      organise and track their money using configurable <i>spending pots</i>. Each pot represents
+      a budgeting category such as food, utilities or savings, with a clear balance displayed
+      for each.
+      <br><br>
+      The system allows users to view balances, add funds, and create new spending pots, with
+      all data persisted locally to a text file so information is retained between sessions.
+      <br><br>
+      The application also integrates with the Plaid API (sandbox environment) to simulate
+      syncing real bank account balances. This allows spending pots to be automatically populated
+      with account data while preserving any custom user-defined pots.
+    </p>
+
+    <h3>Features</h3>
+
+    <ul>
+      <li><b>Console-Based Menu System:</b> A clean, user-friendly menu allowing users to view balances,
+      add funds, create new pots, sync with Plaid or exit the application.</li>
+
+      <li><b>Persistent Local Storage:</b> Spending pots and balances are saved to and loaded from a
+      local text file (<code>spendingpots.txt</code>), ensuring data is not lost between runs.</li>
+
+      <li><b>Dynamic Pot Management:</b> Users can add new spending pots with custom starting balances,
+      which are immediately stored and integrated into the system.</li>
+
+      <li><b>Plaid Sandbox Integration:</b> Simulates real bank account linking, token exchange and
+      balance retrieval using Plaid’s sandbox environment.</li>
+
+      <li><b>Secure Credential Handling:</b> Sensitive API credentials are loaded via environment
+      variables using DotNetEnv rather than being hardcoded.</li>
+
+      <li><b>Asynchronous API Calls:</b> Uses async/await to handle Plaid requests efficiently without
+      blocking the application flow.</li>
+
+      <li><b>Hybrid Sync Logic:</b> Automatically merges Plaid-linked accounts with custom spending
+      pots so user-defined data is never overwritten.</li>
+    </ul>
+
+    <h3>Console Interface</h3>
+    <img src="images/SpendingPotsImg1.png" id="SpendingPotsImg1" alt="SpendingPotsImg1">
+    <img src="images/SpendingPotsImg2.png" id="SpendingPotsImg2" alt="SpendingPotsImg2">
+    <img src="images/SpendingPotsImg3.png" id="SpendingPotsImg3" alt="SpendingPotsImg3">
+    <img src="images/SpendingPotsImg4.png" id="SpendingPotsImg4" alt="SpendingPotsImg4">
+
+    <h3>Future Improvements</h3>
+    <ul>
+      <li><b>Decimal-Based Currency Handling:</b> Replace integer balances with decimals to accurately
+      support cents and prevent rounding errors.</li>
+
+      <li><b>Transfers Between Pots:</b> Allow direct transfers between spending pots to make budget
+      rebalancing faster and more intuitive.</li>
+
+      <li><b>UI or Web API:</b> Introduce a desktop UI or RESTful web API so the application can be used
+      via a web or mobile front end.</li>
+
+      <li><b>Reporting & Graphs:</b> Add reporting tools, historical summaries and visual charts to give
+      deeper insight into spending habits.</li>
+
+      <li><b>Live Bank Account Integration:</b> Move from sandbox-only usage to real Plaid production
+      integration with live bank accounts.</li>
+
+      <li><b>Advanced Data Aggregation:</b> Explore optional screen scraping (where permitted) to
+      support financial institutions not available via APIs.</li>
+
+      <li><b>Savings Goals & Percentage Tracking:</b> Allow users to define savings targets and view
+      percentage-based progress across all spending pots.</li>
+    </ul>
+  `;
+}
+
 
 function closePopup() {
   const closePopUp = document.querySelector(".popup-wrapper");
