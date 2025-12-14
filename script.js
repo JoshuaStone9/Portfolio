@@ -7,29 +7,27 @@ function viewFinanceManager() {
     <h1>Finance Manager</h1>
     <h2>Project Overview</h2>
     <h3>Created With C#, SQL</h3>
-    <p>
-      I have designed a finance tracker which assists users in everyday life. There are multiple features that help users manage
-      their money and easily track what they are spending and what they could potentially save.
-      This is a project which I am currently still working on to make better and adapt to the modern world. I feel very passionate
-      about this project as I believe the ideas implemented throughout will impact users' everyday life in a very positive way.
-    </p>
+<p>
+  I designed this finance tracker to assist users in everyday life. It includes multiple features that help users manage money
+  and track spending and identify potential savings. This project is still under active development so it can improve and adapt
+  to modern needs. I am particularly passionate about this project because I believe the ideas behind it can positively impact
+  daily financial habits.
+</p>
 
-    <h3>Why?</h3>
-    <p>
-      I created this Finance Manager because I wanted a practical tool that actually reflects how people budget in real life, rather
-      than a generic spreadsheet. Many existing tools felt either overly complicated or too limited, so I set out to build something
-      that sits in the middle structured enough to be useful, but simple enough to use every day. It also gave me a great opportunity
-      to deepen my experience with C#, SQL and data-driven application design.
-    </p>
+<h3>Why?</h3>
+<p>
+  I created Finance Manager because I wanted a practical budgeting tool that reflects how people manage money in real life.
+  Many existing tools feel overly complex or too limited. My goal was to build something structured enough to be useful
+  while remaining simple enough for daily use. It also gave me valuable experience working with C# and SQL in a data-driven application.
+</p>
 
-    <h3>Implementation Details</h3>
-    <p>
-      The Finance Manager is built as a C# Windows Forms application backed by a SQL Server database. Each major area bills, savings,
-      extra expenses, investments maps to its own table with auto-incrementing IDs and relationships where needed. The UI communicates
-      with the database through parameterised SQL commands to prevent injection and to keep queries predictable. Forms are designed to
-      act as small modules, each responsible for a single part of the workflow (for example, managing bills or savings), and the
-      dashboard ties them together with navigation buttons and summary calculations.
-    </p>
+<h3>Implementation Details</h3>
+<p>
+  Finance Manager is built as a C# Windows Forms application backed by a SQL Server database. Each major area such as bills
+  savings extra expenses and investments maps to its own database table. The UI communicates with the database using
+  parameterised SQL commands to prevent injection and keep queries predictable. Each form is designed as a focused module
+  responsible for a single workflow while the dashboard connects everything together.
+</p>
 
     <h3>Features</h3>
     <ul>
@@ -80,27 +78,25 @@ function viewBreadsheet() {
     <h2>Project Overview</h2>
     <h3>Created With HTML, CSS, JavaScript, Firebase Hosting</h3>
     <p>
-      I have designed a resource called a ‘breadsheet’ to help log dated stock in my current job role. Although the company already has a
-      paper version of this, I chose to redesign it in an electronic format with added features to improve efficiency and reduce waste.
-      Additionally, there have been several instances where the team did not have paper breadsheets available and this electronic version
-      helps to prevent that issue.
+      I designed Breadsheet to help log dated stock in my current role. Although the company already used a paper version
+      I chose to rebuild it digitally with added features to improve efficiency and reduce waste. The digital version also
+      prevents issues caused by missing or unavailable paper sheets.
     </p>
 
     <h3>Why?</h3>
     <p>
-      I built Breadsheet to solve a very real, everyday problem at work which was paper forms getting lost, damaged or simply not being available
-      when needed. Rather than complaining about it, I wanted to create a lightweight digital tool that the team could pick up instantly
-      without needing training. This project combines my interest in front end development with a practical solution that genuinely makes
-      shifts smoother for everyone.
+      I built Breadsheet to solve a real everyday problem at work. Paper forms were often lost damaged or unavailable.
+      I wanted to create a lightweight digital tool that the team could use instantly without training. This project combines
+      front-end development with a practical solution that improves daily workflows.
     </p>
 
     <h3>Implementation Details</h3>
     <p>
-      Breadsheet is built as a single-page application using vanilla HTML, CSS and JavaScript. The layout is structured with semantic HTML
-      tables to mirror the original paper sheet and CSS is used to keep the design clean and familiar. JavaScript handles dynamic behaviour
-      such as automatically generating today’s date and the following three days and updating the DOM without page reloads. The project is
-      hosted on Firebase Hosting, which provides a simple deployment pipeline and reliable access for the team from any device with a browser.
+      Breadsheet is a single-page application built with HTML CSS and JavaScript. The layout mirrors the original paper sheet
+      to reduce friction for users. JavaScript handles dynamic behaviour such as generating dates and updating the page without
+      reloads. The project is deployed using Firebase Hosting for simple access across devices.
     </p>
+
 
     <h3>Features</h3>
     <ul>
@@ -136,75 +132,64 @@ function viewHomeNASControlPanel() {
   const openPopUp = document.querySelector(".popup-wrapper");
   openPopUp.classList.remove("hidden");
   const projectInfo = document.querySelector(".projectInfo");
+
   projectInfo.innerHTML = `
     <h1>Home NAS Control Panel</h1>
     <h2>Project Overview</h2>
     <h3>Created with C# and PowerShell Scripts</h3>
 
     <p>
-      The <b>Home NAS Control Panel</b> is a custom Windows Forms application I am developing to simplify and streamline the
-      management of my personal NAS (Network Attached Storage) system. It currently has two buttons which assist to transport files and folders
-      using robocopy and has a friendly UI, allowing me to perform routine tasks quickly and efficiently
-      without the need to worry about files not copying or massively slowing my system down.
+      The <b>Home NAS Control Panel</b> is a custom Windows Forms application designed to simplify
+      and streamline management of my personal NAS (Network Attached Storage) system.
+      It provides a clean interface for triggering automated file transfers using PowerShell
+      and <code>robocopy</code> without impacting system performance.
     </p>
 
     <h3>Why?</h3>
-    <p><b>These Are The Reasons Why I Created This & Why It's Needed:</b></p>
     <ul>
-      <li><b>Robocopy:</b> A faster, more reliable and more flexible alternative to standard file copying.
-      It handles large transfers with ease and can create detailed log files to track skipped or failed files and the reasons behind them.</li>
-      <li><b>Time Allocation:</b> Allowing the user to choose when a task runs ensures large transfers can occur during low-usage periods, reducing
-      interruptions and minimizing the impact on system performance.</li>
-      <li><b>External Deployment:</b> The program runs on my mini PC which serves as the application layer for my NAS. This approach keeps processing
-      separate from the main device, preventing performance issues and ensuring smoother operation.</li>
+      <li><b>Reliability:</b> Robocopy provides faster and more resilient file transfers than standard copy operations.</li>
+      <li><b>Performance:</b> Transfers can be scheduled during low-usage periods to avoid system slowdown.</li>
+      <li><b>Separation of concerns:</b> The control panel runs on a dedicated mini PC so the NAS itself remains lightweight.</li>
     </ul>
 
     <h3>Implementation Details</h3>
     <p>
-      The Control Panel is written in C# using Windows Forms, with each button wired to invoke a dedicated PowerShell script. These scripts are
-      responsible for executing <code>robocopy</code> with the correct arguments, handling logging and managing any additional logic such as
-      creating directories if they do not exist. This split of responsibilities keeps the C# side focused on user experience and event handling,
-      while PowerShell handles the heavy lifting for file transfers. The application is designed to run on a small always-on machine that acts
-      as the “control hub” for the NAS.
+      The application is written in C# using Windows Forms.
+      Each UI button invokes a dedicated PowerShell script responsible for executing
+      <code>robocopy</code> with predefined parameters.
+      PowerShell handles logging directory creation and error handling
+      while the C# layer focuses purely on user interaction.
     </p>
 
     <h3>Features</h3>
     <ul>
-      <li><b>Automated NAS Management:</b> Custom automation for routine NAS management tasks driven by the time inputted by the user.</li>
-      <li><b>Responsive Interface Design:</b> Event-driven UI design for smooth and user-friendly controls.</li>
-      <li><b>Ongoing Development:</b> Continuous improvements and updates as new operational needs arise.</li>
+      <li>One-click NAS file and folder transfers.</li>
+      <li>Automated logging of transfer results.</li>
+      <li>Designed to run continuously on an always-on control machine.</li>
+      <li>Expandable structure for additional NAS tasks.</li>
     </ul>
+
+    <h3>User Interface</h3>
+    <img src="images/HomeNASControlPanel.png" class="projectImage" alt="Home NAS Control Panel UI">
 
     <h3>Future Improvements</h3>
     <ul>
-      <li>Add more configurable transfer profiles so different folders and backup scenarios can be triggered with a single click.</li>
-      <li>Introduce status indicators and progress feedback directly in the UI for long-running copy operations.</li>
-      <li>Extend the panel with additional NAS maintenance actions, such as health checks or log viewing.</li>
-      <li>Refine error handling and retries within the PowerShell scripts to make large transfers even more resilient.</li>
+      <li>Add configurable transfer profiles for different backup scenarios.</li>
+      <li>Add progress indicators for long-running transfers.</li>
+      <li>Introduce additional NAS maintenance tools such as health checks.</li>
+      <li>Improve error handling and retry logic.</li>
     </ul>
 
     <h3>Personal Development</h3>
     <p>
-      This project has been both challenging and rewarding. As I keep working on it I am finding new ways to make it easier to use,
-      more efficient and more helpful overall. My goal is to turn my NAS management into a simple one-click process and as the project
-      grows this will become more visible.
-    </p>
-
-    <p>
-      I have maintained a professional yet straightforward design for the Control Panel to ensure a clean, user-friendly interface
-      throughout its development. Looking ahead, my goal is to create a highly customizable menu/control panel which can be used for extensive tasks.
+      This project strengthened my understanding of Windows automation
+      and how to separate UI concerns from system-level scripting.
+      It also helped me think more critically about reliability
+      and long-running background processes.
     </p>
   `;
 }
 
-function viewHomeNASControlPanelImages() {
-  const openPopUp = document.querySelector(".popup-wrapper");
-  openPopUp.classList.remove("hidden");
-  const projectInfo = document.querySelector(".projectInfo");
-  projectInfo.innerHTML = `
-    <img src="images/HomeNASControlPanel.png" alt="Home NAS Control Panel">
-  `;
-}
 
 function viewHomeNASControlPanelScripts() {
   const openPopUp = document.querySelector(".popup-wrapper");
@@ -234,27 +219,26 @@ function viewDateChecker() {
   projectInfo.innerHTML = `
     <h1>Date Checker</h1>
     <h2>Project Overview</h2>
-    <p>
-      The <b>Date Checker Application</b> is a simple web tool I created to speed up and streamline the process of assigning
-      dates to new stock at my workplace. Previously I had to rely on Siri or manually check the calendar, but now all the
-      essential dates are available instantly in a single-page interface. The displayed dates correspond to those currently required
-      for several products.
+   <p>
+      Date Checker is a simple web tool created to speed up the process of assigning stock dates at work.
+      Previously this relied on manual checks or voice assistants. This tool provides instant accurate dates
+      in a single interface.
     </p>
 
     <h3>Why?</h3>
     <p>
-      I made this tool because checking dates manually several times a day quickly became repetitive and error-prone. I wanted a
-      fast, zero-thinking solution that would always be correct and available from any device. It’s a small project, but it removes
-      friction from day-to-day work and demonstrates how even a simple page can genuinely improve efficiency.
+      I built this because manual date checking became repetitive and error-prone. I wanted a fast solution
+      that required no thought and worked on any device. Although small this tool removes daily friction
+      and improves accuracy.
     </p>
 
     <h3>Implementation Details</h3>
     <p>
-      Date Checker is a lightweight static web page built with HTML, CSS and JavaScript. JavaScript is used to calculate the current
-      date and a set of future dates based on simple offsets, then inject those values into the DOM so they are always up to date
-      without any manual editing. Styling is kept intentionally minimal and high contrast to make the dates easy to read from a distance.
-      Once built, the page is deployed to Firebase Hosting, which makes it accessible on phones, tablets or any browser in the workplace.
+      Date Checker is a lightweight static page built with HTML CSS and JavaScript. JavaScript calculates
+      the required dates and injects them into the page dynamically. Styling is kept minimal for readability.
+      The project is deployed using Firebase Hosting for easy access.
     </p>
+
 
     <h3>Features</h3>
     <ul>
@@ -367,7 +351,7 @@ function viewInventoryDatabase() {
     <h1>Inventory Database</h1>
 
     <h2>Project Overview</h2>
-    <h3>Created with HTML, JavaScript, Excel Spreadsheets & PowerShell Scripts</h3>
+    <h3>Created with HTML, JavaScript, SQL, Excel Spreadsheets & PowerShell Scripts</h3>
 
     <p>
       In this project, I developed a web-based inventory database that allows
@@ -627,6 +611,71 @@ function viewSpendingPotsProject() {
     </p>
   `;
 }
+
+function viewJwtInspectorProject() {
+  const openPopUp = document.querySelector(".popup-wrapper");
+  openPopUp.classList.remove("hidden");
+  const projectInfo = document.querySelector(".projectInfo");
+
+  projectInfo.innerHTML = `
+    <h1>JWT Inspector</h1>
+    <h2>Project Overview</h2>
+    <h3>Created with C#, .NET Console Application and JWT validation</h3>
+
+    <p>
+      JWT Inspector is a developer-focused CLI tool for inspecting JSON Web Tokens (JWTs). It can decode tokens and validate them using
+      HS256, RS256 or JWKS (JSON Web Key Set). It helps you check token structure and view claims and confirm expiry directly from the terminal.
+    </p>
+
+    <h3>Why?</h3>
+    <p>
+      I built this because debugging authentication issues often comes down to a simple question. What is inside this token and can this API
+      trust it. I wanted a fast CLI that I could use during development to inspect headers and claims and validate issuer rules and validate
+      audience rules and enforce required claim checks without needing a full web app or external tools.
+    </p>
+
+    <h3>Implementation Details</h3>
+    <p>
+      The app is written as a C# console CLI using <code>System.IdentityModel.Tokens.Jwt</code> and
+      <code>Microsoft.IdentityModel.Tokens</code>. It parses a command mode such as decode or validate and supports flags for issuer and audience
+      and clock skew and repeatable required claim checks. For JWKS validation it reads the JWT <code>kid</code> header and loads the JWKS from a
+      URL or a file and selects the matching key and validates the signature then validates token lifetime and applies claim policy rules.
+      Output can be printed in a human format and JSON can be enabled for piping into other tools.
+    </p>
+
+    <h3>Features</h3>
+    <ul>
+      <li><b>Decode tokens:</b> Inspect header and payload and key timestamps.</li>
+      <li><b>Validate HS256:</b> Verify the signature using a shared secret.</li>
+      <li><b>Validate RS256:</b> Verify the signature using a public key from a PEM string or a file path.</li>
+      <li><b>Validate with JWKS:</b> Match <code>kid</code> and select the correct key from <code>--jwks-url</code> or <code>--jwks-file</code>.</li>
+      <li><b>Issuer validation:</b> Enforce <code>iss</code> rules using flags.</li>
+      <li><b>Audience validation:</b> Enforce <code>aud</code> rules using flags.</li>
+      <li><b>Policy checks:</b> Repeatable <code>--require-claim type=value</code> validation.</li>
+      <li><b>JSON output:</b> Enable <code>--json</code> output for CI and scripting.</li>
+      <li><b>Clock skew control:</b> Configure tolerance using <code>--clock-skew-seconds</code>.</li>
+    </ul>
+
+    <h3>Console Interface</h3>
+    <img src="images/JWTInspector.png" id="JWTInspectorCLI" alt="JWT Inspector CLI">
+    <h3>Future Improvements</h3>
+    <ul>
+      <li>Add support for multiple audiences and multiple valid issuers.</li>
+      <li>Add <code>--require-scope</code> support for common OAuth scope formats.</li>
+      <li>Add more exit codes for clearer automation and CI rules.</li>
+      <li>Add optional profile loading for reusable validation policies.</li>
+    </ul>
+
+    <h3>Personal Development</h3>
+    <p>
+      This project helped me understand JWT validation at a deeper level. It improved my understanding of signature verification and JWKS key
+      selection and the difference between decoding a token and trusting it. It also improved my CLI design skills such as parsing flags and
+      structuring output for humans and for tooling.
+    </p>
+  `;
+}
+
+
 
 function closePopup() {
   const closePopUp = document.querySelector(".popup-wrapper");

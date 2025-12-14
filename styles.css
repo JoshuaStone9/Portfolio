@@ -325,6 +325,26 @@ p, li {
   margin-top: 32px;
 }
 
+.featuredProjects {
+  margin-top: 20px;
+  padding: 16px;
+  border-radius: 12px;
+}
+
+.featuredCard {
+  margin: 14px 0;
+  padding: 14px;
+  border-radius: 12px;
+}
+
+.featuredActions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 10px 0;
+}
+
+
 /* ===== CYBER SECURITY BLOCK ===== */
 
 .cyberSecurityDiv {

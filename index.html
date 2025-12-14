@@ -35,7 +35,7 @@
             <!-- <img src="images/react-logo.png" class="icons" alt="React logo"> -->
             <img src="images/c-sharp-icon.png" class="icons" alt="C# logo">
             <img src="images/SQL-icon.png" class="icons" alt="SQL logo">
-            <img src="images/python-icon.png" class="icons" alt="Python Logo">
+            <!-- <img src="images/python-icon.png" class="icons" alt="Python Logo"> -->
             <img src="images/Powershell-icon.png" class="icons" alt="Powershell Logo">
         </div>
     </div>
@@ -84,10 +84,10 @@
         <span>SQL</span>
       </label>
 
-      <label class="lang-filter-chip">
+      <!-- <label class="lang-filter-chip">
         <input type="checkbox" value="python" checked>
         <span>Python</span>
-      </label>
+      </label> -->
 
       <label class="lang-filter-chip">
         <input type="checkbox" value="powershell" checked>
@@ -101,18 +101,65 @@
   </form>
 </div>
 
+<!-- FEATURED PROJECTS -->
+<section class="featuredProjects" aria-labelledby="featured-title">
+  <h1 id="featured-title">Featured Projects</h1>
+
+  <!-- Finance Manager -->
+  <div class="featuredCard">
+    <h2>Finance Manager</h2>
+    <p>A C# and SQL desktop finance tracker with bills, savings, expenses and investment tracking.</p>
+    <div class="featuredActions">
+      <button onclick="viewFinanceManager()" class="projectViewBtn">View Project</button>
+      <a href="https://github.com/JoshuaStone9/Finance-Manager" target="_blank" class="projectViewBtn">View Repository</a>
+    </div>
+    <div class="project-languages">
+      <span class="lang-circle lang-csharp">C#</span>
+      <span class="lang-circle lang-sql">SQL</span>
+    </div>
+  </div>
+
+  <!-- JWT Inspector -->
+  <div class="featuredCard">
+    <h2>JWT Inspector</h2>
+    <p>A C# CLI tool to decode and validate JWTs with HS256, RS256 and JWKS plus policy checks.</p>
+    <div class="featuredActions">
+      <button onclick="viewJwtInspectorProject()" class="projectViewBtn">View Project</button>
+      <a href="https://github.com/JoshuaStone9/JWTInspector" target="_blank" class="projectViewBtn">View Repository</a>
+    </div>
+    <div class="project-languages">
+      <span class="lang-circle lang-csharp">C#</span>
+    </div>
+  </div>
+
+  <!-- Inventory Database -->
+  <div class="featuredCard">
+    <h2>Inventory Database</h2>
+    <p>A web based inventory viewer with automation that publishes updated data from home SQL on a schedule.</p>
+    <div class="featuredActions">
+      <button onclick="viewInventoryDatabase()" class="projectViewBtn">View Project</button>
+      <a href="https://inventorydatabase.uk" target="_blank" class="projectViewBtn">View Website</a>
+    </div>
+    <div class="project-languages">
+      <span class="lang-circle lang-sql">SQL</span>
+      <span class="lang-circle lang-html">HTML</span>
+      <span class="lang-circle lang-css">CSS</span>
+      <span class="lang-circle lang-js">JavaScript</span>
+      <span class="lang-circle lang-powershell">PowerShell</span>
+    </div>
+  </div>
+</section>
+
 
 <!-- HOME NAS CONTROL PANEL -->
 <h2 class="projectHeaders" id="header-home-nas">Home NAS Control Panel</h2>
 <button onclick="viewHomeNASControlPanel()" id="btn-home-nas-view" class="projectViewBtn">View Project</button>
-<button onclick="viewHomeNASControlPanelImages()" id="btn-home-nas-images" class="projectViewBtn">View Images</button>
 <button onclick="viewHomeNASControlPanelScripts()" id="btn-home-nas-scripts" class="projectViewBtn">View Scripts</button>
 <div class="project-languages" id="langs-home-nas">
-  <span class="lang-circle lang-html">HTML</span>
-  <span class="lang-circle lang-css">CSS</span>
-  <span class="lang-circle lang-js">JavaScript</span>
+  <span class="lang-circle lang-csharp">C#</span>
   <span class="lang-circle lang-powershell">PowerShell</span>
 </div>
+
 
 <!-- NAS AUTO BACKUP -->
 <h2 class="projectHeaders" id="header-nas-auto-backup">NAS Auto Backup</h2>
@@ -120,7 +167,6 @@
 <button onclick="viewNASAutoBackupScripts()" id="btn-nas-auto-backup-scripts" class="projectViewBtn">View Scripts</button>
 <div class="project-languages" id="langs-nas-auto-backup">
   <span class="lang-circle lang-powershell">PowerShell</span>
-  <span class="lang-circle lang-python">Python</span>
 </div>
 
 <!-- DATE CHECKER -->
@@ -150,6 +196,8 @@
   <span class="lang-circle lang-sql">SQL</span>
   <span class="lang-circle lang-html">HTML</span>
   <span class="lang-circle lang-css">CSS</span>
+  <span class="lang-circle lang-js">JavaScript</span>
+  <span class="lang-circle lang-powershell">PowerShell</span>
 </div>
 
 <!-- BREADSHEET -->
@@ -178,6 +226,15 @@
 <div class="project-languages" id="langs-spendingpots">
   <span class="lang-circle lang-csharp">C#</span>
 </div>
+
+<!-- JWT INSPECTOR -->
+<h2 class="projectHeaders" id="header-jwtinspector">JWT Inspector</h2>
+<button onclick="viewJwtInspectorProject()" id="btn-jwtinspector-view" class="projectViewBtn">View Project</button>
+<a href="https://github.com/JoshuaStone9/JWTInspector" target="_blank" id="link-jwtinspector-repo" class="projectViewBtn">View Repository</a>
+<div class="project-languages" id="langs-jwtinspector">
+  <span class="lang-circle lang-csharp">C#</span>
+</div>
+
 
   <div class="externalProjects">
     <h1>External Sources</h1>
