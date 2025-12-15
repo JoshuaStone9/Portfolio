@@ -25,6 +25,47 @@
             <p><strong>To learn more about my skills, experience and professional background, you can view my CV below:</strong></p>
   <a href="documents/Joshua_Stone_CV.pdf" target="_blank" class="cvButton">View CV</a>
         </div>
+
+        <div class="techKnowledge">
+  <h2>Technical Knowledge</h2>
+
+  <p>
+    Over the past two years I have deliberately invested significant time into building strong technical depth through self directed learning and hands on development.
+    My focus has been on writing clean maintainable code and understanding how systems work beyond surface level usage.
+  </p>
+
+  <ul class="techKnowledgeList">
+    <li>
+      <strong>C# and .NET:</strong> Strong understanding of object oriented programming LINQ collections file IO error handling
+      console applications and WinForms with an emphasis on clean architecture and separation of concerns.
+    </li>
+
+    <li>
+      <strong>JavaScript:</strong> Advanced use of modern JavaScript for DOM manipulation event driven logic validation
+      and building interactive browser based tools without relying on frameworks.
+    </li>
+
+    <li>
+      <strong>HTML and CSS:</strong> Semantic accessible markup and responsive layouts with attention to structure
+      readability and user experience rather than visual hacks.
+    </li>
+
+    <li>
+      <strong>Certifications and Learning:</strong> Achieved the Microsoft C# Fundamentals certification
+      alongside several advanced courses and extensive portfolio driven learning.
+    </li>
+
+    <li>
+      <strong>Practical Application:</strong> Applied all skills through real projects including automation tools
+      CLI applications web utilities and data driven systems rather than isolated tutorials.
+    </li>
+  </ul>
+
+  <p class="techKnowledgeFooter">
+    This portfolio reflects a focus on depth consistency and real world problem solving rather than surface level familiarity.
+  </p>
+</div>
+
     </div>
         <br>
         <div>
@@ -101,12 +142,12 @@
   </form>
 </div>
 
-<!-- FEATURED PROJECTS -->
+<!-- FEATURED PROJECTS
 <section class="featuredProjects" aria-labelledby="featured-title">
-  <h1 id="featured-title">Featured Projects</h1>
+  <h1 id="featured-title">Featured Projects</h1> -->
 
   <!-- Finance Manager -->
-  <div class="featuredCard">
+  <!-- <div class="featuredCard">
     <h2>Finance Manager</h2>
     <p>A C# and SQL desktop finance tracker with bills, savings, expenses and investment tracking.</p>
     <div class="featuredActions">
@@ -117,10 +158,10 @@
       <span class="lang-circle lang-csharp">C#</span>
       <span class="lang-circle lang-sql">SQL</span>
     </div>
-  </div>
+  </div> -->
 
   <!-- JWT Inspector -->
-  <div class="featuredCard">
+  <!-- <div class="featuredCard">
     <h2>JWT Inspector</h2>
     <p>A C# CLI tool to decode and validate JWTs with HS256, RS256 and JWKS plus policy checks.</p>
     <div class="featuredActions">
@@ -130,10 +171,10 @@
     <div class="project-languages">
       <span class="lang-circle lang-csharp">C#</span>
     </div>
-  </div>
+  </div> -->
 
   <!-- Inventory Database -->
-  <div class="featuredCard">
+  <!-- <div class="featuredCard">
     <h2>Inventory Database</h2>
     <p>A web based inventory viewer with automation that publishes updated data from home SQL on a schedule.</p>
     <div class="featuredActions">
@@ -148,48 +189,42 @@
       <span class="lang-circle lang-powershell">PowerShell</span>
     </div>
   </div>
-</section>
-
-
-<!-- HOME NAS CONTROL PANEL -->
-<h2 class="projectHeaders" id="header-home-nas">Home NAS Control Panel</h2>
-<button onclick="viewHomeNASControlPanel()" id="btn-home-nas-view" class="projectViewBtn">View Project</button>
-<button onclick="viewHomeNASControlPanelScripts()" id="btn-home-nas-scripts" class="projectViewBtn">View Scripts</button>
-<div class="project-languages" id="langs-home-nas">
-  <span class="lang-circle lang-csharp">C#</span>
-  <span class="lang-circle lang-powershell">PowerShell</span>
-</div>
-
-
-<!-- NAS AUTO BACKUP -->
-<h2 class="projectHeaders" id="header-nas-auto-backup">NAS Auto Backup</h2>
-<button onclick="viewNASAutoBackup()" id="btn-nas-auto-backup-view" class="projectViewBtn">View Project</button>
-<button onclick="viewNASAutoBackupScripts()" id="btn-nas-auto-backup-scripts" class="projectViewBtn">View Scripts</button>
-<div class="project-languages" id="langs-nas-auto-backup">
-  <span class="lang-circle lang-powershell">PowerShell</span>
-</div>
-
-<!-- DATE CHECKER -->
-<h2 class="projectHeaders" id="header-date-checker">Date Checker</h2>
-<button onclick="viewDateChecker()" id="btn-date-checker-view" class="projectViewBtn">View Project</button>
-<a href="https://date-checker-costa.web.app/" target="_blank" id="link-date-checker-site" class="projectViewBtn">View Website</a>
-<div class="project-languages" id="langs-date-checker">
-  <span class="lang-circle lang-html">HTML</span>
-  <span class="lang-circle lang-css">CSS</span>
-  <span class="lang-circle lang-js">JavaScript</span>
-</div>
+</section> -->
 
 <!-- FINANCE MANAGER -->
 <h2 class="projectHeaders" id="header-finance-manager">Finance Manager</h2>
+<p class="projectDesc">A C# WinForms and SQL finance tracker for bills savings extra expenses investments and totals.</p>
 <button onclick="viewFinanceManager()" id="btn-finance-manager-view" class="projectViewBtn">View Project</button>
 <a href="https://github.com/JoshuaStone9/Finance-Manager" target="_blank" id="link-finance-manager-repo" class="projectViewBtn">View Repository</a>
 <div class="project-languages" id="langs-finance-manager">
   <span class="lang-circle lang-csharp">C#</span>
+  <span class="lang-circle lang-winforms">WinForms</span>
   <span class="lang-circle lang-sql">SQL</span>
+</div>
+
+<!-- JWT INSPECTOR -->
+<h2 class="projectHeaders" id="header-jwtinspector">JWT Inspector</h2>
+<p class="projectDesc">A C# CLI tool that decodes and validates JWTs using HS256 RS256 or JWKS plus claim policy checks.</p>
+<button onclick="viewJwtInspectorProject()" id="btn-jwtinspector-view" class="projectViewBtn">View Project</button>
+<a href="https://github.com/JoshuaStone9/JWTInspector" target="_blank" id="link-jwtinspector-repo" class="projectViewBtn">View Repository</a>
+<div class="project-languages" id="langs-jwtinspector">
+  <span class="lang-circle lang-csharp">C#</span>
+  <span class="lang-circle lang-cli">CLI</span>
+</div>
+
+<!-- SPENDING POTS MANAGER -->
+<h2 class="projectHeaders" id="header-spendingpots">Spending Pots Manager</h2>
+<p class="projectDesc">A C# console budgeting tool that manages spending pots with file persistence and Plaid sandbox sync.</p>
+<button onclick="viewSpendingPotsProject()" id="btn-spendingpots-view" class="projectViewBtn">View Project</button>
+<a href="https://github.com/JoshuaStone9/SpendingPots" target="_blank" id="link-spendingpots-repo" class="projectViewBtn">View Repository</a>
+<div class="project-languages" id="langs-spendingpots">
+  <span class="lang-circle lang-csharp">C#</span>
+  <span class="lang-circle lang-cli">CLI</span>
 </div>
 
 <!-- INVENTORY DATABASE -->
 <h2 class="projectHeaders" id="header-inventory-database">Inventory Database</h2>
+<p class="projectDesc">A web based inventory viewer that publishes updated data from a home SQL source on a schedule.</p>
 <button onclick="viewInventoryDatabase()" id="btn-inventory-database-view" class="projectViewBtn">View Project</button>
 <a href="https://inventorydatabase.uk" target="_blank" id="link-inventory-database-site" class="projectViewBtn">View Website</a>
 <div class="project-languages" id="langs-inventory-database">
@@ -200,8 +235,48 @@
   <span class="lang-circle lang-powershell">PowerShell</span>
 </div>
 
+<!-- MEAL PLANNER -->
+<h2 class="projectHeaders" id="header-meal-planner-cli">Meal Planner</h2>
+<p class="projectDesc">A C# console meal planner that generates weekly plans from categories with restocking and saving.</p>
+<button onclick="viewMealPlannerProject()" id="btn-meal-planner-cli-view" class="projectViewBtn">View Project</button>
+<a href="https://github.com/JoshuaStone9/MealPlannerCLI" target="_blank" id="link-meal-planner-cli-repo" class="projectViewBtn">View Repository</a>
+<div class="project-languages" id="langs-meal-planner-cli">
+  <span class="lang-circle lang-csharp">C#</span>
+  <span class="lang-circle lang-cli">CLI</span>
+</div>
+
+<!-- TODO LIST -->
+<h2 class="projectHeaders" id="header-todo">To Do List Application</h2>
+<p class="projectDesc">A C# console to do app with a menu for adding editing completing and deleting tasks with categories.</p>
+<button onclick="viewToDoList()" id="btn-todo-view" class="projectViewBtn">View Project</button>
+<a href="https://github.com/JoshuaStone9/ToDoApp" target="_blank" id="link-todo-repo" class="projectViewBtn">View Repository</a>
+<div class="project-languages" id="langs-todo">
+  <span class="lang-circle lang-csharp">C#</span>
+  <span class="lang-circle lang-cli">CLI</span>
+</div>
+
+<!-- HOME NAS CONTROL PANEL -->
+<h2 class="projectHeaders" id="header-home-nas">Home NAS Control Panel</h2>
+<p class="projectDesc">A Windows Forms control panel that runs PowerShell scripts for reliable NAS transfers with logging.</p>
+<button onclick="viewHomeNASControlPanel()" id="btn-home-nas-view" class="projectViewBtn">View Project</button>
+<button onclick="viewHomeNASControlPanelScripts()" id="btn-home-nas-scripts" class="projectViewBtn">View Scripts</button>
+<div class="project-languages" id="langs-home-nas">
+  <span class="lang-circle lang-powershell">PowerShell</span>
+</div>
+
+
+<!-- NAS AUTO BACKUP -->
+<h2 class="projectHeaders" id="header-nas-auto-backup">NAS Auto Backup</h2>
+<p class="projectDesc">A startup PowerShell automation that detects an external drive and creates timestamped backups with logs.</p>
+<button onclick="viewNASAutoBackup()" id="btn-nas-auto-backup-view" class="projectViewBtn">View Project</button>
+<button onclick="viewNASAutoBackupScripts()" id="btn-nas-auto-backup-scripts" class="projectViewBtn">View Scripts</button>
+<div class="project-languages" id="langs-nas-auto-backup">
+  <span class="lang-circle lang-powershell">PowerShell</span>
+</div>
+
 <!-- BREADSHEET -->
 <h2 class="projectHeaders" id="header-breadsheet">Breadsheet</h2>
+<p class="projectDesc">A simple web app that replaces a paper stock log with a faster digital sheet and auto dates.</p>
 <button onclick="viewBreadsheet()" id="btn-breadsheet-view" class="projectViewBtn">View Project</button>
 <a href="https://breadsheet-8de43.web.app/" target="_blank" id="link-breadsheet-site" class="projectViewBtn">View Website</a>
 <div class="project-languages" id="langs-breadsheet">
@@ -210,30 +285,40 @@
   <span class="lang-circle lang-js">JavaScript</span>
 </div>
 
-<!-- TODO LIST -->
-<h2 class="projectHeaders" id="header-todo">To Do List Application</h2>
-<button onclick="viewToDoList()" id="btn-todo-view" class="projectViewBtn">View Project</button>
-<a href="https://github.com/JoshuaStone9/ToDoApp" target="_blank" id="link-todo-repo" class="projectViewBtn">View Repository</a>
-<div class="project-languages" id="langs-todo">
-  <span class="lang-circle lang-csharp">C#</span>
-  <span class="lang-circle lang-sql">SQL</span>
+<!-- DATE CHECKER -->
+<h2 class="projectHeaders" id="header-date-checker">Date Checker</h2>
+<p class="projectDesc">A lightweight web tool that generates the correct product dates instantly to speed up workflow.</p>
+<button onclick="viewDateChecker()" id="btn-date-checker-view" class="projectViewBtn">View Project</button>
+<a href="https://date-checker-costa.web.app/" target="_blank" id="link-date-checker-site" class="projectViewBtn">View Website</a>
+<div class="project-languages" id="langs-date-checker">
+  <span class="lang-circle lang-html">HTML</span>
+  <span class="lang-circle lang-css">CSS</span>
+  <span class="lang-circle lang-js">JavaScript</span>
 </div>
 
-<!-- SPENDING POTS MANAGER -->
-<h2 class="projectHeaders" id="header-spendingpots">Spending Pots Manager</h2>
-<button onclick="viewSpendingPotsProject()" id="btn-spendingpots-view" class="projectViewBtn">View Project</button>
-<a href="https://github.com/JoshuaStone9/SpendingPots" target="_blank" id="link-spendingpots-repo" class="projectViewBtn">View Repository</a>
-<div class="project-languages" id="langs-spendingpots">
+
+<!-- RUSSIAN ROULETTE -->
+<h2 class="projectHeaders" id="header-russianroulette">Russian Roulette</h2>
+<p class="projectDesc">A C# console game that uses shuffling and player input to simulate a six chamber chance outcome.</p>
+<button onclick="viewRussianRouletteProject()" id="btn-russianroulette-view" class="projectViewBtn">View Project</button>
+<a href="https://github.com/JoshuaStone9/RussianRoulette" target="_blank" id="link-russianroulette-repo" class="projectViewBtn">View Repository</a>
+<div class="project-languages" id="langs-russianroulette">
   <span class="lang-circle lang-csharp">C#</span>
+  <span class="lang-circle lang-cli">CLI</span>
 </div>
 
-<!-- JWT INSPECTOR -->
-<h2 class="projectHeaders" id="header-jwtinspector">JWT Inspector</h2>
-<button onclick="viewJwtInspectorProject()" id="btn-jwtinspector-view" class="projectViewBtn">View Project</button>
-<a href="https://github.com/JoshuaStone9/JWTInspector" target="_blank" id="link-jwtinspector-repo" class="projectViewBtn">View Repository</a>
-<div class="project-languages" id="langs-jwtinspector">
-  <span class="lang-circle lang-csharp">C#</span>
+
+<!-- SURVEY FORM -->
+<h2 class="projectHeaders" id="header-survey-form">Survey Form</h2>
+<p class="projectDesc">A responsive HTML and CSS survey form with validation and multiple input types for feedback.</p>
+<button onclick="viewSurveyFormProject()" id="btn-survey-form-view" class="projectViewBtn">View Project</button>
+<a href="https://github.com/JoshuaStone9/SurveyForm" target="_blank" id="link-survey-form-repo" class="projectViewBtn">View Repository</a>
+<div class="project-languages" id="langs-survey-form">
+  <span class="lang-circle lang-html">HTML</span>
+  <span class="lang-circle lang-css">CSS</span>
 </div>
+
+
 
 
   <div class="externalProjects">

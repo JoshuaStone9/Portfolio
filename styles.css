@@ -230,6 +230,59 @@ p, li {
   -webkit-backdrop-filter: blur(20px) saturate(130%);
 }
 
+.projectDesc {
+  margin: 6px auto 10px;
+  max-width: 900px;
+  color: #cbd5f5;
+  opacity: 0.95;
+}
+
+.techKnowledge {
+  margin-top: 26px;
+  padding: 22px 26px;
+  border-radius: 22px;
+  background: rgba(15,23,42,0.85);
+  border: 1px solid rgba(148,163,184,0.6);
+  box-shadow: 0 16px 36px rgba(15,23,42,0.95);
+  backdrop-filter: blur(18px) saturate(130%);
+  -webkit-backdrop-filter: blur(18px) saturate(130%);
+}
+
+.techKnowledge h2 {
+  margin-bottom: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #bfdbfe;
+}
+
+.techKnowledge p {
+  margin-bottom: 12px;
+  color: #cbd5f5;
+}
+
+.techKnowledgeList {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0;
+}
+
+.techKnowledgeList li {
+  margin-bottom: 12px;
+  padding-left: 16px;
+  border-left: 3px solid rgba(59,130,246,0.6);
+}
+
+.techKnowledgeList strong {
+  color: #fbbf24;
+}
+
+.techKnowledgeFooter {
+  margin-top: 14px;
+  font-style: italic;
+  color: #9ca3af;
+}
+
+
 .projectProgrammingLanguage {
   font-weight: 700;
 }
@@ -558,6 +611,28 @@ p, li {
     #0ea5e9
   );
 }
+
+.lang-winforms {
+  background-image: conic-gradient(
+    from 210deg,
+    #38bdf8,
+    #0ea5e9,
+    #1d4ed8,
+    #38bdf8
+  );
+}
+
+/* For generic CLI / terminal-style tools */
+.lang-cli {
+  background-image: conic-gradient(
+    from 210deg,
+    #4b5563,
+    #111827,
+    #6b7280,
+    #4b5563
+  );
+}
+
 
 /* ===== Accessible language filter chips ===== */
 

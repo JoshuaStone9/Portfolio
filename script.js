@@ -675,6 +675,251 @@ function viewJwtInspectorProject() {
   `;
 }
 
+function viewRussianRouletteProject() {
+  const openPopUp = document.querySelector(".popup-wrapper");
+  openPopUp.classList.remove("hidden");
+  const projectInfo = document.querySelector(".projectInfo");
+
+  projectInfo.innerHTML = `
+    <h1>Russian Roulette</h1>
+    <h2>Project Overview</h2>
+    <h3>Created with C# as a .NET Console Application using arrays randomization and control flow</h3>
+
+    <p>
+      Russian Roulette CLI is a simple interactive console game that simulates a game of chance using a six chamber revolver.
+      The player selects a chamber number and lets fate decide whether they survive or are eliminated.
+      The program introduces randomness by shuffling chambers and comparing player input against a randomly selected outcome.
+    </p>
+
+    <p>
+      The application focuses on understanding randomness conditional logic and user interaction in a terminal based environment.
+    </p>
+
+    <h3>Why?</h3>
+    <p>
+      I built this project to practice foundational C# programming concepts in a fun and engaging way.
+      The goal was to explore how randomness and user input can influence program flow and outcomes while keeping the logic easy to follow and reason about.
+      This project helped reinforce how small design decisions affect gameplay logic and user experience.
+    </p>
+
+    <h3>Implementation Details</h3>
+    <p>
+      The application is written as a C# console application using .NET.
+    </p>
+    <ul>
+      <li>A fixed array represents the six chambers of a revolver</li>
+      <li>The chambers are displayed to the player for context</li>
+      <li>The player inputs a number corresponding to a chamber</li>
+      <li>A random shuffle algorithm Fisher Yates is used to randomize chamber order</li>
+      <li>Conditional checks determine whether the selected chamber contains the fatal outcome</li>
+    </ul>
+
+    <p>
+      The program uses arrays for fixed size data and Random for nondeterministic behavior and string comparison for user choice validation and console input output for interaction.
+    </p>
+
+    <h3>Features</h3>
+    <ul>
+      <li><b>Six chamber revolver simulation</b> with clear outcomes</li>
+      <li><b>Randomized chamber order</b> each run using a shuffle</li>
+      <li><b>User driven input</b> to select a chamber</li>
+      <li><b>Win or lose results</b> printed directly to the console</li>
+      <li><b>Dramatic pacing</b> using prompts and pauses</li>
+      <li><b>Readable output</b> designed for quick feedback</li>
+    </ul>
+
+    <h3>Console Interface</h3>
+    <ul>
+      <li>Displays active chambers</li>
+      <li>Prompts the user to select a number</li>
+      <li>Reveals survival or death outcome</li>
+      <li>Uses suspense based messaging</li>
+      <li>Terminates cleanly after the result</li>
+    </ul>
+
+    <h3>Future Improvements</h3>
+    <ul>
+      <li>Replace string based input with numeric parsing and validation</li>
+      <li>Allow multiple rounds without restarting the application</li>
+      <li>Track player statistics wins and losses</li>
+      <li>Add difficulty modes with multiple bullets and changing chamber counts</li>
+      <li>Improve randomness by hiding chamber positions from the user</li>
+      <li>Add ASCII art or sound effects for atmosphere</li>
+    </ul>
+
+    <h3>Personal Development</h3>
+    <p>
+      This project helped me strengthen my understanding of randomization algorithms and control flow with conditionals and console based user interaction and handling user input safely and structuring small programs for clarity.
+    </p>
+  `;
+}
+
+function viewMealPlannerProject() {
+  const openPopUp = document.querySelector(".popup-wrapper");
+  openPopUp.classList.remove("hidden");
+  const projectInfo = document.querySelector(".projectInfo");
+
+  projectInfo.innerHTML = `
+    <h1>Meal Planner</h1>
+    <h2>Project Overview</h2>
+    <h3>Created with C# as a .NET Console Application using object oriented design principles and collection handling</h3>
+
+    <p>
+      Meal Planner CLI is an interactive console application that generates weekly meal plans by randomly assigning meals to days of the week.
+      It supports multiple meal categories and allows reuse of existing meals and enables adding custom meals at runtime and can persist weekly plans to a text file.
+    </p>
+
+    <p>
+      The application focuses on clean user interaction and safe input handling and separation of concerns between planning logic and domain models.
+    </p>
+
+    <h3>Why?</h3>
+    <p>
+      I built this project to practice core C# concepts in a practical stateful console application.
+      The goal was to go beyond basic lists and loops and explore object oriented modeling with inheritance and managing mutable vs reusable data and input validation and control flow and randomized selection while avoiding duplicates and designing reusable application logic.
+      It also served as a hands on way to understand how consuming data differs from maintaining a reusable catalog.
+    </p>
+
+    <h3>Implementation Details</h3>
+    <p>
+      The application is written as a C# console application using .NET.
+      Meals are represented using an abstract Meal base class with concrete derived types such as PastaMeal CurryMeal BurgerMeal and CustomMeal.
+    </p>
+
+    <ul>
+      <li>Catalog meals as a reusable library of known meals</li>
+      <li>Stock meals as a consumable list used to generate weekly plans</li>
+      <li>Weekly plans are generated by randomly selecting meals from the stock list and assigning them to weekdays</li>
+      <li>Selected meals are removed to prevent duplication within the same week</li>
+      <li>Safe parsing and clear validation paths reduce crashes</li>
+    </ul>
+
+    <p>
+      Users can generate multiple weeks and restock meals when needed and add new custom meals and reuse existing meals from the catalog and save weekly plans to a txt file.
+    </p>
+
+    <h3>Features</h3>
+    <ul>
+      <li><b>Generate weekly meal plans</b> from Sunday through Saturday</li>
+      <li><b>Random meal assignment</b> with no duplicates per week</li>
+      <li><b>Multiple meal categories</b> using inheritance</li>
+      <li><b>Reusable meal catalog</b> with cloning for safe reuse</li>
+      <li><b>Custom meal creation</b> at runtime</li>
+      <li><b>Restock logic</b> triggered only when needed</li>
+      <li><b>Save weekly plans</b> to a TXT file</li>
+      <li><b>Clean console output</b> for readability</li>
+      <li><b>Safe input validation</b> for numeric and string values</li>
+    </ul>
+
+    <h3>Console Interface</h3>
+    <p>Adding Soon!</p>
+
+    <h3>Future Improvements</h3>
+    <ul>
+      <li>Add meal tags such as vegetarian quick and spicy</li>
+      <li>Support multiple saved meal plans with timestamps</li>
+      <li>Allow numbered selection instead of name based selection</li>
+      <li>Add JSON export alongside TXT</li>
+      <li>Persist catalog meals between sessions</li>
+      <li>Add unit tests for planner logic</li>
+    </ul>
+
+    <h3>Personal Development</h3>
+    <p>
+      This project significantly improved my understanding of object oriented design and inheritance in C# and managing state across multiple iterations and the difference between reference reuse and cloning and designing console applications with clear user flow and defensive programming and input validation and separating domain logic from UI concerns.
+      It also reinforced good habits around incremental refactoring and designing for extensibility rather than hardcoded logic.
+    </p>
+  `;
+}
+
+
+function viewSurveyFormProject() {
+  const openPopUp = document.querySelector(".popup-wrapper");
+  openPopUp.classList.remove("hidden");
+  const projectInfo = document.querySelector(".projectInfo");
+
+  projectInfo.innerHTML = `
+    <h1>Survey Form Web Project</h1>
+    <h2>Project Overview</h2>
+    <h3>Created with HTML and CSS as a static web page focusing on form structure accessibility and visual styling</h3>
+
+    <p>
+      Survey Form is a responsive web form designed to collect user information and feedback through a variety of input types including text fields email input number validation dropdowns radio buttons checkboxes and a textarea.
+      The project emphasizes semantic HTML structure and custom CSS styling to create a clean and user friendly interface.
+    </p>
+
+    <p>
+      The form is built to guide users step by step through the survey while enforcing basic validation rules directly in the browser.
+    </p>
+
+    <h3>Why?</h3>
+    <p>
+      I built this project to practice core front end fundamentals and form design.
+      Forms are one of the most common ways users interact with websites and understanding how to structure them correctly is essential for web development.
+      This project helped me explore how HTML and CSS work together to create both functional and visually appealing user interfaces without relying on JavaScript or frameworks.
+    </p>
+
+    <h3>Implementation Details</h3>
+    <p>
+      The application is implemented as a static HTML page styled with CSS.
+    </p>
+
+    <h4>HTML</h4>
+    <ul>
+      <li>Uses semantic elements such as form fieldset legend label and input</li>
+      <li>Built in validation via attributes like required type email min and max</li>
+      <li>Multiple input types including text email number dropdown radio buttons checkboxes and textarea</li>
+      <li>Clear separation of sections using dividers and headings</li>
+    </ul>
+
+    <h4>CSS</h4>
+    <ul>
+      <li>Gradient background using linear gradient</li>
+      <li>Custom styling for form layout and spacing</li>
+      <li>Visual separators created with styled horizontal dividers</li>
+      <li>Consistent input styling via shared classes</li>
+      <li>Focus on readability and alignment</li>
+    </ul>
+
+    <p>
+      The project does not use JavaScript relying instead on native browser validation and clean markup.
+    </p>
+
+    <h3>Features</h3>
+    <ul>
+      <li><b>Responsive viewport support</b> for different screen sizes</li>
+      <li><b>User input validation</b> with HTML attributes</li>
+      <li><b>Multiple question types</b> for structured data collection</li>
+      <li><b>Grouped questions</b> using fieldsets</li>
+      <li><b>Clear section separation</b> for improved UX</li>
+      <li><b>Custom styling</b> with gradients and borders</li>
+      <li><b>Accessible labels</b> for form inputs</li>
+      <li><b>Simple submit workflow</b> using standard form submission</li>
+    </ul>
+
+    <h3>User Interface</h3>
+    <p>Adding Soon!</p>
+
+    <h3>Future Improvements</h3>
+    <ul>
+      <li>Fix duplicated id values to improve HTML validity</li>
+      <li>Improve radio button grouping and naming consistency</li>
+      <li>Add JavaScript for client side enhancements</li>
+      <li>Add success and error messages after submission</li>
+      <li>Improve responsive layout for mobile devices</li>
+      <li>Add accessibility improvements using ARIA attributes</li>
+      <li>Connect the form to a backend or API endpoint</li>
+    </ul>
+
+    <h3>Personal Development</h3>
+    <p>
+      This project helped me strengthen my understanding of semantic HTML structure and form validation without JavaScript and CSS layout and styling techniques and accessibility basics with labels and inputs and organizing UI elements for clarity and building user facing interfaces from scratch.
+      It also reinforced the importance of clean markup and consistent naming and thinking about how users interact with forms in real world applications.
+    </p>
+  `;
+}
+
+
 
 
 function closePopup() {
