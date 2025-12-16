@@ -919,6 +919,76 @@ function viewSurveyFormProject() {
   `;
 }
 
+
+function viewCoinConverter() {
+  const openPopUp = document.querySelector(".popup-wrapper");
+  openPopUp.classList.remove("hidden");
+  const projectInfo = document.querySelector(".projectInfo");
+
+  projectInfo.innerHTML = `
+    <h1>Coin Converter</h1>
+
+    <h2>Project Overview</h2>
+    <h3>Created With HTML, CSS, JavaScript</h3>
+
+    <p>
+      Coin Converter is a simple web-based application designed to help users quickly
+      calculate the total monetary value of coin bags based on UK coin denominations.
+      The project focuses on usability, clarity, and clean logic while reinforcing
+      core front-end development principles.
+    </p>
+
+    <h3>Why?</h3>
+    <p>
+      I created Coin Converter to strengthen my understanding of JavaScript event handling,
+      DOM manipulation, and form validation. I wanted to build a practical tool that solves
+      a real-world problem while remaining lightweight and intuitive. This project helped
+      me gain confidence working with user input, calculations, and dynamic UI updates.
+    </p>
+
+    <h3>Implementation Details</h3>
+    <p>
+      Coin Converter is built using plain HTML, CSS, and JavaScript without external
+      frameworks. The application listens for form submission events, validates user input,
+      and uses a switch statement to determine the value of each coin bag. Results are
+      displayed dynamically, and each conversion is logged with a timestamp for reference.
+    </p>
+
+    <h3>Features</h3>
+    <ul>
+      <li><b>Coin Bag Conversion:</b> Calculates the total monetary value based on selected UK coin denominations.</li>
+      <li><b>Input Validation:</b> Prevents invalid or negative values from being processed.</li>
+      <li><b>Real-Time Results:</b> Displays conversion output instantly without page reloads.</li>
+      <li><b>Conversion History:</b> Logs previous conversions with date and time for tracking.</li>
+      <li><b>Clean User Interface:</b> Simple, responsive layout styled with CSS for readability.</li>
+    </ul>
+
+    <h3>User Interface</h3>
+   <p>Adding Soon!</p>
+
+
+    <h3>Future Improvements</h3>
+    <ul>
+      <li>Add support for additional currencies and denominations.</li>
+      <li>Introduce persistent storage for conversion history using localStorage.</li>
+      <li>Improve mobile responsiveness and accessibility.</li>
+      <li>Add unit testing for conversion logic.</li>
+    </ul>
+
+    <h3>Personal Development</h3>
+    <p>
+      This project strengthened my JavaScript fundamentals, particularly working with
+      conditional logic, DOM updates, and form events. It also reinforced the importance
+      of input validation and user experience when handling numeric data.
+    </p>
+    <p>
+      Coin Converter was a valuable stepping stone toward building more complex
+      front-end applications and has improved my confidence in writing clean,
+      maintainable JavaScript code.
+    </p>
+  `;
+}
+
 function viewPasswordGeneratorProject() {
   const openPopUp = document.querySelector(".popup-wrapper");
   openPopUp.classList.remove("hidden");
