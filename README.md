@@ -12,6 +12,7 @@ A personal portfolio site that highlights projects, technical experience and ext
 - [Randomization Logic](#randomization-logic)
 - [Console Interface](#console-interface)
 - [How to Run](#how-to-run)
+- [Active Website](#active-website)
 - [Potential Improvements](#potential-improvements)
 - [Personal Development](#personal-development)
 
@@ -19,9 +20,9 @@ A personal portfolio site that highlights projects, technical experience and ext
 
 ## Overview
 
-Portfolio Website is a single page personal site designed to present a professional profile, featured skills and a curated list of projects.
+Portfolio Website is a single page personal site designed to present a professional profile, featured skills and a curated list of projects, published as a live GitHub Pages site.
 
-Visitors can browse projects, open detailed popups and filter the project list by language or platform.
+Visitors can browse projects, open detailed popups and filter the project list by language or platform, whether they access the live site or the local copy.
 
 ---
 
@@ -101,6 +102,7 @@ Requirements
 Any modern web browser  
 
 Open the site  
+- Visit the live site at `https://www.joshuastoneportfolio.it.com`, or
 - Open `index.html` directly in a browser, or
 - Run a local server and navigate to the page
 
@@ -110,6 +112,10 @@ python3 -m http.server
 ```
 
 ---
+
+## Active Website
+
+The portfolio is live at `https://www.joshuastoneportfolio.it.com` and runs 24/7. It is hosted on GitHub Pages and stays updated whenever this repository changes.
 
 ## Potential Improvements
 
