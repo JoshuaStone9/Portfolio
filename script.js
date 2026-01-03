@@ -678,6 +678,90 @@ function viewJwtInspectorProject() {
   `;
 }
 
+function viewOrderDataServiceProject() {
+  const openPopUp = document.querySelector(".popup-wrapper");
+  openPopUp.classList.remove("hidden");
+  const projectInfo = document.querySelector(".projectInfo");
+
+  projectInfo.innerHTML = `
+    <h1>OrderDataService</h1>
+    <h2>Project Overview</h2>
+    <h3>Created with C#, SQLite, and a CLI workflow</h3>
+
+    <p>
+      OrderDataService is a C# console application that manages customers, orders, 
+      and order items using a SQLite database combined with in memory dictionary caching.
+      It provides a fast command line interface for creating, viewing, and deleting data
+      without a UI layer.
+    </p>
+
+    <h3>Why?</h3>
+    <p>
+      I built this project as part of my personal development in C# to practice CRUD flows,
+      relational data modeling, and efficient data access. The project focuses on writing
+      data to SQLite and then loading that data into dictionaries for quick lookups and
+      clear program flow.
+    </p>
+
+    <h3>Implementation Details</h3>
+    <p>
+      The application connects to a SQLite database using parameterized SQL commands
+      and enforces relational integrity with foreign keys and cascading deletes.
+      On startup, data is loaded into dictionary based caches to support fast lookups
+      and in memory operations using C# collections.
+    </p>
+
+    <h3>Features</h3>
+    <ul>
+      <li><b>CRUD operations:</b> Create, read, and delete customers, orders, and order items.</li>
+      <li><b>Dictionary backed cache:</b> Customers, orders, and items are stored in memory for fast access.</li>
+      <li><b>Search and lookup:</b> Find customers by email and view orders by customer ID.</li>
+      <li><b>Lambda queries:</b> Use FindAll to locate orders after a date and items with quantity greater than two.</li>
+      <li><b>SQLite persistence:</b> Data is stored locally and persists between runs.</li>
+    </ul>
+
+    <h3>Console Interface</h3>
+    <img src="images/OrderDataService_img_1.png" id="OrderDataServiceCLI" alt="Order Data Service CLI">
+
+    <h3>Future Improvements</h3>
+    <ul>
+      <li>Add update flows for customers, orders, and items.</li>
+      <li>Introduce async database operations.</li>
+      <li>Add reporting features such as totals by customer.</li>
+      <li>Expand validation and error handling.</li>
+    </ul>
+
+    <h3>Personal Development</h3>
+
+    <p>
+      This project was created as part of my ongoing personal development in C# and software development.
+      As I continue to learn more about C# through hands on projects and online learning resources
+      I apply that knowledge directly to my work.
+    </p>
+
+    <p>
+      The project focuses on core concepts such as CRUD operations SQL backed data models and in memory
+      caching using dictionaries within a console based C# application. By building real features that
+      create read update and delete data I have strengthened my understanding of how C# works with
+      relational databases and how data can be managed efficiently in memory.
+    </p>
+
+    <p>
+      During development I used key C# and .NET features including collections lambda expressions
+      predicates and clear separation of responsibilities. This project shows my ability to take
+      what I learn through continuous study and apply it in practical ways while improving my
+      technical skills and problem solving ability.
+    </p>
+
+    <p>
+      As I continue learning and building more projects this application serves as a strong foundation
+      that I can improve and expand over time.
+    </p>
+
+  `;
+}
+
+
 function viewRussianRouletteProject() {
   const openPopUp = document.querySelector(".popup-wrapper");
   openPopUp.classList.remove("hidden");
