@@ -6,7 +6,7 @@ function viewFinanceManager() {
   projectInfo.innerHTML = `
     <h1>Finance Manager</h1>
     <h2>Project Overview</h2>
-    <h3>Created With C#, SQL</h3>
+    <h3>Created With C# .NET, WinForms & SQL</h3>
 <p>
   I designed this finance tracker to assist users in everyday life. It includes multiple features that help users manage money
   and track spending and identify potential savings. This project is still under active development so it can improve and adapt
@@ -76,7 +76,7 @@ function viewBreadsheet() {
   projectInfo.innerHTML = `
     <h1>Breadsheet</h1>
     <h2>Project Overview</h2>
-    <h3>Created With HTML, CSS, JavaScript, Firebase Hosting</h3>
+    <h3>Created With HTML, CSS, JavaScript and Firebase Hosting</h3>
     <p>
       I designed Breadsheet to help log dated stock in my current role. Although the company already used a paper version
       I chose to rebuild it digitally with added features to improve efficiency and reduce waste. The digital version also
@@ -136,7 +136,7 @@ function viewHomeNASControlPanel() {
   projectInfo.innerHTML = `
     <h1>Home NAS Control Panel</h1>
     <h2>Project Overview</h2>
-    <h3>Created with C# and PowerShell Scripts</h3>
+    <h3>Created With PowerShell</h3>
 
     <p>
       The <b>Home NAS Control Panel</b> is a custom Windows Forms application designed to simplify
@@ -219,6 +219,7 @@ function viewDateChecker() {
   projectInfo.innerHTML = `
     <h1>Date Checker</h1>
     <h2>Project Overview</h2>
+    <h3>Built with HTML, CSS and JavaScript</h3>
    <p>
       Date Checker is a simple web tool created to speed up the process of assigning stock dates at work.
       Previously this relied on manual checks or voice assistants. This tool provides instant accurate dates
@@ -274,6 +275,7 @@ function viewNASAutoBackup() {
     <section id="nas-auto-backup" aria-labelledby="nabs-title">
       <h1 id="nabs-title">NAS Auto-Backup PowerShell Script</h1>
       <h2>Project Overview</h2>
+      <h3>Created With PowerShell</h3>
 
       <article>
         <p>
@@ -354,7 +356,7 @@ function viewInventoryDatabase() {
     <h1>Inventory Database</h1>
 
     <h2>Project Overview</h2>
-    <h3>Created with HTML, JavaScript, SQL, Excel Spreadsheets & PowerShell Scripts</h3>
+    <h3>Created with HTML, JavaScript, SQL, Excel Spreadsheets & PowerShell</h3>
 
     <p>
       In this project, I developed a web-based inventory database that allows
@@ -434,7 +436,7 @@ function viewToDoList() {
     <h1>To Do List Application</h1>
 
     <h2>Project Overview</h2>
-    <h3>Created with C# (.NET), Object-Oriented Programming Principles & Console UI</h3>
+    <h3>Created with C# .NET CLI</h3>
 
     <p>
       This project is a fully interactive and console-based To Do List Application designed to help users
@@ -517,7 +519,7 @@ function viewSpendingPotsProject() {
     <h1>Spending Pots Manager</h1>
 
     <h2>Project Overview</h2>
-    <h3>Created with C#, .NET Console Application & Plaid API (Sandbox Environment)</h3>
+    <h3>Created with C# .NET CLI & Plaid API (Sandbox Environment)</h3>
 
     <p>
       This project is a console-based financial management application designed to help users
@@ -623,7 +625,7 @@ function viewJwtInspectorProject() {
   projectInfo.innerHTML = `
     <h1>JWT Inspector</h1>
     <h2>Project Overview</h2>
-    <h3>Created with C#, .NET Console Application and JWT validation</h3>
+    <h3>Created with C# .NET CLI</h3>
 
     <p>
       JWT Inspector is a developer-focused CLI tool for inspecting JSON Web Tokens (JWTs). It can decode tokens and validate them using
@@ -684,12 +686,12 @@ function viewOrderDataServiceProject() {
   const projectInfo = document.querySelector(".projectInfo");
 
   projectInfo.innerHTML = `
-    <h1>OrderDataService</h1>
+    <h1>Order Data Service</h1>
     <h2>Project Overview</h2>
-    <h3>Created with C#, SQLite, and a CLI workflow</h3>
+    <h3>Created with C# .NET CLI and SQLite</h3>
 
     <p>
-      OrderDataService is a C# console application that manages customers, orders, 
+      Order Data Service is a C# console application that manages customers, orders, 
       and order items using a SQLite database combined with in memory dictionary caching.
       It provides a fast command line interface for creating, viewing, and deleting data
       without a UI layer.
@@ -770,7 +772,7 @@ function viewRussianRouletteProject() {
   projectInfo.innerHTML = `
     <h1>Russian Roulette</h1>
     <h2>Project Overview</h2>
-    <h3>Created with C# as a .NET Console Application using arrays randomization and control flow</h3>
+    <h3>Created with C# .NET CLI</h3>
 
     <p>
       Russian Roulette CLI is a simple interactive console game that simulates a game of chance using a six chamber revolver.
@@ -1148,7 +1150,7 @@ function viewCategoryBudgetTrackerProject() {
   projectInfo.innerHTML = `
     <h1>Category Budget Tracker</h1>
     <h2>Project Overview</h2>
-    <h3>Created with Python as an object oriented CLI focusing on ledger management and ASCII visualisation</h3>
+    <h3>Created with Python CLI </h3>
 
     <p>
       Budget Category Tracker is a text based budgeting tool that lets users create spending categories deposit and withdraw money
@@ -1298,7 +1300,7 @@ function viewCafeList() {
   projectInfo.innerHTML = `
     <h1>Cafe List</h1>
     <h2>Project Overview</h2>
-    <h3>Built with C# .NET Console App</h3>
+    <h3>Created with C# .NET CLI</h3>
 
 <p>
   CafeList is a lightweight console experience that assembles curated menu sections—coffee, chocolate drinks, cold beverages, syrups, bottled drinks,
