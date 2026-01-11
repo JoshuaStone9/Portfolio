@@ -1,3 +1,37 @@
+// Project image lists for index thumbnails
+const projectImages = {
+  'Finance Manager': ['images/FM_img1.png','images/FM_img2.png','images/FM_img3.png','images/FM_img4.png','images/FM_img5.png','images/FM_img6.png'],
+  'Breadsheet': ['images/B2.png','images/B3.png'],
+  'Home NAS Control Panel': ['images/HomeNASControlPanel.png'],
+  'Date Checker': ['images/DateChecker.png'],
+  'Inventory Database': ['images/InventoryDatabase.png'],
+  'To Do List Application': ['images/To-Do-Application-UI.png'],
+  'Spending Pots Manager': ['images/SpendingPotsImg1.png','images/SpendingPotsImg2.png','images/SpendingPotsImg3.png','images/SpendingPotsImg4.png'],
+  'JWT Inspector': ['images/JWTInspector.png'],
+  'Order Data Service': ['images/OrderDataService_img_1.png'],
+  'Category Budget Tracker': ['images/CategoryBudgetTracker.png'],
+  'Weather Forecast Web API': ['images/WeatherForecast.png'],
+  'CafeList Console App': ['images/CafeMenu_img1.png','images/CafeMenu_img2.png']
+};
+
+function pickRandom(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+
+function insertProjectThumbnails() {
+  const largeTitles = new Set(['JWT Inspector','Weather Forecast Web API','Inventory Database','CafeList Console App','Breadsheet']);
+  Object.keys(projectImages).forEach(title => {
+    const src = pickRandom(projectImages[title]);
+    document.querySelectorAll('h2').forEach(h2 => {
+      if (h2.textContent && h2.textContent.trim() === title) {
+        // avoid inserting duplicate thumbnails
+        const next = h2.nextElementSibling;
+        if (next && next.classList && next.classList.contains('indexProjectThumbnail')) return;
+        const classes = 'indexProjectThumbnail' + (largeTitles.has(title) ? ' largeThumbnail' : '');
+        h2.insertAdjacentHTML('afterend', `<img src="${src}" class="${classes}" alt="${title} thumbnail">`);
+      }
+    });
+  });
+}
+
 function viewFinanceManager() {
   const openPopUp = document.querySelector(".popup-wrapper");
   openPopUp.classList.remove("hidden");
@@ -1461,4 +1495,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Initial pass: apply filter based on initial checkbox state
   applyLanguageFilter();
+
+  // Insert randomized thumbnails under project titles
+  try {
+    insertProjectThumbnails();
+  } catch (e) {
+    console.error('Thumbnail insertion failed', e);
+  }
 });

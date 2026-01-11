@@ -238,6 +238,28 @@ p, li {
   text-align: center;
 }
 
+/* Thumbnails inserted under project titles on the index page */
+.indexProjectThumbnail {
+  display: block;
+  margin: 8px auto 14px;
+  width: 220px; /* slightly bigger */
+  max-width: 90%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+  border: 1px solid rgba(148,163,184,0.25);
+}
+
+/* Larger variant for a few highlighted projects */
+.indexProjectThumbnail.largeThumbnail {
+  width: 420px;
+  max-width: 98%;
+  height: 260px;
+  object-fit: contain; /* show whole image without cropping */
+  object-position: center center;
+  background-color: rgba(15,23,42,0.5); /* fill empty space when aspect ratios differ */
+  border-radius: 10px;
+}
 .techKnowledge {
   margin-top: 26px;
   padding: 22px 26px;
