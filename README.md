@@ -117,6 +117,15 @@ python3 -m http.server
 
 The portfolio is live at `https://www.joshuastoneportfolio.it.com` and runs 24/7. It is hosted on GitHub Pages and stays updated whenever this repository changes.
 
+---
+
+## FreeCodeCamp Projects
+
+- **Category Budget Tracker** — A Python console budget application completed during the freeCodeCamp curriculum. Repository: https://github.com/JoshuaStone9/CategoryBudgetTracker
+- **freeCodeCamp profile:** https://www.freecodecamp.org/JoshuaStone
+
+---
+
 ## Potential Improvements
 
 - Add a featured-projects section with curated highlights

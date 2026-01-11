@@ -1150,7 +1150,7 @@ function viewCategoryBudgetTrackerProject() {
   projectInfo.innerHTML = `
     <h1>Category Budget Tracker</h1>
     <h2>Project Overview</h2>
-    <h3>Created with Python CLI </h3>
+    <h3>Created with Python CLI (completed during the freeCodeCamp curriculum)</h3>
 
     <p>
       Budget Category Tracker is a text based budgeting tool that lets users create spending categories deposit and withdraw money
