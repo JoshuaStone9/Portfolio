@@ -1296,9 +1296,9 @@ function viewCafeList() {
   const projectInfo = document.querySelector(".projectInfo");
 
   projectInfo.innerHTML = `
-    <h1>Weather Forecast Web API</h1>
+    <h1>Cafe List</h1>
     <h2>Project Overview</h2>
-    <h3>Built with ASP.NET Core Minimal APIs and HTML </h3>
+    <h3>Built with C# .NET Console App</h3>
 
 <p>
   CafeList is a lightweight console experience that assembles curated menu sections—coffee, chocolate drinks, cold beverages, syrups, bottled drinks,
