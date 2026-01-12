@@ -66,11 +66,11 @@ function viewFinanceManager() {
     <h3>Features</h3>
     <ul>
       <li><b>Centralized Dashboard: </b>The main form provides quick access to all sections of the Finance Manager, giving users various options to input their financial data.</li>
-      <li><b>Bills Management: </b>Users can easily add, view, and manage their recurring bills to keep track of regular monthly expenses.</li>
+      <li><b>Bills Management: </b>Users can easily add view and manage their recurring bills to keep track of regular monthly expenses.</li>
       <li><b>Extra Expenses Tracking: </b>Allows users to record one-off or predicted extra expenses for better budgeting throughout the month.</li>
-      <li><b>Savings Overview: </b>Lets users input and monitor their savings progress, set financial goals, and visualize monthly savings performance.</li>
+      <li><b>Savings Overview: </b>Lets users input and monitor their savings progress set financial goals and visualize monthly savings performance.</li>
       <li><b>Investments Management: </b>Supports tracking of current, future and past investments giving users insight into how much they invest over time.</li>
-      <li><b>All Payments Page: </b>Displays all financial data in a single view, including a grand total of expenses, with quick-access buttons for Reload, Edit, and Delete functions.</li>
+      <li><b>All Payments Page: </b>Displays all financial data in a single view including a grand total of expenses with quick-access buttons for Reload Edit and Delete functions.</li>
       <li><b>(Future Development) User Account System: </b>Simple registration and login process with 2FA (two-factor authentication).</li>
       <li><b>Secure Data Storage: </b>Uses a connected SQL Server to store user data, featuring auto-incremented IDs and 32-bit encrypted passwords for protection.</li>
     </ul>
@@ -315,7 +315,7 @@ function viewNASAutoBackup() {
         <p>
           This <strong>PowerShell</strong> script is designed to run on my NAS system and is configured to execute automatically on boot.
           Its purpose is to detect when an external drive is connected and immediately back up all files stored on it. The solution
-          provides a fast, reliable, and fully automated approach to safeguarding important data, removing the need for manual backups
+          provides a fast reliable and fully automated approach to safeguarding important data removing the need for manual backups
           and reducing the risk of oversight.
         </p>
         <p>
@@ -561,7 +561,7 @@ function viewSpendingPotsProject() {
       a budgeting category such as food, utilities or savings, with a clear balance displayed
       for each.
       <br><br>
-      The system allows users to view balances, add funds, and create new spending pots, with
+      The system allows users to view balances add funds and create new spending pots with
       all data persisted locally to a text file so information is retained between sessions.
       <br><br>
       The application also integrates with the Plaid API (sandbox environment) to simulate
@@ -727,14 +727,14 @@ function viewOrderDataServiceProject() {
     <p>
       Order Data Service is a C# console application that manages customers, orders, 
       and order items using a SQLite database combined with in memory dictionary caching.
-      It provides a fast command line interface for creating, viewing, and deleting data
+      It provides a fast command line interface for creating viewing and deleting data
       without a UI layer.
     </p>
 
     <h3>Why?</h3>
     <p>
       I built this project as part of my personal development in C# to practice CRUD flows,
-      relational data modeling, and efficient data access. The project focuses on writing
+      relational data modeling and efficient data access. The project focuses on writing
       data to SQLite and then loading that data into dictionaries for quick lookups and
       clear program flow.
     </p>
@@ -749,8 +749,8 @@ function viewOrderDataServiceProject() {
 
     <h3>Features</h3>
     <ul>
-      <li><b>CRUD operations:</b> Create, read, and delete customers, orders, and order items.</li>
-      <li><b>Dictionary backed cache:</b> Customers, orders, and items are stored in memory for fast access.</li>
+      <li><b>CRUD operations:</b> Create read and delete customers orders and order items.</li>
+      <li><b>Dictionary backed cache:</b> Customers orders and items are stored in memory for fast access.</li>
       <li><b>Search and lookup:</b> Find customers by email and view orders by customer ID.</li>
       <li><b>Lambda queries:</b> Use FindAll to locate orders after a date and items with quantity greater than two.</li>
       <li><b>SQLite persistence:</b> Data is stored locally and persists between runs.</li>
@@ -761,7 +761,7 @@ function viewOrderDataServiceProject() {
 
     <h3>Future Improvements</h3>
     <ul>
-      <li>Add update flows for customers, orders, and items.</li>
+      <li>Add update flows for customers orders and items.</li>
       <li>Introduce async database operations.</li>
       <li>Add reporting features such as totals by customer.</li>
       <li>Expand validation and error handling.</li>
@@ -1057,24 +1057,24 @@ function viewCoinConverter() {
     <p>
       Coin Converter is a simple web-based application designed to help users quickly
       calculate the total monetary value of coin bags based on UK coin denominations.
-      The project focuses on usability, clarity, and clean logic while reinforcing
+      The project focuses on usability clarity and clean logic while reinforcing
       core front-end development principles.
     </p>
 
     <h3>Why?</h3>
     <p>
       I created Coin Converter to strengthen my understanding of JavaScript event handling,
-      DOM manipulation, and form validation. I wanted to build a practical tool that solves
+      DOM manipulation and form validation. I wanted to build a practical tool that solves
       a real-world problem while remaining lightweight and intuitive. This project helped
-      me gain confidence working with user input, calculations, and dynamic UI updates.
+      me gain confidence working with user input calculations and dynamic UI updates.
     </p>
 
     <h3>Implementation Details</h3>
     <p>
-      Coin Converter is built using plain HTML, CSS, and JavaScript without external
+      Coin Converter is built using plain HTML CSS and JavaScript without external
       frameworks. The application listens for form submission events, validates user input,
       and uses a switch statement to determine the value of each coin bag. Results are
-      displayed dynamically, and each conversion is logged with a timestamp for reference.
+      displayed dynamically and each conversion is logged with a timestamp for reference.
     </p>
 
     <h3>Features</h3>
@@ -1101,7 +1101,7 @@ function viewCoinConverter() {
     <h3>Personal Development</h3>
     <p>
       This project strengthened my JavaScript fundamentals, particularly working with
-      conditional logic, DOM updates, and form events. It also reinforced the importance
+      conditional logic DOM updates and form events. It also reinforced the importance
       of input validation and user experience when handling numeric data.
     </p>
     <p>
@@ -1172,6 +1172,87 @@ function viewPasswordGeneratorProject() {
     <p>
       This project helped me build confidence with Python input validation and looping logic and using standard library modules and file handling.
       It also helped reinforce security focused thinking around password complexity and randomness.
+    </p>
+  `;
+}
+
+function viewPrinterAppProject() {
+  const openPopUp = document.querySelector(".popup-wrapper");
+  openPopUp.classList.remove("hidden");
+  const projectInfo = document.querySelector(".projectInfo");
+
+  projectInfo.innerHTML = `
+    <h1>Printer App</h1>
+    <h2>Project Overview</h2>
+    <h3>Created with C# .NET CLI</h3>
+
+    <p>
+      The Printer App is a console based printer simulator that mimics the behavior of real multifunction office printers. 
+      Users can perform three primary operations: Print Scan and Copy. The application initializes with animated loading 
+      sequences detects available system printers and provides visual feedback for each operation.
+    </p>
+
+    <p>
+      The app showcases object oriented programming principles and clean console I/O handling with an interactive 
+      menu driven interface.
+    </p>
+
+    <h3>Why?</h3>
+    <p>
+      I wanted to build something that would let me practice putting together multiple C# concepts in one project. 
+      Working on this helped me understand how different parts of an application fit together classes, interfaces 
+      and how to actually talk to the system itself. I liked thinking about how to make a console app feel engaging 
+      and polished even without a fancy UI and it really drove home why keeping different parts of the code focused on their own job instead of mixing everything together really matters.
+    </p>
+
+    <h3>Implementation Details</h3>
+    <p>
+      The application is written as a C# .NET 9 console application with multiple classes organized by responsibility. 
+      The core architecture includes a Presentation/UI layer for user interaction, Operation classes for domain logic 
+      (Print Scan Copy) a System Integration layer that detects installed printers and a Loading layer that manages 
+      startup sequences. Each operation implements an IPrinterApp interface for consistency and extensibility.
+    </p>
+
+    <h3>Features</h3>
+    <ul>
+      <li><b>System Printer Detection:</b> Displays all available system printers using PrinterSettings</li>
+      <li><b>Print Operation:</b> Prompts user for content and outputs it in a formatted box</li>
+      <li><b>Scan Operation:</b> Simulates document scanning with user-provided details</li>
+      <li><b>Copy Operation:</b> Simulates document copying with formatted output</li>
+      <li><b>Animated Loading Sequences:</b> Visual feedback during initialization and transitions</li>
+      <li><b>Interactive Menu Driven Interface:</b> User friendly command selection (P/PRINT, S/SCAN, C/COPY)</li>
+      <li><b>Error Handling:</b> Graceful handling of invalid input with retry prompts</li>
+      <li><b>Object-Oriented Design:</b> Implements multiple classes and interfaces for clean architecture</li>
+    </ul>
+    <ul>
+      <li><b>Program:</b> Entry point and main orchestrator</li>
+      <li><b>Printer:</b> Implements IPrinterApp for printing operations</li>
+      <li><b>Scan:</b> Implements IPrinterApp for scanning operations</li>
+      <li><b>Options:</b> Handles user menu selection and operation routing</li>
+      <li><b>Loading:</b> Manages startup sequences and displays available printers</li>
+    </ul>
+
+
+    <h3>Console Interface</h3>
+      <p><img src="images/PrinterApp.png" id="OrderDataServiceCLI" alt="Order Data Service CLI"></p>
+
+    <h3>Future Improvements</h3>
+    <ul>
+      <li>Add file-based printing to read and process actual files</li>
+      <li>Implement a paper tray system with capacity limits</li>
+      <li>Add printer status tracking (busy, idle, error states)</li>
+      <li>Store operation history to a log file</li>
+      <li>Add color output for better visual distinction</li>
+      <li>Implement cancellation tokens for long-running operations</li>
+      <li>Add unit tests for operation classes</li>
+    </ul>
+
+    <h3>Personal Development</h3>
+    <p>
+      This project helped me develop a deeper understanding of C# object-oriented principles, interface design patterns, 
+      and system integration. Working with PrinterSettings enhanced my knowledge of .NET's system interaction capabilities. 
+      The project demonstrated how to structure a console application for maintainability and extensibility and provided 
+      valuable experience in creating engaging user interfaces within console constraints.
     </p>
   `;
 }
@@ -1274,7 +1355,7 @@ function viewWeatherForecastWebApiProject() {
     </p>
 
     <p>
-      The focus is on practicing Web API fundamentals such as routing, response types, and serving static HTML content directly from an endpoint
+      The focus is on practicing Web API fundamentals such as routing response types and serving static HTML content directly from an endpoint
       while keeping the application small and easy to extend.
     </p>
 
@@ -1292,7 +1373,7 @@ function viewWeatherForecastWebApiProject() {
 
     <h4>Core Components</h4>
     <ul>
-      <li>A <code>WeatherForecast</code> record that stores date, Celsius temperature, summary, and message</li>
+      <li>A <code>WeatherForecast</code> record that stores date Celsius temperature summary and message</li>
       <li>A calculated <code>TemperatureF</code> property derived from Celsius</li>
       <li><code>CreateForecast()</code> which generates 5 days of random forecast data</li>
       <li><code>/weatherforecastOutput</code> returns formatted forecast lines as plain text</li>
@@ -1321,7 +1402,7 @@ function viewWeatherForecastWebApiProject() {
 
     <h3>Personal Development</h3>
     <p>
-      Building this helped reinforce how Minimal APIs work in ASP.NET Core, how to structure endpoints, and how to debug client-side fetch issues
+      Building this helped reinforce how Minimal APIs work in ASP.NET Core how to structure endpoints and how to debug client-side fetch issues
       when the UI doesn’t render due to JavaScript errors.
     </p>
   `;
@@ -1343,13 +1424,13 @@ function viewCafeList() {
 </p>
 
 <p>
-  The emphasis is on practicing clean data modeling, reusable printing logic via an <code>IMenuItem</code> abstraction, and integrating a small external package
+  The emphasis is on practicing clean data modeling reusable printing logic via an <code>IMenuItem</code> abstraction and integrating a small external package
   (QRCoder) for asset generation without adding storage or databases.
 </p>
 
 <h3>Why?</h3>
 <p>
-  I built this to experiment with structured menu data in code, demonstrate dietary tagging (vegan/gluten-free), and explore how a console app can still produce
+  I built this to experiment with structured menu data in code demonstrate dietary tagging (vegan/gluten-free) and explore how a console app can still produce
   shareable assets like QR codes for kiosk-style flows.
   It also keeps the footprint tiny—no persistence or input prompts—while remaining easy to extend with new sections.
 </p>
@@ -1357,7 +1438,7 @@ function viewCafeList() {
 <h3>Implementation Details</h3>
 <p>
   <code>Program.cs</code> orchestrates everything: it calls each <code>BuildMenu()</code> factory, prints sections through a shared <code>PrintMenu</code> helper,
-  filters vegan foods, and finally invokes <code>GenerateBlankSiteQr()</code> to save <code>blank-site-qr.png</code> next to the executable.
+  filters vegan foods and finally invokes <code>GenerateBlankSiteQr()</code> to save <code>blank-site-qr.png</code> next to the executable.
   Menu categories are strongly typed classes that implement <code>IMenuItem</code> for uniform handling.
 </p>
 
@@ -1372,7 +1453,7 @@ function viewCafeList() {
 
 <h3>Execution Flow</h3>
 <ul>
-  <li><b>Startup</b> – Instantiate every menu list, print a welcome banner, and display each section plus a vegan-only subset</li>
+  <li><b>Startup</b> – Instantiate every menu list print a welcome banner and display each section plus a vegan-only subset</li>
   <li><b>QR Output</b> – Save <code>blank-site-qr.png</code> and echo its path so users can scan it immediately</li>
   <li><b>Console UI</b> – All interaction is read-only output, making the app deterministic and easy to demo</li>
 </ul>
@@ -1395,7 +1476,7 @@ function viewCafeList() {
 <p>
   Building CafeList reinforced how to organize small domain models, leverage interfaces for consistent rendering,
   and integrate third-party packages for asset creation even in simple console utilities.
-  It also highlighted opportunities to keep console apps maintainable with clear separation between data, presentation, and generation logic.
+  It also highlighted opportunities to keep console apps maintainable with clear separation between data presentation and generation logic.
 </p>
   `;
 }
