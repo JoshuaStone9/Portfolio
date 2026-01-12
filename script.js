@@ -9,6 +9,7 @@ const projectImages = {
   'Spending Pots Manager': ['images/SpendingPotsImg1.png','images/SpendingPotsImg2.png','images/SpendingPotsImg3.png','images/SpendingPotsImg4.png'],
   'JWT Inspector': ['images/JWTInspector.png'],
   'Order Data Service': ['images/OrderDataService_img_1.png'],
+  'Printer App': ['images/PrinterApp.png'],
   'Category Budget Tracker': ['images/CategoryBudgetTracker.png'],
   'Weather Forecast Web API': ['images/WeatherForecast.png'],
   'CafeList Console App': ['images/CafeMenu_img1.png','images/CafeMenu_img2.png']
