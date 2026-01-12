@@ -963,7 +963,7 @@ body.panel-open {
 .projectImage,
 .sidepanelimg {
   display: block;
-  max-width: 90%;
+  max-width: 60%;
   height: auto;
   margin: 12px auto;
   object-fit: contain;
