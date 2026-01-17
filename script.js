@@ -12,7 +12,8 @@ const projectImages = {
   'Printer App': ['images/PrinterApp.png'],
   'Category Budget Tracker': ['images/CategoryBudgetTracker.png'],
   'Weather Forecast Web API': ['images/WeatherForecast.png'],
-  'CafeList Console App': ['images/CafeMenu_img1.png','images/CafeMenu_img2.png']
+  'CafeList Console App': ['images/CafeMenu_img1.png','images/CafeMenu_img2.png'],
+  'Heating Controller': ['images/CLIHeatingController_img_1.png','images/CLIHeatingController_img_2.png','images/CLIHeatingController_img_3.png']
 };
 
 function pickRandom(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
@@ -1254,6 +1255,97 @@ function viewPrinterAppProject() {
       and system integration. Working with PrinterSettings enhanced my knowledge of .NET's system interaction capabilities. 
       The project demonstrated how to structure a console application for maintainability and extensibility and provided 
       valuable experience in creating engaging user interfaces within console constraints.
+    </p>
+  `;
+}
+
+function viewHeatingControllerProject() {
+  const openPopUp = document.querySelector(".popup-wrapper");
+  openPopUp.classList.remove("hidden");
+  const projectInfo = document.querySelector(".projectInfo");
+
+  projectInfo.innerHTML = `
+    <h1>Heating Controller</h1>
+    <h2>Project Overview</h2>
+    <h3>Created with C# .NET CLI</h3>
+
+    <p>
+      The Heating Controller is a console based temperature control system that simulates how smart thermostats 
+      dynamically adjust heating and cooling services. Users input their desired temperature and the system automatically 
+      selects the appropriate service (heating or cooling) based on the current environment temperature. The application 
+      demonstrates clean architectural patterns commonly used in real world IoT and home automation systems.
+    </p>
+
+    <p>
+      This project highlights interface based design dependency injection and polymorphism in .NET showing how 
+      different implementations can be swapped seamlessly without changing core logic.
+    </p>
+
+    <h3>Why?</h3>
+    <p>
+      I built this project to practice implementing design patterns that are essential in professional software development. 
+      Interface based programming and dependency injection are critical for building testable and maintainable systems. 
+      By simulating a real world scenario like temperature control I could focus on architectural decisions rather than 
+      just syntax. This helped me understand how to write code that's easy to extend and modify without breaking existing functionality.
+    </p>
+
+    <h3>Implementation Details</h3>
+    <p>
+      The application is structured around a core <code>ITemperatureService</code> interface that defines the contract 
+      for temperature control operations. Two concrete implementations <code>HeatingService</code> and <code>CoolingService</code> 
+      provide specific logic for raising or lowering temperatures. A <code>TemperatureController</code> class acts as the 
+      orchestrator dynamically selecting which service to use based on user input and current conditions.
+    </p>
+
+    <p>
+      Dependency injection is used to pass services into the controller making the system easy to test and extend. 
+      The design follows SOLID principles particularly the Dependency Inversion Principle where high level modules 
+      depend on abstractions rather than concrete implementations.
+    </p>
+
+    <h3>Features</h3>
+    <ul>
+      <li><b>Dynamic Service Selection:</b> Automatically chooses heating or cooling based on desired temperature</li>
+      <li><b>Interface Based Design:</b> Uses ITemperatureService to define a common contract for all services</li>
+      <li><b>Dependency Injection:</b> Services are injected into the controller for loose coupling</li>
+      <li><b>Polymorphism in Action:</b> Different service implementations share the same interface</li>
+      <li><b>User Input Validation:</b> Ensures temperature inputs are valid and within realistic ranges</li>
+      <li><b>Console Feedback:</b> Provides clear status updates as temperature adjusts</li>
+      <li><b>Extensible Architecture:</b> New services (e.g. fan control humidity) can be added without modifying existing code</li>
+      <li><b>Clean Separation of Concerns:</b> Controller services and UI logic are separated into focused classes</li>
+    </ul>
+
+    <ul>
+      <li><b>ITemperatureService:</b> Interface defining the temperature control contract</li>
+      <li><b>HeatingService:</b> Concrete implementation for heating operations</li>
+      <li><b>CoolingService:</b> Concrete implementation for cooling operations</li>
+      <li><b>TemperatureController:</b> Orchestrator that selects and executes the appropriate service</li>
+      <li><b>Program:</b> Entry point that handles user input and initializes the system</li>
+    </ul>
+
+    <h3>Console Interface</h3>
+      <p><img src="images/CLIHeatingController_img_1.png" id="CLIHeatingController_img_1" alt="Heating Controller CLI Image 1"></p>
+      <p><img src="images/CLIHeatingController_img_2.png" id="CLIHeatingController_img_2" alt="Heating Controller CLI Image 2"></p>
+      <p><img src="images/CLIHeatingController_img_3.png" id="CLIHeatingController_img_3" alt="Heating Controller CLI Image 3"></p>
+
+    <h3>Future Improvements</h3>
+    <ul>
+      <li>Add scheduling functionality to set temperature changes at specific times</li>
+      <li>Implement multiple zones for controlling different rooms independently</li>
+      <li>Add logging to track temperature changes over time</li>
+      <li>Include energy consumption estimates for each operation</li>
+      <li>Integrate with actual hardware sensors for real temperature readings</li>
+      <li>Add unit tests to verify service behavior and controller logic</li>
+      <li>Implement a settings system for temperature limits and preferences</li>
+    </ul>
+
+    <h3>Personal Development</h3>
+    <p>
+      This project deepened my understanding of professional software architecture patterns. Learning to apply dependency 
+      injection and interface based design in a practical context helped me see why these patterns matter beyond theoretical 
+      discussions. The project also improved my ability to think about extensibility and maintainability from the start 
+      rather than retrofitting structure later. Working through the polymorphic behavior of different services gave me 
+      concrete experience with one of the core principles of object oriented programming.
     </p>
   `;
 }
