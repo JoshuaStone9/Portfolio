@@ -164,6 +164,98 @@ function viewBreadsheet() {
   `;
 }
 
+function viewTaskManager() {
+  const openPopUp = document.querySelector(".popup-wrapper");
+  openPopUp.classList.remove("hidden");
+  const projectInfo = document.querySelector(".projectInfo");
+  projectInfo.innerHTML = `
+    <h1>TaskManager</h1>
+    <h2>Project Overview</h2>
+    <h3>Created With C#, ASP.NET Core MVC, Entity Framework Core, SQLite and Razor Views</h3>
+    <p>
+      I designed TaskManager to streamline task assignment and tracking for coffee shop operations. 
+      The system allows managers to create tasks, assign them to employees, and track progress in real-time 
+      with a color-coded interface. It replaces informal communication methods with a centralized digital 
+      solution that provides visibility and accountability.
+    </p>
+
+    <h3>Why?</h3>
+    <p>
+      I built TaskManager to solve coordination challenges in a coffee shop environment. Without a structured 
+      system, tasks were often communicated verbally or through messages, leading to confusion about assignments 
+      and status. I wanted to create an intuitive web application that managers and staff could use to stay 
+      organized without complicated training. This project demonstrates full-stack development while addressing 
+      a practical business need.
+    </p>
+
+    <h3>Implementation Details</h3>
+    <p>
+      TaskManager is built using the ASP.NET Core MVC framework with Entity Framework Core for data persistence 
+      using SQLite. The application follows the Model-View-Controller pattern with Employee, Task, and TaskAssignment 
+      models. Controllers handle both page rendering and API endpoints for task operations. The database is initialized 
+      automatically on startup, and Razor views provide server-side rendering with dynamic content. The responsive 
+      interface uses custom CSS with color-coded task statuses for quick visual feedback.
+    </p>
+
+    <h3>Features</h3>
+    <ul>
+      <li><b>Real-Time Task Management:</b> Create, assign, and update tasks with instant status changes (Not Started, In Progress, Completed).</li>
+      <li><b>Color-Coded Interface:</b> Tasks are visually color-coded based on status for quick identification and improved user experience.</li>
+      <li><b>Employee Management:</b> View all team members with task counts and navigate to individual employee dashboards.</li>
+      <li><b>Task Assignment System:</b> Assign tasks to multiple employees with a many-to-many relationship using TaskAssignment entities.</li>
+      <li><b>Employee-Specific Views:</b> Each employee can see their own personalized task list through dedicated views.</li>
+      <li><b>RESTful API:</b> Includes API endpoints for retrieving all tasks and filtering tasks by employee ID.</li>
+      <li><b>Database Persistence:</b> All data is stored in SQLite database with Entity Framework Core ORM for reliable data management.</li>
+      <li><b>Responsive Design:</b> Grid-based layout with custom CSS ensuring usability across different devices.</li>
+    </ul>
+
+    <ul>
+      <li><b>Backend:</b> ASP.NET Core MVC (.NET 10.0) with dependency injection and middleware pipeline</li>
+      <li><b>Database:</b> SQLite with Entity Framework Core for migrations and query operations</li>
+      <li><b>Frontend:</b> Razor Views (.cshtml) with server-side rendering and dynamic data binding</li>
+      <li><b>Data Models:</b> Employee, TaskItem, and TaskAssignment with navigation properties for relational data</li>
+      <li><b>Controllers:</b> HomeController for views, TaskController for API endpoints, EmployeeController for employee operations</li>
+      <li><b>JSON Support:</b> Includes JSON file handling (employees.json, tasks.json) for data import/export capabilities</li>
+    </ul>
+
+    <ul>
+      <li><b>Status Updates:</b> One-click buttons to transition tasks between Not Started → In Progress → Completed</li>
+      <li><b>Task Creation:</b> Create new tasks and assign them to multiple employees simultaneously</li>
+      <li><b>Employee Filtering:</b> API endpoint to retrieve tasks filtered by specific employee ID</li>
+      <li><b>Relational Data:</b> Proper database relationships with navigation properties for seamless data access</li>
+      <li><b>Auto Database Initialization:</b> Database schema is created automatically on first run</li>
+    </ul>
+
+    <h3>User Interface</h3>
+    <p><i>Main Dashboard showing all task assignments with color-coded status cards</i></p>
+    <p><i>Employee grid displaying team members with task counts and quick access links</i></p>
+    <p><i>Individual employee task view with status management controls</i></p>
+    
+    <h3>Future Improvements</h3>
+    <ul>
+      <li>Add authentication and authorization for role-based access (managers vs. employees)</li>
+      <li>Implement task editing and deletion functionality</li>
+      <li>Add due dates and priority levels to tasks</li>
+      <li>Create task history and audit trail for accountability</li>
+      <li>Add email or push notifications when tasks are assigned or updated</li>
+      <li>Implement task filtering and search functionality</li>
+      <li>Add data visualization dashboards showing task completion metrics</li>
+      <li>Enable task comments and collaboration features</li>
+      <li>Migrate to cloud hosting (Azure App Service) for production deployment</li>
+    </ul>
+
+    <h3>Personal Development</h3>
+    <p>
+      This project significantly strengthened my understanding of the MVC architectural pattern and full-stack 
+      web development with C#. Working with Entity Framework Core taught me how to design relational databases, 
+      manage migrations, and implement complex many-to-many relationships. I gained experience with dependency 
+      injection, middleware configuration, and ASP.NET Core's request pipeline. Building RESTful API endpoints 
+      alongside traditional MVC views helped me understand different approaches to serving data. The project also 
+      improved my skills in Razor view syntax, server-side rendering, and creating responsive interfaces with custom CSS.
+    </p>
+  `;
+}
+
 function viewHomeNASControlPanel() {
   const openPopUp = document.querySelector(".popup-wrapper");
   openPopUp.classList.remove("hidden");
