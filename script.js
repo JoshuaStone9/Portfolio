@@ -13,13 +13,14 @@ const projectImages = {
   'Category Budget Tracker': ['images/CategoryBudgetTracker.png'],
   'Weather Forecast Web API': ['images/WeatherForecast.png'],
   'CafeList Console App': ['images/CafeMenu_img1.png','images/CafeMenu_img2.png'],
-  'Heating Controller': ['images/CLIHeatingController_img_1.png','images/CLIHeatingController_img_2.png','images/CLIHeatingController_img_3.png']
+  'Heating Controller': ['images/CLIHeatingController_img_1.png','images/CLIHeatingController_img_2.png','images/CLIHeatingController_img_3.png'],
+  'Coffee Shop Task Manager': ['images/TaskManager_img_1.png','images/TaskManager_img_2.png','images/TaskManager_img_3.png']
 };
 
 function pickRandom(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
 
 function insertProjectThumbnails() {
-  const largeTitles = new Set(['JWT Inspector','Weather Forecast Web API','Inventory Database','CafeList Console App','Breadsheet']);
+  const largeTitles = new Set(['JWT Inspector','Weather Forecast Web API','Inventory Database','CafeList Console App','Breadsheet','Coffee Shop Task Manager','Order Data Service','Heating Controller','Category Budget Tracker']);
   Object.keys(projectImages).forEach(title => {
     const src = pickRandom(projectImages[title]);
     document.querySelectorAll('h2').forEach(h2 => {
@@ -227,10 +228,10 @@ function viewTaskManager() {
     </ul>
 
     <h3>User Interface</h3>
-    <p><i>Main Dashboard showing all task assignments with color-coded status cards</i></p>
-    <p><i>Employee grid displaying team members with task counts and quick access links</i></p>
-    <p><i>Individual employee task view with status management controls</i></p>
-    
+    <img src="images/TaskManager_img_1.png" class="projectImage" alt="TaskManager screenshot 1">
+    <img src="images/TaskManager_img_2.png" class="projectImage" alt="TaskManager screenshot 2">
+    <img src="images/TaskManager_img_3.png" class="projectImage" alt="TaskManager screenshot 3">
+
     <h3>Future Improvements</h3>
     <ul>
       <li>Add authentication and authorization for role-based access (managers vs. employees)</li>
