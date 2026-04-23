@@ -717,6 +717,25 @@ p, li {
   );
 }
 
+.lang-react {
+  background-image: conic-gradient(
+    from 210deg,
+    #61dafb,
+    #0f172a,
+    #38bdf8,
+    #61dafb
+  );
+}
+
+.lang-bootstrap {
+  background-image: conic-gradient(
+    from 210deg,
+    #a855f7,
+    #7c3aed,
+    #4c1d95,
+    #a855f7
+  );
+}
 
 /* ===== Accessible language filter chips ===== */
 
