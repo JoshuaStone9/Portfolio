@@ -14,13 +14,14 @@ const projectImages = {
   'Weather Forecast Web API': ['images/WeatherForecast.png'],
   'CafeList Console App': ['images/CafeMenu_img1.png','images/CafeMenu_img2.png'],
   'Heating Controller': ['images/CLIHeatingController_img_1.png','images/CLIHeatingController_img_2.png','images/CLIHeatingController_img_3.png'],
-  'Coffee Shop Task Manager': ['images/TaskManager_img_1.png','images/TaskManager_img_2.png','images/TaskManager_img_3.png']
+  'Coffee Shop Task Manager': ['images/TaskManager_img_1.png','images/TaskManager_img_2.png','images/TaskManager_img_3.png'],
+  'Personal Photography Site' : ['images/StonePhotography.png']
 };
 
 function pickRandom(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
 
 function insertProjectThumbnails() {
-  const largeTitles = new Set(['JWT Inspector','Weather Forecast Web API','Inventory Database','CafeList Console App','Breadsheet','Coffee Shop Task Manager','Order Data Service','Heating Controller','Category Budget Tracker']);
+  const largeTitles = new Set(['JWT Inspector','Weather Forecast Web API','Inventory Database','CafeList Console App','Breadsheet','Coffee Shop Task Manager','Order Data Service','Heating Controller','Category Budget Tracker', 'Personal Photography Site']);
   Object.keys(projectImages).forEach(title => {
     const src = pickRandom(projectImages[title]);
     document.querySelectorAll('h2').forEach(h2 => {
@@ -1666,6 +1667,8 @@ function viewCafeList() {
 </p>
   `;
 }
+
+
 
 
 
